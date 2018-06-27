@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/greetings")
 public class HelloService {
 
-    @GetMapping
+    @GetMapping("/hello")
     public String sayHello(@RequestParam("name") String name) {
 
-        return "Hello " + (StringUtils.isEmpty(name) ? "Spring Boot!!" : name + "!!");
+        String greet = StringUtils.isEmpty(name) ? "Spring Boot" : name;
+        return "Hello " + greet + "!!";
     }
-
 }
