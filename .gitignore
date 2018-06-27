@@ -1,0 +1,7 @@
+# Ignore everything in this directory
+target
+.classpath
+.settings
+.project
+*.i??
+.idea
