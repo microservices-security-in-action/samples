@@ -1,0 +1,24 @@
+spring:
+    application:
+        name: secure-helloworld-microservice
+    mvc:
+        favicon:
+            enabled: false
+        throw-exception-if-no-handler-found: true
+    main:
+        banner-mode: 'off'
+security:
+    oauth2:
+        resource:
+            filter-order: 3
+        client:
+            authenticationScheme: header
+logging:
+    level:
+    # org.springframework.security: DEBUG
+
+server:
+    port: 8080
+    error:
+        whitelabel:
+            enabled: false

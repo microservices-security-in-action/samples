@@ -3,7 +3,7 @@ Sample OAuth2 server for Spring Boot which uses an in-memory token store
 The requesting method for token supports both ```json format``` and ```url-encoded format```
 
 
-The token validity is currently 60secs.
+The token validity is currently 300 seconds (5 minutes).
 
 
 Update any of the ```applicationid```/```applicationsecret```/```tokenValidity``` to however you want.
@@ -15,7 +15,7 @@ mvn clean install
 
 ## Running the OAuth2 server
 ```shell
-java -jar target/oauth2-server-1.0.0.jar
+java -jar target/oauth2-server-1.0.jar
 ```
 
 ## Request new access token
