@@ -6,7 +6,7 @@ The requesting method for token supports both ```json format``` and ```url-encod
 The token validity is currently 60secs.
 
 
-Update any of the ```clienId```/```clientPassword```/```tokenValidity``` to however you want.
+Update any of the ```applicationid```/```applicationsecret```/```tokenValidity``` to however you want.
 
 ## Building the Project
 ```shell
