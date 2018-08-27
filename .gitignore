@@ -5,3 +5,5 @@ target
 .project
 *.i??
 .idea
+.metadata
+.recommenders
