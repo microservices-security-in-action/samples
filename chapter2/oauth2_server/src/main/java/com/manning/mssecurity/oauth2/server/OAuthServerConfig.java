@@ -29,13 +29,17 @@ public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients
-                .inMemory()
-                .withClient("applicationid")
-                .secret("applicationsecret")
+        clients.inMemory()
+            .withClient("application1").secret("application1secret")
                 .authorizedGrantTypes("client_credentials", "password")
                 .scopes("read", "write")
-                .accessTokenValiditySeconds(300)
+                .accessTokenValiditySeconds(3600)
+                .resourceIds("sample-oauth")
+            .and()
+            .withClient("application2").secret("application2secret")
+                .authorizedGrantTypes("client_credentials", "password")
+                .scopes("read")
+                .accessTokenValiditySeconds(3600)
                 .resourceIds("sample-oauth");
     }
 
