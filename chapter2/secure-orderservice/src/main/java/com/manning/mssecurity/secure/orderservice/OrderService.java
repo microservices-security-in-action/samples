@@ -65,9 +65,9 @@ public class OrderService extends WebSecurityConfigurerAdapter {
     @Bean
     public ResourceServerTokenServices tokenServices() {
         RemoteTokenServices tokenServices = new RemoteTokenServices();
-        tokenServices.setClientId("applicationid");
-        tokenServices.setClientSecret("applicationsecret");
-        tokenServices.setCheckTokenEndpointUrl("http://localhost:8084/oauth/check_token");
+        tokenServices.setClientId("application1");
+        tokenServices.setClientSecret("application1secret");
+        tokenServices.setCheckTokenEndpointUrl("http://localhost:8085/oauth/check_token");
         return tokenServices;
     }
 
