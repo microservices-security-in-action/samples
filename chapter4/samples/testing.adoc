@@ -1,0 +1,83 @@
+[[_testing_angular_js_and_spring_security_part_viii]]
+= Testing an Angular Application
+
+In this section we continue <<_modular_angular_js_and_spring_security_part_vii,our discussion>> of how to use http://projects.spring.io/spring-security[Spring Security] with http://angular.io[Angular] in a "single page application". Here we show how to write and run unit tests for the client-side code using the Angular test framework. You can catch up on the basic building blocks of the application or build it from scratch by reading the <<_spring_and_angular_js_a_secure_single_page_application,first section>>, or you can just go straight to the https://github.com/dsyer/spring-security-angular/tree/master/basic[source code in Github] (the same source code as Part I, but with tests now added). This section actually has very little code using Spring or Spring Security, but it covers the client-side testing in a way that might not be so easy to find in the usual Angular community resources, and one which we feel will be comfortable for the majority of Spring users.
+
+____
+Reminder: if you are working through this section with the sample application, be sure to clear your browser cache of cookies and HTTP Basic credentials. In Chrome the best way to do that for a single server is to open a new incognito window.
+____
+
+== Writing a Specification
+
+Our "app" component in the "basic" application is very simple, so it won't take a lot to test it thoroughly. Here's a reminder of the code:
+
+.app.component.ts
+```javascript
+include::basic/src/app/app.component.ts
+```
+
+The main challenge we face is to provide the `http` object in the test, so we can make assertions about how they are used in the component. Actually, even before we face that challenge we need to be able to create a component instance, so we can test what happens when it loads. Here's how you can do that.
+
+The Angular build in an app created from `ng new` already has a spec and some configuration to run it. The generated spec is in "src/app", and it starts like this:
+
+.app.component.ts
+```javascript
+import { TestBed, async } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+describe('AppComponent', () => {
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [],
+      declarations: [
+        AppComponent
+      ]
+    }).compileComponents();
+  }));
+  it('should create the app', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  }));
+  ...
+}
+```
+
+In this very basic test suite we have these important elements:
+
+1. We `describe()` the thing that is being tested (the "AppComponent" in this case) with a function.
+
+2. Inside that function we provide a `beforeEach()` callback, which loads the Angular component.
+
+3. Behaviour is expressed through a call to `it()`, where we state in words what the expectation is, and then provide a function that makes assertions.
+
+4. The test environment is initialized before anything else happens. This is boilerplate for most Angular apps.
+
+The test function here is so trivial it actually only asserts that the component exists, so if that fails then the test will fail.
+
+== Improving the Unit Test: Mocking HTTP Backend
+
+To improve the spec to production grade we need to actually assert something about what happens when the controller loads. Since it makes a call to `http.get()` we need to mock that call to avoid having to run the whole application just for a unit test. To do that we use the Angular `HttpClientTestingModule`:
+
+.app.component.spec
+[source,javascript]
+----
+include::basic/src/app/app.component.spec[indent=0]
+----
+
+The new pieces here are:
+
+* The declaration of the `HttpClientTestingModule` as an imports in the `TestBed` in `beforeEach()`.
+
+* In the test function we set expectations for the backend before we create the component, telling it to expect a call to 'resource/',and what the response should be.
+
+== Running the Specs
+
+To run our test" code we can do `./ng test` (or `./ng build`) using the convenience script created when the project was set up. It also runs as part of the Maven lifecycle, so `./mvnw install` is also a good way to run the tests, and this is what will happen in your CI build.
+
+== End-to-End Tests
+
+Angular also has a standard build set up for "end-to-end tests" using a browser and your generated JavaScript. These are written as "specs" in the top-level `e2e` directory. All the samples in this tutorial contain a really simple end-to-end test which run in the Maven lifecycle (hence you will see a browser window popup if you run `mvn install` in any of the "ui" apps).
+
+== Conclusion
+
+Being able to run unit tests for Javascript is important in a modern web application and it's a topic that we've ignored (or dodged) up to now in this series. With this installment we have presented the basic ingredients of how to write the tests, how to run them at development time and also, importantly, in a continuous integration setting. The approach we have taken is not going to suit everyone, so please don't feel bad about doing it in a different way, but make sure you have all those ingredients. The way we did it here will probably feel comfortable to traditional Java enterprise developers, and integrates well with their existing tools and processes, so if you are in that category I hope you will find it useful as a starting point. More examples of testing with Angular and Jasmine can be found in plenty of places on the internet, but the first point of call might be the https://github.com/dsyer/spring-security-angular/tree/master/single["single" sample] from this series, which now has some up to date test code which is a bit less trivial than the code we needed to write for the "basic" sample in this tutorial.

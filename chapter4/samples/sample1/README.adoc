@@ -1,0 +1,261 @@
+[[_spring_and_angular_js_a_secure_single_page_application]]
+= A Secure Single Page Application
+
+In this tutorial we show some nice features of Spring Security, Spring Boot and Angular working together to provide a pleasant and secure user experience. It should be accessible to beginners with Spring and Angular, but there also is plenty of detail that will be of use to experts in either. This is actually the first in a series of sections on Spring Security and Angular, with new features exposed in each one successively. We'll improve on the application in the <<_the_login_page_angular_js_and_spring_security_part_ii,second>> and subsequent installments, but the main changes after this are architectural rather than functional.
+
+== Spring and the Single Page Application
+
+HTML5, rich browser-based features, and the "single page application" are extremely valuable tools for modern developers, but any meaningful interactions will involve a backend server, so as well as static content (HTML, CSS and JavaScript) we are going to need a backend server. The backend server can play any or all of a number of roles: serving static content, sometimes (but not so often these days) rendering dynamic HTML, authenticating users, securing access to protected resources, and (last but not least) interacting with JavaScript in the browser through HTTP and JSON (sometimes referred to as a REST API).
+
+Spring has always been a popular technology for building the backend features (especially in the enterprise), and with the advent of http://projects.spring.io/spring-boot[Spring Boot] things have never been easier. Let's have a look at how to build a new single page application from nothing using Spring Boot, Angular and Twitter Bootstrap. There's no particular reason to choose that specific stack, but it is quite popular, especially with the core Spring constituency in enterprise Java shops, so it's a worthwhile starting point.
+
+== Create a New Project
+
+We are going to step through creating this application in some detail, so that anyone who isn't completely au fait with Spring and Angular can follow what is happening. If you prefer to cut to the chase, you can link:#how-does-it-work[skip to the end] where the application is working, and see how it all fits together. There are various options for creating a new project:
+
+* link:#using-curl[Using curl on the command line]
+* link:#using-spring-boot-cli[Using Spring Boot CLI]
+* link:#using-the-initializr-website[Using the Spring Initializr website]
+* link:#using-spring-tool-suite[Using Spring Tool Suite]
+
+The source code for the complete project we are going to build is in https://github.com/spring-guides/tut-spring-security-and-angular-js/tree/master/basic[Github here], so you can just clone the project and work directly from there if you want. Then jump to the link:#add-a-home-page[next section].
+
+[[using-curl]]
+=== Using Curl
+
+The easiest way to create a new project to get started is via the https://start.spring.io[Spring Boot Initializr]. E.g. using curl on a UN*X like system:
+
+[source]
+----
+$ mkdir ui && cd ui
+$ curl https://start.spring.io/starter.tgz -d style=web \
+-d style=security -d name=ui | tar -xzvf -
+----
+
+You can then import that project (it's a normal Maven Java project by default) into your favourite IDE, or just work with the files and "mvn" on the command line. Then jump to the link:#add-a-home-page[next section].
+
+[[using-spring-boot-cli]]
+=== Using Spring Boot CLI
+
+You can create the same project using the http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started-installing-the-cli[Spring Boot CLI], like this:
+
+[source]
+----
+$ spring init --dependencies web,security ui/ && cd ui
+----
+
+Then jump to the link:#add-a-home-page[next section].
+
+[[using-the-initializr-website]]
+=== Using the Initializr Website
+
+If you prefer you can also get the same code directly as a .zip file from the https://start.spring.io[Spring Boot Initializr]. Just open it up in your browser and select dependencies "Web" and "Security", then click on "Generate Project". The .zip file contains a standard Maven or Gradle project in the root directory, so you might want to create an empty directory before you unpack it. Then jump to the link:#add-a-home-page[next section].
+
+[[using-spring-tool-suite]]
+=== Using Spring Tool Suite
+
+In http://spring.io/tools/sts[Spring Tool Suite] (a set of Eclipse plugins) you can also create and import a project using a wizard at `File-&gt;New-&gt;Spring Starter Project`. Then jump to the link:#add-a-home-page[next section]. IntelliJ IDEA and NetBeans have similar features.
+
+[[add-a-home-page]]
+== Add an Angular App
+
+The core of a single page application in Angular (or any modern front-end framework) these days is going to be a Node.js build. Angular has some tools for setting this up quickly, so lets use those, and also keep the option of building with Maven, like any other Spring Boot application. The details of how to set up the Angular app are covered https://github.com/dsyer/spring-boot-angular[elsewhere], or you can just checkout the code for this tutorial from github.
+
+=== Running the Application
+
+Once the Angular app is primed, your application will be loadable in a browser (even though it doesn't do much yet). On the command line you can do this
+
+[source]
+----
+$ mvn spring-boot:run
+----
+
+and go to a browser at http://localhost:8080[http://localhost:8080]. When you load the home page you should get a browser dialog asking for username and password (the username is "user" and the password is printed in the console logs on startup). There's actually no content yet (or maybe the deafult "hero" tutorial content from the `ng` CLI), so you should get essentially a blank page.
+
+TIP: If you don't like scraping the console log for the password just add this to the "application.properties" (in "src/main/resources"): `security.user.password=password` (and choose your own password). We did this in the sample code using "application.yml".
+
+In an IDE, just run the `main()` method in the application class (there is only one class, and it is called `UiApplication` if you used the "curl" command above).
+
+To package and run as a standalone JAR, you can do this:
+
+[source]
+----
+$ mvn package
+$ java -jar target/*.jar
+----
+
+== Customize the Angular Application
+
+Let's customize the "app-root" component (in "src/app/app.component.ts").
+
+A minimal Angular application looks like this:
+
+.app.component.ts
+[source,javascript]
+----
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Demo';
+  greeting = {'id': 'XXX', 'content': 'Hello World'};
+}
+----
+
+Most of the code in this TypeScript is boiler plate. The interesting stuff is all going to be in the `AppComponent` where we define the "selector" (the name of the HTML element) and a snippet of HTML to render via the `@Component` annotation. We also need to edit the HTML template ("app.component.html"):
+
+.app.component.html
+[source,html]
+----
+<div style="text-align:center"class="container">
+  <h1>
+    Welcome {{title}}!
+  </h1>
+  <div class="container">
+    <p>Id: <span>{{greeting.id}}</span></p>
+    <p>Message: <span>{{greeting.content}}!</span></p>
+  </div>
+</div>
+----
+
+If you added those files under "src/app" and rebuilt your app it should now be secure and functional, and it will say "Hello World!". The `greeting` is rendered by Angular in the HTML using the handlebar placeholders, `{{greeting.id}}` and `{{greeting.content}}`.
+
+[[dynamic-content]]
+== Adding Dynamic Content
+
+So far we have an application with a greeting that is hard coded. That's useful for learning how things fit together, but really we expect content to come from a backend server, so let's create an HTTP endpoint that we can use to grab a greeting. In your https://github.com/spring-guides/tut-spring-security-and-angular-js/blob/master/basic/src/main/java/demo/UiApplication.java[application class] (in "src/main/java/demo"), add the `@RestController` annotation and define a new `@RequestMapping`:
+
+.UiApplication.java
+[source,java]
+----
+@SpringBootApplication
+@RestController
+public class UiApplication {
+
+  @RequestMapping("/resource")
+  public Map<String,Object> home() {
+    Map<String,Object> model = new HashMap<String,Object>();
+    model.put("id", UUID.randomUUID().toString());
+    model.put("content", "Hello World");
+    return model;
+  }
+
+  public static void main(String[] args) {
+    SpringApplication.run(UiApplication.class, args);
+  }
+
+}
+----
+
+NOTE: Depending on the way you created your new project it might not be called `UiApplication`.
+
+Run that application and try to curl the "/resource" endpoint and you will find that it is secure by default:
+
+[source]
+----
+$ curl localhost:8080/resource
+{"timestamp":1420442772928,"status":401,"error":"Unauthorized","message":"Full authentication is required to access this resource","path":"/resource"}
+----
+
+=== Loading a Dynamic Resource from Angular
+
+So let's grab that message in the browser. Modify the `AppComponent` to load the protected resource using XHR:
+
+.app.component.ts
+[source,javascript]
+----
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Demo';
+  greeting = {};
+  constructor(private http: HttpClient) {
+    http.get('resource').subscribe(data => this.greeting = data);
+  }
+}
+----
+
+We injected an https://angular.io/guide/http[`http` service], which is provided by Angular through the `http` module, and used it to GET our resource. Angular passes us the response and we pull out JSON and assign it to the greeting.
+
+To enable the dependency injection of the `http` service into our custom component, we need to declare it in the `AppModule` that includes the component (it's just one more line in the `imports` compared to the initial draft):
+
+.app.module.ts
+[source,javascript]
+----
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+----
+
+Run the application again (or just reload the home page in the browser), and you will see the dynamic message with its unique ID. So, even though the resource is protected and you can't curl it directly, the browser was able to access the content. We have a secure single page application in less than a hundred lines of code!
+
+NOTE: You might need to force your browser to reload the static resources after you change them. In Chrome (and Firefox with a plugin) you can use "developer tools" (F12), and that might be enough. Or you might have to use CTRL+F5.
+
+[[how-does-it-work]]
+== How Does it Work?
+
+The interactions between the browser and the backend can be seen in your browser if you use some developer tools (usually F12 opens this up, works in Chrome by default, may require a plugin in Firefox). Here's a summary:
+
+|===
+|Verb |Path |Status |Response
+
+|GET |/ |401 |Browser prompts for authentication
+|GET |/ |200 |index.html
+|GET |/*.js |200 |Loads of third assets from angular
+|GET |/main.bundle.js |200 |Application logic
+|GET |/resource |200 |JSON greeting
+|===
+
+You might not see the 401 because the browser treats the home page load as a single interaction, and you might see 2 requests for "/resource" because there is a http://en.wikipedia.org/wiki/Cross-origin_resource_sharing[CORS] negotiation.
+
+Look more closely at the requests and you will see that all of them have an "Authorization" header, something like this:
+
+[source]
+----
+Authorization: Basic dXNlcjpwYXNzd29yZA==
+----
+
+The browser is sending the username and password with every request (so remember to use HTTPS exclusively in production). There's nothing "Angular" about that, so it works with your JavaScript framework or non-framework of choice.
+
+=== What's Wrong with That?
+
+On the face of it, it seems like we did a pretty good job, it's concise, easy to implement, all our data are secured by a secret password, and it would still work if we changed the front end or backend technologies. But there are some issues.
+
+* Basic authentication is restricted to username and password authentication.
+
+* The authentication UI is ubiquitous but ugly (browser dialog).
+
+* There is no protection from http://en.wikipedia.org/wiki/Cross-site_request_forgery[Cross Site Request Forgery] (CSRF).
+
+CSRF isn't really an issue with our application as it stands since it only needs to GET the backend resources (i.e. no state is changed in the server). As soon as you have a POST, PUT or DELETE in your application it simply isn't secure any more by any reasonable modern measure.
+
+In the <<_the_login_page_angular_js_and_spring_security_part_ii,next section in this series>> we will extend the application to use form-based authentication, which is a lot more flexible than HTTP Basic. Once we have a form we will need CSRF protection, and both Spring Security and Angular have some nice out-of-the box features to help with this. Spoiler: we are going to need to use the `HttpSession`.
+
+****
+Thanks: I would like to thank everyone who helped me develop this series, and in particular http://spring.io/team/rwinch[Rob Winch] and https://twitter.com/thspaeth[Thorsten Spaeth] for their careful reviews of the text and source code, and for teaching me a few tricks I didn't know even about the parts I thought I was most familar with.
+****
