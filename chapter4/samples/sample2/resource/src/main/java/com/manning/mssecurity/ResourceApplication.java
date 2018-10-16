@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -27,7 +28,10 @@ public class ResourceApplication {
     }
 
     @GetMapping("/orders")
-    @CrossOrigin(origins = "*", maxAge = 3600)
+    @CrossOrigin(origins = "http://localhost:8080",
+                 allowedHeaders = "x-requested-with",
+                 methods = RequestMethod.GET,
+                 maxAge = 3600)
     public List<Order> getOrders() {
 
         System.out.println("Returning " + orders.size() + " orders");
