@@ -10,3 +10,4 @@ mvnw.cmd
 .metadata
 .recommenders
 .mvn
+.DS_Store
