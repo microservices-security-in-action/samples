@@ -1,4 +1,4 @@
-package demo;
+package com.manning.mssecurity;
 
 import java.security.KeyPair;
 import java.security.Principal;

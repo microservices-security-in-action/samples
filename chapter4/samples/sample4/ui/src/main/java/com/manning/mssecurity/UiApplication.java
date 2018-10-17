@@ -1,4 +1,4 @@
-package demo;
+package com.manning.mssecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

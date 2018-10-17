@@ -1,4 +1,4 @@
-package demo;
+package com.manning.mssecurity;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'Demo';
   authenticated = false;
   greeting = {};
+  orders = {};
 
   constructor(private http: HttpClient) {
     this.authenticate();
@@ -22,7 +23,7 @@ export class AppComponent {
     this.http.get('user').subscribe(response => {
         if (response['name']) {
             this.authenticated = true;
-            this.http.get('resource').subscribe(data => this.greeting = data);
+            this.http.get('orders').subscribe(data => this.orders = data);
         } else {
             this.authenticated = false;
         }
