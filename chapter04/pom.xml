@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.springframework.guides</groupId>
+	<artifactId>tut-spring-security-and-angular-js</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Spring Security Angular Samples</name>
+
+	<modules>
+		<module>sample1</module>
+		<module>single</module>
+		<module>vanilla</module>
+		<module>spring-session</module>
+		<module>proxy</module>
+		<module>oauth2-vanilla</module>
+		<module>oauth2</module>
+		<module>oauth2-logout</module>
+		<module>double</module>
+		<module>modular</module>
+	</modules>
+
+	<build>
+      <plugins>
+      </plugins>
+    </build>
+
+</project>

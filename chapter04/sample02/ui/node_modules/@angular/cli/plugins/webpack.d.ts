@@ -1,0 +1,5 @@
+export { BaseHrefWebpackPlugin } from '../lib/base-href-webpack/base-href-webpack-plugin';
+export { GlobCopyWebpackPlugin, GlobCopyWebpackPluginOptions } from './glob-copy-webpack-plugin';
+export { NamedLazyChunksWebpackPlugin } from './named-lazy-chunks-webpack-plugin';
+export { ScriptsWebpackPlugin, ScriptsWebpackPluginOptions } from './scripts-webpack-plugin';
+export { SuppressExtractedTextChunksWebpackPlugin } from './suppress-entry-chunks-webpack-plugin';
