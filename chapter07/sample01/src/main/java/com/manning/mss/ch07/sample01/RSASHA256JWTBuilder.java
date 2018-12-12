@@ -1,4 +1,4 @@
-package com.manning.ch07.sample01;
+package com.manning.mss.ch07.sample01;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
