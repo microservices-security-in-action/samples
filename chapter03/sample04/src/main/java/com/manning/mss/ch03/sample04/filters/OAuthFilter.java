@@ -1,4 +1,4 @@
-package com.manning.mss.ch03.sample03.filters;
+package com.manning.mss.ch03.sample04.filters;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
