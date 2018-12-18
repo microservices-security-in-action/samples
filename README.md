@@ -104,7 +104,7 @@
 * Summary  
 
 ## Part 5 Secure Development 
-**Chapter 12: Secure coding**
+**Chapter 12: Secure coding practices and automation**
 * OWASP top 10 most critical web application security risks
 * Static code analysis vs. dynamic analysis
 * Running static code analysis
