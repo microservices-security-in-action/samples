@@ -1,4 +1,4 @@
-##Chapter 2: Hello World microservices security
+## Chapter 2: Hello World microservices security
 * Your first microservice
 * Setting up an OAuth 2.0 server 
 * Securing a microservice with OAuth 2.0 
