@@ -21,7 +21,7 @@
 * Summary  
 
 ## Part 2 Edge Security
-**Chapter 3: Deploying a microservice behind an API gateway**
+**[Chapter 3: Deploying a microservice behind an API gateway](https://github.com/microservices-security-in-action/samples/tree/master/chapter03)**
 * The need for an API gateway in a microservices architecture?
 * Security at the edge
 * How to pick the correct OAuth 2.0 grant type?
@@ -30,7 +30,7 @@
 * Securing communication between Zuul and the microservice
 * Summary
 
-**Chapter 4: Building a single-page application to talk to microservices**
+**[Chapter 4: Building a single-page application to talk to microservices](https://github.com/microservices-security-in-action/samples/tree/master/chapter04)**
 * Building a single-page app 
 * Introducing an API gateway, and setting up cross-origin resource sharing (CORS)
 * Securing a SPA with OpenID Connect 
@@ -44,7 +44,7 @@
 * Summary
 
 ## Part 3 Service to Service Communication
-**Chapter 6: Securing service-to-service communication with certificates**
+**[Chapter 6: Securing service-to-service communication with certificates](https://github.com/microservices-security-in-action/samples/tree/master/chapter06)**
 * Why use mTLS? 
 * Creating certificates
 * Securing microservices with TLS 
@@ -55,7 +55,7 @@
 * SPIFFE 
 * Summary  
 					
-**Chapter 7: Securing service-to-service communication with JWT**
+**[Chapter 7: Securing service-to-service communication with JWT](https://github.com/microservices-security-in-action/samples/tree/master/chapter07)**
 * What is a JSON Web Token (JWT)? 
 * What does a JWT look like? 
 * JSON Web Signature (JWS) 
