@@ -13,33 +13,23 @@
 * Summary
 
 **Chapter 2: Hello World microservices security**
-2.1 Your first microservice - 4
-2.2 Setting up an OAuth 2.0 server  - 6
-2.3 Securing a microservice with OAuth 2.0 – 5
+* Your first microservice - 4
+* Setting up an OAuth 2.0 server  - 6
+* Securing a microservice with OAuth 2.0 – 5
 2.4 Invoking a secured microservice with a client application – 4
-2.5 Authorization of requests based on OAuth 2.0 scopes
-2.6 Summary  
-Total Pages = (Topic 4 => 6 * 2 = 12
-Topic 5 => 8 * 1 = 8
-Topic 6 => 10 * 1 = 10
-Overview + Summary => 2
-=> 32)
+* Authorization of requests based on OAuth 2.0 scopes
+* Summary  
 
-Part 2 Edge Security
-3. Deploying a microservice behind an API gateway
-3.1 The need for an API gateway in a microservices architecture? – 4
-3.2 Security at the edge
-3.3 How to pick the correct OAuth 2.0 grant type? - 6
-3.4 Setting up an API gateway with Zuul - 4
-3.5 Deploying a microservice behind Zuul - 4
-3.6 Securing communication between Zuul and the microservice. - 5
-3.7 Summary
-Total Pages = (Topic 3 => 4 * 1 = 4
-Topic 4 => 6 * 3 = 18
-Topic 5 => 8 * 1 = 8
-Topic 6 => 10 * 1 = 10
-Overview + Summary => 2
-=> 42)
+## Part 2 Edge Security
+**Chapter 3: Deploying a microservice behind an API gateway**
+* The need for an API gateway in a microservices architecture?
+* Security at the edge
+* How to pick the correct OAuth 2.0 grant type?
+* Setting up an API gateway with Zuul
+* Deploying a microservice behind Zuul
+* Securing communication between Zuul and the microservice
+* Summary
+
 4. Building a single-page app to talk to microservices
 4.1 Building a single-page app – 6
 4.2 Introducing an API gateway, and setting up cross-origin resource sharing (CORS)
