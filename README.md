@@ -1,7 +1,7 @@
 # Microservices Security In Action
-## By Prabath Siriwardena and Nuwan Dias
+** By Prabath Siriwardena and Nuwan Dias **
 
-Part 1 Overview
+# Part 1 Overview
 1. Welcome to microservices security
 1.1 How security works in a monolithic application 
 1.2 Challenges of securing microservices - 5
