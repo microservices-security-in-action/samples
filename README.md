@@ -68,7 +68,7 @@
 * Exchanging a JWT for a new one with a new audience
 * Summary  
 					
-**Chapter 8: Securing Event-driven Microservices**
+**Chapter 8: Securing Event-driven microservices**
 * Setting up Kafka 
 * Building a publisher microservice with Kafka 
 * Building a consumer microservice with Kafka 
