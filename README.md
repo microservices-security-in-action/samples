@@ -13,10 +13,10 @@
 * Summary
 
 **Chapter 2: Hello World microservices security**
-* Your first microservice - 4
-* Setting up an OAuth 2.0 server  - 6
-* Securing a microservice with OAuth 2.0 – 5
-2.4 Invoking a secured microservice with a client application – 4
+* Your first microservice
+* Setting up an OAuth 2.0 server 
+* Securing a microservice with OAuth 2.0 
+* Invoking a secured microservice with a client application 
 * Authorization of requests based on OAuth 2.0 scopes
 * Summary  
 
@@ -76,57 +76,39 @@
 * Setting OPA over Kafka 
 * Summary									
 
-Part 3 Secure Deployment 
-9. Conquering container security with Docker
-9.1 Docker security principles - 5
-9.2 Deploying a microservice on Docker - 6
-9.3 Securing the host - 5
-9.4 Running Docker bench for security - 5
-9.5 Challenges in container security - 7
-9.6 Summary
-Total Pages = (Topic 5 => 8 * 3 = 24
-Topic 6 => 10 * 1 = 10
-Topic 7 => 15 * 1 = 15
-Overview + Summary => 2
-=> 51)					
-10. Securing microservices on Kubernetes
-            10.1 Overview 
-10.2 Setting up a Docker cluster with Kubernetes - 6
-10.3 Kubernetes built in security features - 5
-10.4 Setting up Kubernetes security policies - 5
-10.5 Using Kubernetes network policies - 5
-10.6 Securing applications with Calico - 5
-10.7 Implementing security as a sidecar - 6
-10.8 Summary
-Total Pages = (Topic 5 => 8 * 5 = 40
-Topic 6 => 10 * 2 = 20
-Overview + Summary  => 2
-⇨	62)	
-11. Securing microservices with Istio service mesh
-11.1 Setting up Istio on Kubernetes - 5
-11.2 Istio authentication architecture - 5
-11.3 Securing service-to-service communication with mTLS - 6
-11.4 Securing service-to-service communication with JWT - 6
-11.5 Istio athorization architecture – 5
-11.6 Enabling authorization 
-11.7 Summary  
-Total Pages = (Topic 5 => 8 * 3 = 24
-Topic 6 => 10 * 2 = 20
-Overview + Summary  => 2
-=> 46)
+## Part 4 Secure Deployment 
+**Chapter 9: Conquering container security with Docker**
+* Docker security principles
+* Deploying a microservice on Docker
+* Securing the host
+* Running Docker bench for security 
+* Challenges in container security 
+* Summary
+					
+**Chapter 10: Securing microservices on Kubernetes**
+* Setting up a Docker cluster with Kubernetes
+* Kubernetes built in security features
+* Setting up Kubernetes security policies
+* Using Kubernetes network policies 
+* Securing applications with Calico 
+* Implementing security as a sidecar 
+* Summary
+	
+**Chapter 11: Securing microservices with Istio service mesh**
+* Setting up Istio on Kubernetes 
+* Istio authentication architecture 
+* Securing service-to-service communication with mTLS 
+* Securing service-to-service communication with JWT 
+* Istio athorization architecture 
+* Enabling authorization 
+* Summary  
 
-Part 4 Secure Development 
-12. Secure coding
-11.1 OWASP top 10 most critical web application security risks - 6
-11.2 Static code analysis vs. dynamic analysis - 5
-11.3 Running static code analysis - 5
-11.4 Running dependency checks - 5
-11.5 Running dynamic analysis with OWASP ZAP - 6
-11.6 Integrating security testing with Jenkins - 5
-11.7 Summary  
-Total Pages = (Topic 5 => 8 * 4 = 32
-Topic 6 => 10 * 2 = 20
-Overview + Summary  => 2
-=> 54)
-
-
+## Part 5 Secure Development 
+**Chapter 12: Secure coding**
+* OWASP top 10 most critical web application security risks
+* Static code analysis vs. dynamic analysis
+* Running static code analysis
+* Running dependency checks
+* Running dynamic analysis with OWASP ZAP 
+* Integrating security testing with Jenkins 
+* Summary  
