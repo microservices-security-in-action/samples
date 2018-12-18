@@ -1,30 +1,6 @@
-This is the third sample of chapter 4.
+## Prerequisites to run the sample
 
-In this sample we use an API Gateway to route requests from our UI to the remote Resource Server to get a list of orders to our SPA based on AngularJS. Follow the steps below to run the sample.
-
-1) Execute the following command from your command line client to build the source.
-
-[source]
---------
-mvn clean install
---------
-
-2) Once built, navigate to the 'resource' directory and execute the command below.
-
-[source]
---------
-mvn spring-boot:run
---------
-
-3) On a new terminal window navigate to the 'ui' directory and execute the command below.
-
-[source]
---------
-mvn spring-boot:run
---------
-
-4) On a private browser window go to the URL http://localhost:8080. You will see a message saying 'Login to see your orders'.
-
-5) Press on the Login button and provide 'user' as the username and 'password' as the password and submit.
-
-6) You should see a list of orders being displayed on a table. This information is fetched from the resource server running at localhost:9000. The request from the SPA (UI) actually goes to the UI server running on host localhost:8080. An API Gateway acting as a reverse proxy on the same host routes these request to the resource server running on localhost:9000. You can use the web browsers developer console's network tab to observe the request response exchange happening between the browser and the UI server.
+* Download and install the Java Development Kit (JDK) for your operating system. JDK is required to compile and build the source code in the samples. You can [download](http://www.oracle.com/technetwork/java/javase/downloads/index.html) the latest JDK from the Oracle website.  We use Java version 11 to test all the samples.
+* Download and install Apache [Maven](https://maven.apache.org/install.html). Maven is a project management and comprehension tool that makes it easy to declare third-party (external) dependencies of your Java project required in the compile/build phase. It has various plugins such as the compiler, which compiles your Java source code and produces the runnable artifact (binary). You can download Maven from the Apache website.  Follow the installation instructions  to install Maven on your operating system. We use Maven version 3.5 to test all the samples.
+* Download and install the [curl](https://curl.haxx.se/download.html) command line tool from the curl website.  You use curl in the book as a client application to access microservices. Most of the operating systems do have curl installed out of the box.
+* Download and install the Git command-line client on your computer. You only use Git client once to clone our samples Git repository. 
