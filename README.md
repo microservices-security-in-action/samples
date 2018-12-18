@@ -30,7 +30,7 @@
 * Securing communication between Zuul and the microservice
 * Summary
 
-**Chapter 4: Building a single-page app to talk to microservices**
+**Chapter 4: Building a single-page application to talk to microservices**
 * Building a single-page app 
 * Introducing an API gateway, and setting up cross-origin resource sharing (CORS)
 * Securing a SPA with OpenID Connect 
@@ -43,52 +43,38 @@
 * Enforce access control policies at the API gateway with Zuul and Open Policy Agent (OPA)
 * Summary
 
-Part 2 Service to Service Communication
-6. Securing service-to-service communication with certificates
-            6.1 Why use mTLS? 
-            6.2 Creating certificates - 5
-6.3 Securing microservices with TLS - 5
-6.4 Engaging mTLS - 5
-6.5  Challenges in key management - 5
-6.6 Key rotation - 6
-6.7 Monitoring key use - 5 
-6.8 SPIFFE - 5
-6.9 Summary  
-Total Pages = (Topic 5 => 8 * 6 = 48
-Topic 6 => 10 * 1 = 10
-Overview + Summary => 2
-=> 60)					
-7. Securing service-to-service communication with JWT
-7.1 What is a JSON Web Token (JWT)? - 5
-7.2 What does a JWT look like? - 6
-7.3 JSON Web Signature (JWS) – 7
-7.4 JSON Web Encryption (JWE)
-7.5 Use cases for securing microservices with JWT - 5
-7.6 Setting up an STS to issue JWTs - 5
-7.7 Securing microservices with JWT – 7
-7.8 Using JWT as a data source to do access control
-7.9 Securing service-to-service communication with JWT
-7.10 Exchanging a JWT for a new one with a new audience
-7.11 Summary  
-Total Pages = (Topic 5 => 8 * 3 = 24
-Topic 6 => 10 * 1 = 10
-Topic 7 => 15 * 2 = 30
-Overview + Summary => 2
-=> 66)					
-8. Securing Event-driven Microservices
-           8.1 Setting up Kafka - 4
-           8.2 Building a publisher microservice with Kafka - 5
-           8.3 Building a consumer microservice with Kafka - 5
-           8.4 Securing access to Kafka - 5
-           8.5 Setting OPA over Kafka - 6
-           8.6 Summary
-
-
-          Total Pages = (Topic 4 => 6 * 1 = 6
-                                   Topic 5 => 8 * 3 = 24
-                                   Topic 6=> 10 * 1 = 10
-           Overview + Summary => 2
-=> 42)										
+## Part 3 Service to Service Communication
+**Chapter 6: Securing service-to-service communication with certificates**
+* Why use mTLS? 
+* Creating certificates
+* Securing microservices with TLS 
+* Engaging mTLS
+* Challenges in key management 
+* Key rotation
+* Monitoring key use 
+* SPIFFE -
+* Summary  
+					
+**Chapter 7: Securing service-to-service communication with JWT**
+* What is a JSON Web Token (JWT)? 
+* What does a JWT look like? 
+* JSON Web Signature (JWS) 
+* JSON Web Encryption (JWE)
+* Use cases for securing microservices with JWT 
+* Setting up an STS to issue JWTs 
+* Securing microservices with JWT
+* Using JWT as a data source to do access control
+* Securing service-to-service communication with JWT
+* Exchanging a JWT for a new one with a new audience
+* Summary  
+					
+**Chapter 8: Securing Event-driven Microservices**
+* Setting up Kafka 
+* Building a publisher microservice with Kafka 
+* Building a consumer microservice with Kafka 
+* Securing access to Kafka 
+* Setting OPA over Kafka 
+* Summary									
 
 Part 3 Secure Deployment 
 9. Conquering container security with Docker
