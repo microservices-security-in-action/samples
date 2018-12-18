@@ -1,23 +1,6 @@
-Secured Order Microservice
+## Prerequisites to run the sample
 
-## Building the Project
-```shell
-mvn clean install
-```
-
-## Running the Microservice
-
-Note: If you are still running the Microservice from sample 'order_service', you need to stop that first.
-This can be done by pressing the CTRL (Command on Mac) + C on the terminal window that is running the Microservice.
-```shell
-java -jar target/secure-orderservice-1.0.jar
-```
-
-## Accessing the Microservice
-First obtain an access token as specified in the sample 'oauth2_server'.
-
-Use the access token as the Bearer header as below.
-
-```
-curl -v -H "Authorization: Bearer 705e6c9d-fc95-4181-af62-a18764ec1c56" -d "{\"orderId\": \"ORD0001\", \"items\": [{\"itemCode\": \"IT0001\", \"quantity\": 3}, {\"itemCode\": \"IT0004\", \"quantity\": 1}], \"shippingAddress\": \"No 4, Main Street, Colombo 1, Sri Lanka\"}" -H "Content-Type: application/json" http://localhost:8080/orders
-```
+* Download and install the Java Development Kit (JDK) for your operating system. JDK is required to compile and build the source code in the samples. You can [download](http://www.oracle.com/technetwork/java/javase/downloads/index.html) the latest JDK from the Oracle website.  We use Java version 11 to test all the samples.
+* Download and install Apache [Maven](https://maven.apache.org/install.html). Maven is a project management and comprehension tool that makes it easy to declare third-party (external) dependencies of your Java project required in the compile/build phase. It has various plugins such as the compiler, which compiles your Java source code and produces the runnable artifact (binary). You can download Maven from the Apache website.  Follow the installation instructions  to install Maven on your operating system. We use Maven version 3.5 to test all the samples.
+* Download and install the [curl](https://curl.haxx.se/download.html) command line tool from the curl website.  You use curl in the book as a client application to access microservices. Most of the operating systems do have curl installed out of the box.
+* Download and install the Git command-line client on your computer. You only use Git client once to clone our samples Git repository. 
