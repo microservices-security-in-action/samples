@@ -1,8 +1,8 @@
 # Microservices Security In Action
 **By Prabath Siriwardena and Nuwan Dias**
 
-# Part 1 Overview
-1. Welcome to microservices security
+## Part 1 Overview
+**1. Welcome to microservices security**
 1.1 How security works in a monolithic application 
 1.2 Challenges of securing microservices - 5
 1.3 Key security funamentals  - 5
@@ -11,11 +11,8 @@
 1.6 Security in DevOps - 3
 1.7 Security code development lifecycle (SCDL) - 3
 1.8 Summary
-Total Pages = (Topic 3 => 4 * 4 = 16
-Topic 5 => 8 * 2 = 16
-Overview + Summary => 2
-=> 34)
-2. Hello World microservices security
+
+**2. Hello World microservices security**
 2.1 Your first microservice - 4
 2.2 Setting up an OAuth 2.0 server  - 6
 2.3 Securing a microservice with OAuth 2.0 – 5
