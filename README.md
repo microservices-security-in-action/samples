@@ -1,5 +1,5 @@
 # Microservices Security In Action
-** By Prabath Siriwardena and Nuwan Dias **
+**By Prabath Siriwardena and Nuwan Dias**
 
 # Part 1 Overview
 1. Welcome to microservices security
