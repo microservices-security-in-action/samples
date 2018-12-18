@@ -30,25 +30,18 @@
 * Securing communication between Zuul and the microservice
 * Summary
 
-4. Building a single-page app to talk to microservices
-4.1 Building a single-page app – 6
-4.2 Introducing an API gateway, and setting up cross-origin resource sharing (CORS)
-4.3 Securing a SPA with OpenID Connect - 6
-4.4 Federated authentication - 5
-4.5 Summary
-Total Pages = (Topic 5 => 8 * 2 = 16
-Topic 6 => 10 * 2 = 20
-Overview + Summary => 2
-=> 38)
-5. Engaging throttling, monitoring and access control
-5.1 Engaging throttling at the API gateway with Zuul- 5
-5.2 Monitoring & analytics with Prometheus and Grafana- 5
-5.3 Enforce access control policies at the API gateway with Zuul and Open Policy Agent (OPA) - 5
-5.4 Summary
-Total Pages = (Topic 5 => 8 * 4 = 32
-Topic 6 => 10 * 2 = 20
-Overview + Summary => 2
-=> 54)
+**Chapter 4: Building a single-page app to talk to microservices**
+* Building a single-page app 
+* Introducing an API gateway, and setting up cross-origin resource sharing (CORS)
+* Securing a SPA with OpenID Connect 
+* Federated authentication 
+* Summary
+
+**Chapter 5: Engaging throttling, monitoring and access control**
+* Engaging throttling at the API gateway with Zuul
+* Monitoring & analytics with Prometheus and Grafana
+* Enforce access control policies at the API gateway with Zuul and Open Policy Agent (OPA)
+* Summary
 
 Part 2 Service to Service Communication
 6. Securing service-to-service communication with certificates
