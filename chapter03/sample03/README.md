@@ -1,32 +1,6 @@
-Sample OAuth2 server for Spring Boot which uses an in-memory token store
+## Prerequisites to run the sample
 
-The requesting method for token supports both ```json format``` and ```url-encoded format```
-
-
-The token validity is currently 300 seconds (5 minutes).
-
-
-Update any of the ```applicationid```/```applicationsecret```/```tokenValidity``` to however you want.
-
-## Building the Project
-```shell
-mvn clean install
-```
-
-## Running the OAuth2 server
-```shell
-java -jar target/oauth2-server-1.0.jar
-```
-
-## Request new access token
-Use any of the curl commands to request an access token.
-
-#### Using URL-Encoded Format
-```
-curl -X POST -u applicationid:applicationsecret -v 'http://localhost:8085/oauth/token?grant_type=client_credentials&scopes=read%20write'
-```
-
-#### Using JSON Format
-```
-curl -u applicationid:applicationsecret -H "Content-Type: application/json" -d '{ "grant_type": "client_credentials", "scopes": "read write" }' -v 'http://localhost:8085/oauth/token'
-```
+* Download and install the Java Development Kit (JDK) for your operating system. JDK is required to compile and build the source code in the samples. You can [download](http://www.oracle.com/technetwork/java/javase/downloads/index.html) the latest JDK from the Oracle website.  We use Java version 11 to test all the samples.
+* Download and install Apache [Maven](https://maven.apache.org/install.html). Maven is a project management and comprehension tool that makes it easy to declare third-party (external) dependencies of your Java project required in the compile/build phase. It has various plugins such as the compiler, which compiles your Java source code and produces the runnable artifact (binary). You can download Maven from the Apache website.  Follow the installation instructions  to install Maven on your operating system. We use Maven version 3.5 to test all the samples.
+* Download and install the [curl](https://curl.haxx.se/download.html) command line tool from the curl website.  You use curl in the book as a client application to access microservices. Most of the operating systems do have curl installed out of the box.
+* Download and install the Git command-line client on your computer. You only use Git client once to clone our samples Git repository. 
