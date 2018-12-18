@@ -52,7 +52,7 @@
 * Challenges in key management 
 * Key rotation
 * Monitoring key use 
-* SPIFFE -
+* SPIFFE 
 * Summary  
 					
 **Chapter 7: Securing service-to-service communication with JWT**
