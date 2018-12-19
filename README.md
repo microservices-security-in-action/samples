@@ -44,7 +44,7 @@
 * Summary
 
 ## Part 3 Service to Service Communication
-**[Chapter 6: Securing service-to-service communication with certificates](https://github.com/microservices-security-in-action/samples/tree/master/chapter06)**
+### [Chapter 6: Securing service-to-service communication with certificates](https://github.com/microservices-security-in-action/samples/tree/master/chapter06)
 * Why use mTLS? 
 * Creating certificates
 * Securing microservices with TLS 
