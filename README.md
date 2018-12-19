@@ -2,7 +2,7 @@
 **By Prabath Siriwardena and Nuwan Dias**
 
 ## Part 1 Overview
-**Chapter 1: Welcome to microservices security**
+### Chapter 1: Welcome to microservices security
 * How security works in a monolithic application 
 * Challenges of securing microservices 
 * Key security funamentals 
