@@ -67,17 +67,27 @@
 * Securing service-to-service communication with JWT
 * Exchanging a JWT for a new one with a new audience
 * Summary  
+
+**Chapter 8: Securing service-to-service communication happens over gRPC**
+* Understanding gRPC 
+* Service-to-service communications over gRPC 
+* Securing gRPC service-to-service communications with mTLS 
+* Securing gRPC service-to-service communications with JWT          
+* Summary
 					
-**Chapter 8: Securing Event-driven microservices**
-* Setting up Kafka 
-* Building a publisher microservice with Kafka 
-* Building a consumer microservice with Kafka 
-* Securing access to Kafka 
-* Setting OPA over Kafka 
+**Chapter 9: Securing Event-driven microservices**
+* Why event-driven microservices?
+* Setting up Kafka as a message broker in a microservices deployment
+* Developing a microservice to push events to a topic in Kafka
+* Developing a microservice to read events from a Kafka topic
+* Using Transport Layer Security (TLS) to protect data in transit 
+* Using mutual Transport Layer Security (mTLS) for authentication 
+* Controlling access to Kafka topics with ACLs 
+* Controlling access to Kafka topics with OPA          
 * Summary									
 
 ## Part 4 Secure Deployment 
-**Chapter 9: Conquering container security with Docker**
+**Chapter 10: Conquering container security with Docker**
 * Docker security principles
 * Deploying a microservice on Docker
 * Securing the host
@@ -85,7 +95,7 @@
 * Challenges in container security 
 * Summary
 					
-**Chapter 10: Securing microservices on Kubernetes**
+**Chapter 11: Securing microservices on Kubernetes**
 * Setting up a Docker cluster with Kubernetes
 * Kubernetes built in security features
 * Setting up Kubernetes security policies
@@ -94,17 +104,17 @@
 * Implementing security as a sidecar 
 * Summary
 	
-**Chapter 11: Securing microservices with Istio service mesh**
+**Chapter 12: Securing microservices with Istio service mesh**
 * Setting up Istio on Kubernetes 
 * Istio authentication architecture 
 * Securing service-to-service communication with mTLS 
 * Securing service-to-service communication with JWT 
-* Istio athorization architecture 
+* Istio authorization architecture 
 * Enabling authorization 
 * Summary  
 
 ## Part 5 Secure Development 
-**Chapter 12: Secure coding practices and automation**
+**Chapter 13: Secure coding practices and automation**
 * OWASP top 10 most critical web application security risks
 * Static code analysis vs. dynamic analysis
 * Running static code analysis
