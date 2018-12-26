@@ -91,7 +91,8 @@
 * Docker security principles
 * Deploying a microservice on Docker
 * Securing the host
-* Running Docker bench for security 
+* Running Docker Bench for security
+* Running Docker in Swarm mode
 * Challenges in container security 
 * Summary
 					
