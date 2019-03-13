@@ -4,19 +4,19 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-    monitor: 'bootifull-monitoring'
+    monitor: 'springboot-monitoring'
 
 scrape_configs:
-- job_name:       'monitoring-demo'
+- job_name:       'springboot-app'
 
   # Override the global default and scrape targets from this job every 10 seconds.
   scrape_interval: 10s
   metrics_path: '/actuator/prometheus'
 
   static_configs:
-  - targets: ['monitoring-demo:8080']
+  - targets: ['host.docker.internal:8080']
     labels:
-      application: 'monitoring-demo'
+      application: 'springboot-app'
 
 - job_name: 'prometheus'
 
@@ -24,3 +24,4 @@ scrape_configs:
 
   static_configs:
   - targets: ['localhost:9090']
+

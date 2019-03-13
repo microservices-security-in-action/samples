@@ -1,31 +1,35 @@
 # Monitoring Spring Boot Applications with Prometheus and Grafana
 
-This small demo project contains an example setup of Prometheus and Grafana to monitor Spring Boot applications.
+In sample 2 of chapter 5 of this book this is an example setup of Prometheus and Grafana to monitor Spring Boot applications.
 
 The project contains a default Grafana Prometheus datasource and scrapes the Spring Boot project and Prometheus server 
 for monitoring information.
 
 If you want to login to Grafana you can use the `admin / password` combination.
 
-For monitoring Spring Boot applications I highly recommend the [JVM Micrometer dashboard](https://grafana.com/dashboards/4701) created by [Michael Weirauch](https://twitter.com/emwexx).
-
 ## Building the project
 
 First build the spring boot application.
 
 ```bash
-mvn clean package
+mvn clean install
 ```
 
-Now when the application has been build we can start running our services by running:
+After the application has been built we can start it by executing:
 
 ```bash
-docker-compose up
+mvn spring-boot:run
+```
+
+Next navigate to the `monitoring` directory and start the Prometheus and Grafana runtimes using the following docker-compose
+
+```bash
+docker-compose -f docker-compose.yml up
 ```
 
 After all services have started successfully, you can navigate to the following urls:
 
-- Spring Boot app - http://localhost:8080/
+- Spring Boot app - http://localhost:8080/actuator/prometheus
 - Prometheus      - http://localhost:9090/
 - Grafana         - http://localhost:3000/
 
