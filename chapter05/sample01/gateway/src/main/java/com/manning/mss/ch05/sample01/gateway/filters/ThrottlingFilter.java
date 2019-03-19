@@ -18,7 +18,7 @@ public class ThrottlingFilter extends ZuulFilter {
 
     //Create a counter cache where each entry expires in 1 minute and the cache is cleared every 10 seconds.
     //Maximum number of entries in the cache would be 10000.
-    CounterCache counter = new CounterCache(60, 10, 10000);
+    private CounterCache counter = new CounterCache(60, 10, 10000);
 
     public String filterType() {
 
@@ -43,7 +43,7 @@ public class ThrottlingFilter extends ZuulFilter {
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest request = requestContext.getRequest();
 
-        //Avoid checking for authentication for the token endpoint
+        //Avoid throttling the token endpoint
         if (request.getRequestURI().startsWith("/token")) {
             return null;
         }
