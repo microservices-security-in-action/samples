@@ -6,19 +6,13 @@
 	<artifactId>tut-spring-security-and-angular-js</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Spring Security Angular Samples</name>
+	<name>Microservice Security in Action Chapter 04</name>
 
 	<modules>
-		<module>sample1</module>
-		<module>single</module>
-		<module>vanilla</module>
-		<module>spring-session</module>
-		<module>proxy</module>
-		<module>oauth2-vanilla</module>
-		<module>oauth2</module>
-		<module>oauth2-logout</module>
-		<module>double</module>
-		<module>modular</module>
+		<module>sample01</module>
+		<module>sample02</module>
+		<module>sample03</module>
+		<module>sample04</module>
 	</modules>
 
 	<build>
