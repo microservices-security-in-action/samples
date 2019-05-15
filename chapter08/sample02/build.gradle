@@ -62,14 +62,14 @@ sourceSets {
 
 startScripts.enabled = false
 
-task helloWorldServer(type: CreateStartScripts) {
+task inventoryServer(type: CreateStartScripts) {
     mainClassName = 'com.manning.mss.ch08.sample02.InventoryServer'
     applicationName = 'inventory-server'
     outputDir = new File(project.buildDir, 'tmp')
     classpath = startScripts.classpath
 }
 
-task helloWorldClient(type: CreateStartScripts) {
+task inventoryClient(type: CreateStartScripts) {
     mainClassName = 'com.manning.mss.ch08.sample02.InventoryClient'
     applicationName = 'inventory-client'
     outputDir = new File(project.buildDir, 'tmp')
@@ -77,7 +77,7 @@ task helloWorldClient(type: CreateStartScripts) {
 }
 
 applicationDistribution.into('bin') {
-    from(helloWorldServer)
-    from(helloWorldClient)
+    from(inventoryServer)
+    from(inventoryClient)
     fileMode = 0755
 }

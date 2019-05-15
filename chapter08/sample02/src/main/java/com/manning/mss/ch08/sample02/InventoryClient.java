@@ -19,7 +19,7 @@ public class InventoryClient {
     private final InventoryGrpc.InventoryBlockingStub inventoryBlockingStub;
 
     /**
-     * Construct client connecting to HelloWorld server at {@code host:port}.
+     * Construct client connecting to InventoryServer
      */
     public InventoryClient(String host, int port) {
 
