@@ -66,8 +66,8 @@ public class InventoryServer {
 
         /**
          * Method that updates the inventory upon receiving a message.
-         * @param req
-         * @param responseObserver
+         * @param req - The request
+         * @param responseObserver - A handle to the response
          */
         @Override
         public void updateInventory(Order req, StreamObserver<UpdateReply> responseObserver) {

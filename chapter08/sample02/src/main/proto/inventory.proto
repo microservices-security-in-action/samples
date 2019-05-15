@@ -4,7 +4,7 @@ option java_multiple_files = true;
 option java_package = "com.manning.mss.ch08.sample02";
 option java_outer_classname = "InventoryProto";
 
-package helloworld;
+package sample02;
 
 //The inventory service
 service Inventory {
