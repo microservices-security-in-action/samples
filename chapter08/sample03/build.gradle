@@ -56,14 +56,14 @@ sourceSets {
 
 startScripts.enabled = false
 
-task helloWorldTlsServer(type: CreateStartScripts) {
+task inventoryTlsServer(type: CreateStartScripts) {
     mainClassName = 'com.manning.mss.ch08.sample03.InventoryServer'
     applicationName = 'inventory-server'
     outputDir = new File(project.buildDir, 'tmp')
     classpath = startScripts.classpath
 }
 
-task helloWorldTlsClient(type: CreateStartScripts) {
+task inventoryTlsClient(type: CreateStartScripts) {
     mainClassName = 'com.manning.mss.ch08.sample03.InventoryClient'
     applicationName = 'inventory-client'
     outputDir = new File(project.buildDir, 'tmp')
@@ -71,7 +71,7 @@ task helloWorldTlsClient(type: CreateStartScripts) {
 }
 
 applicationDistribution.into('bin') {
-    from(helloWorldTlsServer)
-    from(helloWorldTlsClient)
+    from(inventoryTlsServer)
+    from(inventoryTlsClient)
     fileMode = 0755
 }
