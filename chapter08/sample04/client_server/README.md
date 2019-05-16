@@ -6,7 +6,7 @@ $ ./gradlew installDist
 ```
 
 This creates the scripts `inventory-server` and `inventory-client`
-in the `build/install/sample03/bin/` directory. The `inventory-server`
+in the `build/install/client_server/bin/` directory. The `inventory-server`
 needs to be running before starting the client.
 
 #### Generating self-signed certificates for use with grpc
@@ -54,25 +54,32 @@ popd
 3. Execute the command below to run the inventory server.
 
 ```
-$ ./build/install/sample03/bin/inventory-server
+./build/install/client_server/bin/inventory-server localhost 50440 /tmp/sslcert/server.crt /tmp/sslcert/server.pem
 ```
 
 If you are using a Windows machine, execute the .bat process of the same.
 
 ```
-$ ./build/install/sample03/bin/inventory-server.bat
+$ ./build/install/client_server/bin/inventory-server.bat localhost 50440 /tmp/sslcert/server.crt /tmp/sslcert/server.pem
 ```
 
-4. Execute the command on a different terminal window to run the inventory client.
+4. Open a new terminal tab, navigate to the same directory as above and set the value of the JWT token as a system 
+variable using the command below
 
 ```
-$ ./build/install/sample03/bin/inventory-client
+$ export TOKEN=<value_of_token>
+```
+
+5. Execute this command on the same terminal window to run the inventory client.
+
+```
+$ ./build/install/client_server/bin/inventory-client localhost 50440 /tmp/sslcert/ca.crt $TOKEN
 ```
 
 If you are using a Windows machine, execute the .bat process of the same.
 
 ```
-$ ./build/install/sample03/bin/inventory-client.bat
+$ ./build/install/client_server/bin/inventory-client.bat localhost 50440 /tmp/sslcert/ca.crt $TOKEN
 ```
 
 You should see the output of the inventory client on the terminal.
