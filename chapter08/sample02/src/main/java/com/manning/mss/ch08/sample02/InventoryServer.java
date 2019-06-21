@@ -1,36 +1,56 @@
 package com.manning.mss.ch08.sample02;
 
 import io.grpc.Server;
-import io.grpc.ServerBuilder;
+import io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.NettyServerBuilder;
 import io.grpc.stub.StreamObserver;
+import io.netty.handler.ssl.ClientAuth;
+import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.SslProvider;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.util.logging.Logger;
 
-/**
- * The Inventory Server process.
- */
 public class InventoryServer {
-
     private static final Logger logger = Logger.getLogger(InventoryServer.class.getName());
 
     private Server server;
 
-    /**
-     * Main launches the server from the command line.
-     */
-    public static void main(String[] args) throws IOException, InterruptedException {
+    private final String host;
+    private final int port;
+    private final String certChainFilePath;
+    private final String privateKeyFilePath;
+    private final String trustCertCollectionFilePath;
 
-        final InventoryServer server = new InventoryServer();
-        server.start();
-        server.blockUntilShutdown();
+    public InventoryServer(String host,
+                           int port,
+                           String certChainFilePath,
+                           String privateKeyFilePath,
+                           String trustCertCollectionFilePath) {
+        this.host = host;
+        this.port = port;
+        this.certChainFilePath = certChainFilePath;
+        this.privateKeyFilePath = privateKeyFilePath;
+        this.trustCertCollectionFilePath = trustCertCollectionFilePath;
+    }
+
+    private SslContextBuilder getSslContextBuilder() {
+        SslContextBuilder sslClientContextBuilder = SslContextBuilder.forServer(new File(certChainFilePath),
+                new File(privateKeyFilePath));
+        if (trustCertCollectionFilePath != null) {
+            sslClientContextBuilder.trustManager(new File(trustCertCollectionFilePath));
+            sslClientContextBuilder.clientAuth(ClientAuth.REQUIRE);
+        }
+        return GrpcSslContexts.configure(sslClientContextBuilder,
+                SslProvider.OPENSSL);
     }
 
     private void start() throws IOException {
-        /* The port on which the server should run */
-        int port = 50051;
-        server = ServerBuilder.forPort(port)
+        server = NettyServerBuilder.forAddress(new InetSocketAddress(host, port))
                 .addService(new InventoryImpl())
+                .sslContext(getSslContextBuilder().build())
                 .build()
                 .start();
         logger.info("Server started, listening on " + port);
@@ -46,7 +66,6 @@ public class InventoryServer {
     }
 
     private void stop() {
-
         if (server != null) {
             server.shutdown();
         }
@@ -56,10 +75,31 @@ public class InventoryServer {
      * Await termination on the main thread since the grpc library uses daemon threads.
      */
     private void blockUntilShutdown() throws InterruptedException {
-
         if (server != null) {
             server.awaitTermination();
         }
+    }
+
+    /**
+     * Main launches the server from the command line.
+     */
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        if (args.length < 4 || args.length > 5) {
+            System.out.println(
+                    "USAGE: InventoryServer host port certChainFilePath privateKeyFilePath " +
+                    "[trustCertCollectionFilePath]\n  Note: You only need to supply trustCertCollectionFilePath if you want " +
+                    "to enable Mutual TLS.");
+            System.exit(0);
+        }
+
+        final InventoryServer server = new InventoryServer(args[0],
+                Integer.parseInt(args[1]),
+                args[2],
+                args[3],
+                args.length == 5 ? args[4] : null);
+        server.start();
+        server.blockUntilShutdown();
     }
 
     static class InventoryImpl extends InventoryGrpc.InventoryImplBase {

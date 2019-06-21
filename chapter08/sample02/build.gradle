@@ -9,7 +9,8 @@ plugins {
 
 repositories {
     maven { // The google mirror is less flaky than mavenCentral()
-        url "https://maven-central.storage-download.googleapis.com/repos/central/data/" }
+        url "https://maven-central.storage-download.googleapis.com/repos/central/data/"
+    }
     mavenLocal()
 }
 
@@ -22,22 +23,15 @@ targetCompatibility = 1.7
 // Feel free to delete the comment at the next line. It is just for safely
 // updating the version in our release process.
 def grpcVersion = '1.20.0' // CURRENT_GRPC_VERSION
-def protobufVersion = '3.7.1'
-def protocVersion = protobufVersion
+def nettyTcNativeVersion = '2.0.25.Final'
+def protocVersion = '3.7.1'
 
 dependencies {
+    implementation "io.grpc:grpc-netty:${grpcVersion}"
     implementation "io.grpc:grpc-protobuf:${grpcVersion}"
     implementation "io.grpc:grpc-stub:${grpcVersion}"
     compileOnly "javax.annotation:javax.annotation-api:1.2"
-
-    // examples/advanced need this for JsonFormat
-    implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
-
-    runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
-
-    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
-    testImplementation "junit:junit:4.12"
-    testImplementation "org.mockito:mockito-core:2.25.1"
+    runtimeOnly "io.netty:netty-tcnative-boringssl-static:${nettyTcNativeVersion}"
 }
 
 protobuf {
@@ -62,14 +56,14 @@ sourceSets {
 
 startScripts.enabled = false
 
-task inventoryServer(type: CreateStartScripts) {
+task inventoryTlsServer(type: CreateStartScripts) {
     mainClassName = 'com.manning.mss.ch08.sample02.InventoryServer'
     applicationName = 'inventory-server'
     outputDir = new File(project.buildDir, 'tmp')
     classpath = startScripts.classpath
 }
 
-task inventoryClient(type: CreateStartScripts) {
+task inventoryTlsClient(type: CreateStartScripts) {
     mainClassName = 'com.manning.mss.ch08.sample02.InventoryClient'
     applicationName = 'inventory-client'
     outputDir = new File(project.buildDir, 'tmp')
@@ -77,7 +71,7 @@ task inventoryClient(type: CreateStartScripts) {
 }
 
 applicationDistribution.into('bin') {
-    from(inventoryServer)
-    from(inventoryClient)
+    from(inventoryTlsServer)
+    from(inventoryTlsClient)
     fileMode = 0755
 }

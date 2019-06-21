@@ -6,5 +6,3 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
-rootProject.name = 'sample02'
