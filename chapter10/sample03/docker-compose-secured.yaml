@@ -1,0 +1,20 @@
+version: '3'
+services:
+ nginx:
+  image: nginx:alpine
+  volumes:
+  - ./nginx-secured.conf:/etc/nginx/nginx.conf
+  - ./keys/nginx/nginx_cert.pem:/etc/nginx/nginx_cert.pem
+  - ./keys/nginx/nginx_key.pem:/etc/nginx/nginx_key.pem
+  - ./keys/ca/ca_cert.pem:/etc/nginx/ca_cert.pem
+  ports:
+  - "8443:8443"
+  depends_on:
+  - "socat"
+ socat:
+  image: alpine/socat
+  volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  ports:
+  - "2345:2345"
+  command: TCP-L:2345,fork,reuseaddr,bind=socat UNIX:/var/run/docker.sock
