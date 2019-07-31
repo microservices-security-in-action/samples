@@ -1,0 +1,15 @@
+{
+	"customer_id": "1",
+	"order_id": "5",
+	"payment_method": {
+		"card_type": "Visa",
+		"expiration": "2019-10-11",
+		"name": "Nuwan",
+		"billing_address": "Colombo"
+	},
+	"items": [{
+		"code": "IT01",
+		"qty": 1
+	}],
+	"shipping_address": "Colombo"
+}
