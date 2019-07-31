@@ -35,19 +35,19 @@ public class ResourceApplication {
     }
 
     public static void main(String[] args) {
-
+        
         Order order1 = new Order();
         order1.setOrderId("00001");
         order1.addItem(new LineItem("IT001", 3));
         order1.addItem(new LineItem("IT002", 5));
         order1.addItem(new LineItem("IT003", 4));
-        order1.setShippingAddress("No 5, Light Street, Colombo, Sri Lanka.");
+        order1.setShippingAddress("No 5, Castro Street, Mountain View, CA, USA.");
 
         Order order2 = new Order();
         order2.setOrderId("00002");
         order2.addItem(new LineItem("IT001", 7));
         order2.addItem(new LineItem("IT003", 1));
-        order2.setShippingAddress("No 18, Hyde Park, Colombo, Sri Lanka.");
+        order2.setShippingAddress("No 20, 2nd Street, San Jose, CA, USA.");
 
         orders.add(order1);
         orders.add(order2);

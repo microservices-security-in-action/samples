@@ -1,5 +1,3 @@
-**TODO:** The STS still does not support token exchange functionality. The last section on chapter 07.
-
 ## Prerequisites to run the sample
 
 * Download and install the Java Development Kit (JDK) for your operating system. JDK is required to compile and build the source code in the samples. You can [download](http://www.oracle.com/technetwork/java/javase/downloads/index.html) the latest JDK from the Oracle website.  We use Java version 11 to test all the samples.
