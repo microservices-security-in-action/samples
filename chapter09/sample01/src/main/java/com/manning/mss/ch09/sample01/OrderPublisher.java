@@ -16,5 +16,4 @@ public class OrderPublisher {
 	public void publish(Order order) {
 		source.output().send(MessageBuilder.withPayload(order).build());
 	}
-
 }

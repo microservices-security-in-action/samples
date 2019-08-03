@@ -6,7 +6,7 @@
 :\> mvn clean install
 ```
 
-* You need to have Apache Kafkra up and running for this microservice to run successfully.
+* You need to have Apache Kafka up and running for this microservice to run successfully.
 
 * To spin up the microservice, run the following command from the sample01 directory.
 
