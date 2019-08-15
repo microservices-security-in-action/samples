@@ -28,5 +28,3 @@ through the orders microservice.
 * This command should return a 201 Created response. If you have a Kafka consumer listening on 
 the ORDERS topic you should see the orders request payload being received on the topic.
 
-* See sample02 to test the end to end flow with an event sink.
-
