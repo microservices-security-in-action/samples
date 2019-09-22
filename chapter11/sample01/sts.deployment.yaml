@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sts-deployment 
+  labels:
+    app: sts 
+spec:
+  replicas: 5 
+  selector:
+    matchLabels:
+      app: sts
+  template:
+    metadata:
+      labels:
+        app: sts
+    spec:
+      containers:
+      - name: sts
+        image: prabath/insecure-sts-ch10:v1
+        ports:
+        - containerPort: 8443
