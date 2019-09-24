@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sts-deployment 
+  labels:
+    app: sts 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: sts
+  template:
+    metadata:
+      labels:
+        app: sts
+    spec:
+      initContainers:
+      - name: init-keystores
+        image: busybox:1.28
+        command:
+          - "/bin/sh"
+          - "-c"
+          - "wget https://github.com/microservices-security-in-action/samples/raw/master/chapter10/sample01/keystores/jwt.jks -O /opt/jwt.jks | wget https://github.com/microservices-security-in-action/samples/raw/master/chapter10/sample01/keystores/keystore.jks -O /tmp/keystore.jks"
+        volumeMounts:
+          - name: keystore
+            mountPath: "/tmp"
+          - name: jwt-keystore
+            mountPath: "/opt"
+      containers:
+      - name: sts
+        image: prabath/secure-sts-ch10:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"
+          - name: keystore
+            mountPath: "/opt/keystore.jks"
+            subPath: "keystore.jks"
+          - name: jwt-keystore
+            mountPath: "/opt/jwt.jks"
+            subPath: "jwt.jks"
+        env:
+          - name: KEYSTORE_SECRET
+            valueFrom:
+              configMapKeyRef:
+                name: sts-keystore-credentials
+                key: KEYSTORE_PASSWORD
+          - name: JWT_KEYSTORE_SECRET
+            valueFrom:
+              configMapKeyRef:
+                name: sts-keystore-credentials
+                key: JWT_KEYSTORE_PASSWORD       
+      volumes:
+        - name: application-properties
+          configMap:
+            name: sts-application-properties-config-map
+        - name: keystore
+          emptyDir: {}
+        - name: jwt-keystore
+          emptyDir: {}

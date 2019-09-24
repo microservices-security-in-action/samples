@@ -33,12 +33,12 @@ spec:
         env:
           - name: KEYSTORE_SECRET
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: orders-key-credentials
                 key: KEYSTORE_PASSWORD  
           - name: TRUSTSTORE_SECRET
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: orders-key-credentials
                 key: TRUSTSTORE_PASSWORD     
       volumes:
