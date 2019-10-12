@@ -116,7 +116,7 @@
 
 ## Part 5 Secure Development 
 ### Chapter 13: Secure coding practices and automation
-* OWASP top 10 most critical web application security risks
+* OWASP API security top 10 
 * Static code analysis vs. dynamic analysis
 * Running static code analysis
 * Running dependency checks
