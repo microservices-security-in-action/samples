@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-deployment 
+  labels:
+    app: orders 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      containers:
+      - name: orders
+        image: prabath/order-processing:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: orders-application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"
+          - name: orders-keystore
+            mountPath: "/opt/keystore.jks"
+            subPath: "keystore.jks"
+          - name: orders-truststore
+            mountPath: "/opt/trust-store.jks"
+            subPath: "trust-store.jks"
+        env:
+          - name: KEYSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: orders-key-credentials
+                key: KEYSTORE_PASSWORD  
+          - name: TRUSTSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: orders-key-credentials
+                key: TRUSTSTORE_PASSWORD     
+      volumes:
+        - name: orders-application-properties
+          configMap:
+            name: orders-application-properties-config-map
+        - name: orders-keystore
+          configMap:
+            name: orders-keystore-config-map
+        - name: orders-truststore
+          configMap:
+            name: orders-truststore-config-map
