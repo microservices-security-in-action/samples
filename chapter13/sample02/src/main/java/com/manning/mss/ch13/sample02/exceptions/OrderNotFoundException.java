@@ -1,4 +1,4 @@
-package com.manning.mss.ch13.sample01.exceptions;
+package com.manning.mss.ch13.sample02.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package com.manning.mss.ch13.sample01.paymententity;
+package com.manning.mss.ch13.sample02.paymententity;
 
 public class PaymentDetail {
 

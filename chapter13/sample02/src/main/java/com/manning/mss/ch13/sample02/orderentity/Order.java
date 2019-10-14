@@ -1,4 +1,4 @@
-package com.manning.mss.ch13.sample01.orderentity;
+package com.manning.mss.ch13.sample02.orderentity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
