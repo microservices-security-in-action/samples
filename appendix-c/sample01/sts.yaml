@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sts-keystore-secrets
+stringData: 
+  KEYSTORE_PASSWORD: springboot
+  JWT_KEYSTORE_PASSWORD: springboot
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sts-deployment 
+  labels:
+    app: sts 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: sts
+  template:
+    metadata:
+      labels:
+        app: sts
+    spec:
+      containers:
+      - name: sts
+        image: prabath/secure-sts-ch10:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"
+          - name: keystore
+            mountPath: "/opt/keystore.jks"
+            subPath: "keystore.jks"
+          - name: jwt-keystore
+            mountPath: "/opt/jwt.jks"
+            subPath: "jwt.jks"
+        env:
+          - name: KEYSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: sts-keystore-secrets
+                key: KEYSTORE_PASSWORD
+          - name: JWT_KEYSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: sts-keystore-secrets
+                key: JWT_KEYSTORE_PASSWORD       
+      volumes:
+        - name: application-properties
+          configMap:
+            name: sts-application-properties-config-map
+        - name: keystore
+          configMap:
+            name: sts-keystore-config-map
+        - name: jwt-keystore
+          configMap:
+            name: sts-jwt-keystore-config-map
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sts-service
+spec:
+ type: LoadBalancer
+ selector:
+  app: sts
+ ports:
+ - protocol: TCP
+   port: 443
+   targetPort: 8443
