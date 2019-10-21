@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.manning.mss.ch10.sample02.model.Item;
 
-
 @Component
 public class InventoryClient {
 

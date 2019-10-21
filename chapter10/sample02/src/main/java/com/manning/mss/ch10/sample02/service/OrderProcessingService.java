@@ -1,29 +1,28 @@
 package com.manning.mss.ch10.sample02.service;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.manning.mss.ch10.sample02.model.Item;
+import com.manning.mss.ch10.sample02.model.Order;
+import com.manning.mss.ch10.sample02.model.PaymentMethod;
+
 import java.net.URI;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.manning.mss.ch10.sample02.client.InventoryClient;
-import com.manning.mss.ch10.sample02.model.Item;
-import com.manning.mss.ch10.sample02.model.Order;
-import com.manning.mss.ch10.sample02.model.PaymentMethod;
-
-
 
 @RestController
 @RequestMapping(value = "/orders")
 public class OrderProcessingService {
-	
 
 	@Autowired
 	InventoryClient inventoryClient;
@@ -33,7 +32,7 @@ public class OrderProcessingService {
 		return ResponseEntity.ok("{'status' : 'shipped'}");
 	}
 
-	//@PreAuthorize("#oauth2.hasScope('bar')")
+	// @PreAuthorize("#oauth2.hasScope('bar')")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getOrder(@PathVariable("id") String orderId) {
 		Item book1 = new Item("101", 1);
@@ -46,16 +45,17 @@ public class OrderProcessingService {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<?> createOrder(@RequestBody Order order) {
-		
+
 		if (order != null) {
 			inventoryClient.updateInventory(order.getItems());
 			order.setOrderId(UUID.randomUUID().toString());
 			URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 					.buildAndExpand(order.getOrderId()).toUri();
-			
+
 			return ResponseEntity.created(location).build();
 		}
 
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 	}
+
 }
