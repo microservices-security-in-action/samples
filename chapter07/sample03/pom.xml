@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.manning.mss</groupId>
-	<artifactId>com.manning.mss.ch07.sample04</artifactId>
+	<artifactId>com.manning.mss.ch07.sample03</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>com.manning.mss.ch07.sample04</name>
-	<description>com.manning.mss.ch07.sample04</description>
+	<name>com.manning.mss.ch07.sample03</name>
+	<description>com.manning.mss.ch07.sample03</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
