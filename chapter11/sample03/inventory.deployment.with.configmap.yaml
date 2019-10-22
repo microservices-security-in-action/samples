@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-deployment 
+  labels:
+    app: inventory 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: inventory
+  template:
+    metadata:
+      labels:
+        app: inventory
+    spec:
+      containers:
+      - name: inventory
+        image: prabath/inventory:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: inventory-application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"
+          - name: inventory-keystore
+            mountPath: "/opt/keystore.jks"
+            subPath: "keystore.jks"
+          - name: inventory-truststore
+            mountPath: "/opt/trust-store.jks"
+            subPath: "trust-store.jks"
+        env:
+          - name: KEYSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: inventory-key-credentials
+                key: KEYSTORE_PASSWORD  
+          - name: TRUSTSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: inventory-key-credentials
+                key: TRUSTSTORE_PASSWORD     
+      volumes:
+        - name: inventory-application-properties
+          configMap:
+            name: inventory-application-properties-config-map
+        - name: inventory-keystore
+          configMap:
+            name: inventory-keystore-config-map
+        - name: inventory-truststore
+          configMap:
+            name: inventory-truststore-config-map

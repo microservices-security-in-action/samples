@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sts-keystore-secrets
+stringData: 
+  KEYSTORE_PASSWORD: springboot
+  JWT_KEYSTORE_PASSWORD: springboot
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,20 +22,6 @@ spec:
       labels:
         app: sts
     spec:
-      initContainers:
-      - name: init-keystores
-        image: busybox:1.28
-        command:
-          - "/bin/sh"
-          - "-c"
-          - "wget https://github.com/microservices-security-in-action/samples/raw/master/chapter10/sample01/keystores/jwt.jks -O /opt/jwt.jks | wget https://github.com/microservices-security-in-action/samples/raw/master/chapter10/sample01/keystores/keystore.jks -O /opt/keystore.jks"
-        volumeMounts:
-          - name: keystore
-            mountPath: "/opt/keystore.jks"
-            subPath: "keystore.jks"
-          - name: jwt-keystore
-            mountPath: "/opt/jwt.jks"
-            subPath: "jwt.jks"
       containers:
       - name: sts
         image: prabath/secure-sts-ch10:v1
@@ -47,19 +41,34 @@ spec:
         env:
           - name: KEYSTORE_SECRET
             valueFrom:
-              configMapKeyRef:
-                name: sts-keystore-credentials
+              secretKeyRef:
+                name: sts-keystore-secrets
                 key: KEYSTORE_PASSWORD
           - name: JWT_KEYSTORE_SECRET
             valueFrom:
-              configMapKeyRef:
-                name: sts-keystore-credentials
+              secretKeyRef:
+                name: sts-keystore-secrets
                 key: JWT_KEYSTORE_PASSWORD       
       volumes:
         - name: application-properties
           configMap:
             name: sts-application-properties-config-map
         - name: keystore
-          emptyDir: {}
+          configMap:
+            name: sts-keystore-config-map
         - name: jwt-keystore
-          emptyDir: {}
+          configMap:
+            name: sts-jwt-keystore-config-map
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sts-service
+spec:
+ type: LoadBalancer
+ selector:
+  app: sts
+ ports:
+ - protocol: TCP
+   port: 80
+   targetPort: 8080

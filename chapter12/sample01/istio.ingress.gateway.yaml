@@ -8,10 +8,12 @@ spec:
   servers:
   - port:
       number: 443
-      name: http
+      name: https
       protocol: HTTPS
     tls:
-      mode: PASSTHROUGH
+      mode: SIMPLE # enables HTTPS on this port
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
     hosts:
     - "*"
 ---
@@ -33,7 +35,7 @@ spec:
       - destination:
           host: sts-service
           port:
-            number: 443
+            number: 80
     - match:
       - port: 443
         sni_hosts:
@@ -42,4 +44,4 @@ spec:
       - destination:
           host: orders-service
           port:
-            number: 443
+            number: 80

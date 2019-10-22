@@ -15,7 +15,7 @@ public class InventoryClient {
 	OAuth2RestTemplate restTemplate;
 
 	public void updateInventory(Item[] items) {
-		URI uri = URI.create("https://localhost:10443/inventory");
+		URI uri = URI.create(System.getProperty("inventory.service"));
 		restTemplate.put(uri, items);
 	}
 }
