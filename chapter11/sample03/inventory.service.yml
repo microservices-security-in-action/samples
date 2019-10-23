@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: inventory-service
 spec:
- type: LoadBalancer
  selector:
   app: inventory
  ports:

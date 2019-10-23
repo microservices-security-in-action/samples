@@ -1,0 +1,1 @@
+apiVersion: extensions/v1beta1kind: Deploymentmetadata:  name: hello-serverspec:  replicas: 1  selector:    matchLabels:      run: hello-server  template:    metadata:      labels:        run: hello-server    spec:      containers:      - image: gcr.io/google-samples/hello-app:1.0        name: hello-server        ports:        - containerPort: 8080
