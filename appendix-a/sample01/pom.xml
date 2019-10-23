@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.manning.mss</groupId>
-	<artifactId>com.manning.mss.appenidxa.sample01</artifactId>
+	<artifactId>com.manning.mss.appendixa.sample01</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 

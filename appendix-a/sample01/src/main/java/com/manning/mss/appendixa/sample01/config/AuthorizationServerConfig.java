@@ -1,10 +1,12 @@
 package com.manning.mss.appendixa.sample01.config;
 
+import java.io.File;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -44,7 +46,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory().withClient("applicationid").secret("applicationsecret").scopes("foo", "bar")
-				.authorizedGrantTypes("client_credentials", "password", "refresh_token").accessTokenValiditySeconds(6000);
+				.authorizedGrantTypes("client_credentials", "password", "refresh_token")
+				.accessTokenValiditySeconds(6000);
 	}
 
 	@Bean
@@ -63,7 +66,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		String alias = environment.getProperty("spring.security.oauth.jwt.keystore.alias");
 		String keystore = environment.getProperty("spring.security.oauth.jwt.keystore.name");
 
-		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource(keystore),
+
+		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new FileSystemResource(new File(keystore)),
 				pwd.toCharArray());
 		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
 		converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
