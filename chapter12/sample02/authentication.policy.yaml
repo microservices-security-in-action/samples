@@ -1,7 +1,7 @@
 apiVersion: authentication.istio.io/v1alpha1
 kind: Policy
 metadata:
-  name: ecomm-mtls-policy
+  name: ecomm-authn-policy
 spec:
   targets:
   - name: orders-service
