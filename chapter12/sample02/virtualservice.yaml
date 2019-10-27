@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ecomm-virtual-service
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - ecomm-gateway.istio-system.svc.cluster.local
+  http:
+    - match:
+      - sni_hosts:
+        - sts.ecomm.com
+      route:
+      - destination:
+          host: sts-service
+          port:
+            number: 80
+    - match:
+      - sni_hosts:
+        - orders.ecomm.com
+      route:
+      - destination:
+          host: orders-service
+          port:
+            number: 80

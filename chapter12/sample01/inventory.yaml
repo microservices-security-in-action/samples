@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: orders-application-properties-config-map
+  name: inventory-application-properties-config-map
 data:
   application.properties: |
     [
      server.port: 8443
-     inventory.service: http://inventory-service/inventory
      logging.level.org.springframework=DEBUG
      logging.level.root=DEBUG
     ]
@@ -14,47 +13,41 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: orders-deployment 
+  name: inventory-deployment 
   labels:
-    app: orders 
+    app: inventory 
 spec:
   replicas: 1 
   selector:
     matchLabels:
-      app: orders
+      app: inventory
   template:
     metadata:
       labels:
-        app: orders
+        app: inventory
     spec:
       containers:
-      - name: orders
-        image: prabath/com.manning.mss.ch12.order:v1
+      - name: inventory
+        image: prabath/com.manning.mss.ch12.inventory:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 8443
-        # readinessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 8443
-        #     scheme: HTTP
         volumeMounts:
-          - name: orders-application-properties
+          - name: inventory-application-properties
             mountPath: "/opt/application.properties"
-            subPath: "application.properties"    
+            subPath: "application.properties"   
       volumes:
-        - name: orders-application-properties
+        - name: inventory-application-properties
           configMap:
-            name: orders-application-properties-config-map
+            name: inventory-application-properties-config-map
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: orders-service
+  name: inventory-service
 spec:
- type: LoadBalancer
  selector:
-  app: orders
+  app: inventory
  ports:
  - protocol: TCP
    port: 80
