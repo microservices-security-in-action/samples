@@ -33,11 +33,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8443
-        # readinessProbe:
-        #   httpGet:
-        #     path: /
-        #     port: 8443
-        #     scheme: HTTP
         volumeMounts:
           - name: orders-application-properties
             mountPath: "/opt/application.properties"
