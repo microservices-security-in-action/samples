@@ -12,6 +12,7 @@ data:
      server.ssl.trust-store: /opt/trust-store.jks
      server.ssl.trust-store-password: ${TRUSTSTORE_SECRET}
      security.oauth2.resource.jwt.key-uri: https://sts-service/oauth/token_key
+     inventory.service: https://inventory-service/inventory
      logging.level.org.springframework=DEBUG
      logging.level.root=DEBUG
     ]

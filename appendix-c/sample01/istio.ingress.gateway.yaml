@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: ecomm-gateway
+  namespace: istio-system
 spec:
   selector:
     istio: ingressgateway 
@@ -23,7 +24,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - ecomm-gateway
+  - ecomm-gateway.istio-system.svc.cluster.local
   tls:
     - match:
       - port: 443
