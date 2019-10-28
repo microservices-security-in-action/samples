@@ -1,0 +1,11 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRoleBinding
+metadata:
+  name: order-viewer-binding
+spec:
+  subjects:
+  - properties:
+      request.auth.claims[authorities]: "ROLE_USER"
+  roleRef:
+    kind: ServiceRole
+    name: order-viewer

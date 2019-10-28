@@ -1,0 +1,17 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRole
+metadata:
+  name: order-viewer
+spec:
+  rules:
+  - services: ["orders-service"]
+    methods: ["GET"]
+---
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRole
+metadata:
+  name: order-admin
+spec:
+  rules:
+  - services: ["orders-service"]
+    methods: ["POST"]

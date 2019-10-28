@@ -16,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.4.RELEASE</version>
-		<relativePath /> 
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -29,24 +29,24 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-    			<groupId>javax.xml.bind</groupId>
-    			<artifactId>jaxb-api</artifactId>
-    			<version>2.3.0</version>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
 		</dependency>
 		<dependency>
-    			<groupId>com.sun.xml.bind</groupId>
-    			<artifactId>jaxb-impl</artifactId>
-    			<version>2.3.0.1</version>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.0.1</version>
 		</dependency>
 		<dependency>
-    			<groupId>com.sun.xml.bind</groupId>
-    			<artifactId>jaxb-core</artifactId>
-    			<version>2.3.0.1</version>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>2.3.0.1</version>
 		</dependency>
 		<dependency>
-    			<groupId>javax.activation</groupId>
-    			<artifactId>activation</artifactId>
-    			<version>1.1.1</version>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 	</dependencies>
 
@@ -58,6 +58,15 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>

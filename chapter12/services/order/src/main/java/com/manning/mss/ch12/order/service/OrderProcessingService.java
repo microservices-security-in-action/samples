@@ -1,6 +1,7 @@
 package com.manning.mss.ch12.order.service;
 
 import java.net.URI;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +29,7 @@ public class OrderProcessingService {
 
 	@RequestMapping(value = "/{id}/status", method = RequestMethod.GET)
 	public ResponseEntity<?> checkOrderStatus(@PathVariable("id") String orderId) {
+
 		return ResponseEntity.ok("{'status' : 'shipped'}");
 	}
 
@@ -42,10 +45,15 @@ public class OrderProcessingService {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<?> createOrder(@RequestBody Order order) {
+	public ResponseEntity<?> createOrder(@RequestBody Order order, @RequestHeader Map<String, String> headers) {
 
 		if (order != null) {
-			inventoryClient.updateInventory(order.getItems());
+
+			String jwt = headers.get("authorization");
+			
+			System.out.println("JWT: " + jwt);
+
+			inventoryClient.updateInventory(order.getItems(), jwt);
 			order.setOrderId(UUID.randomUUID().toString());
 			URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 					.buildAndExpand(order.getOrderId()).toUri();
