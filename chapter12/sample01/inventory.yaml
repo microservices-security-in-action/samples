@@ -49,6 +49,7 @@ spec:
  selector:
   app: inventory
  ports:
- - protocol: TCP
+ - name: http
+   protocol: TCP
    port: 80
    targetPort: 8443
