@@ -6,7 +6,6 @@ spec:
   targets:
   - name: orders-service
   - name: inventory-service
-  - name: sts
   peers:
   - mtls:
       mode: STRICT
