@@ -12,8 +12,9 @@ spec:
   origins:
   - jwt:
       issuer: "sts.ecomm.com"
-      #jwksUri: "https://raw.githubusercontent.com/microservices-security-in-action/samples/master/chapter10/sample01/keystores/jwtkey.jwk"
-      jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.0/security/tools/jwt/samples/jwks.json"
+      audiences:
+      - "*.ecomm.com"
+      jwksUri: "https://raw.githubusercontent.com/microservices-security-in-action/samples/master/chapter12/sample04/jwtkey.jwk"
   principalBinding: USE_ORIGIN
 
 

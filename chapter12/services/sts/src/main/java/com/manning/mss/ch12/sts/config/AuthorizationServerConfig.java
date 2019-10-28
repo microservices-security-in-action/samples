@@ -79,11 +79,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		String alias = environment.getProperty("spring.security.oauth.jwt.keystore.alias");
 		String keystore = environment.getProperty("spring.security.oauth.jwt.keystore.name");
 
-
 		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new FileSystemResource(new File(keystore)),
 				pwd.toCharArray());
-		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-		converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
+		JwtAccessTokenConverter converter = new CustomJWTEncoder(keyStoreKeyFactory.getKeyPair(alias));
+		//converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
 		return converter;
 	}
 }

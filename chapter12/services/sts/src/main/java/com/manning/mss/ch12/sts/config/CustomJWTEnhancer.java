@@ -19,6 +19,7 @@ public class CustomJWTEnhancer extends JwtAccessTokenConverter {
 		info.put("sub", authentication.getUserAuthentication().getName());
 		info.put("iss", "sts.ecomm.com");
 		info.put("aud", "*.ecomm.com");
+		
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
 
 		return accessToken;
