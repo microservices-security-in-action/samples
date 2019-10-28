@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 
 public class CustomJWTEnhancer extends JwtAccessTokenConverter {
 
+
 	@Override
 	public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
 
@@ -20,7 +21,7 @@ public class CustomJWTEnhancer extends JwtAccessTokenConverter {
 		info.put("iss", "sts.ecomm.com");
 		info.put("aud", "*.ecomm.com");
 		((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(info);
-
 		return accessToken;
 	}
+
 }

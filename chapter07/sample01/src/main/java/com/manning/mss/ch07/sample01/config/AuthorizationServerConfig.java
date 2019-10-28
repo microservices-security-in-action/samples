@@ -1,5 +1,6 @@
 package com.manning.mss.ch07.sample01.config;
 
+import java.security.KeyPair;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public TokenEnhancer tokenEnhancer() {
 		return new CustomJWTEnhancer();
 	}
+	
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
@@ -80,8 +82,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource(keystore),
 				pwd.toCharArray());
-		JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-		converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
+		JwtAccessTokenConverter converter = new CustomJWTEncoder(keyStoreKeyFactory.getKeyPair(alias));
+		//converter.setKeyPair(keyStoreKeyFactory.getKeyPair(alias));
 		return converter;
 	}
 }
