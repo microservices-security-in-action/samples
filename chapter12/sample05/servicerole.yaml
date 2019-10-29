@@ -4,7 +4,7 @@ metadata:
   name: order-viewer
 spec:
   rules:
-  - services: ["orders-service"]
+  - services: ["orders-service.default.svc.cluster.local"]
     methods: ["GET"]
 ---
 apiVersion: "rbac.istio.io/v1alpha1"
@@ -13,5 +13,5 @@ metadata:
   name: order-admin
 spec:
   rules:
-  - services: ["orders-service"]
+  - services: ["orders-service.default.svc.cluster.local"]
     methods: ["POST"]
