@@ -1,0 +1,20 @@
+[
+	{
+	 "id": "p1",
+	 "path": "orders",
+	 "method": "POST",
+	 "scopes": ["create_order"]
+	},
+	{
+	 "id": "p2",
+	 "path": "orders",
+	 "method": "GET",
+     "scopes": ["retrieve_orders"]
+	},
+	{
+	 "id": "p3",
+	 "path": "orders/{order_id}",
+	 "method": "PUT",
+	 "scopes": ["update_order"]
+	}
+]

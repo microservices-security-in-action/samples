@@ -1,7 +1,7 @@
 {
  "input":{
-   "path":"/orders",
-   "method":"GET",
+   "path":"orders",
+   "method":"POST",
    "scopes":["retrieve_orders"]
 	}
 }

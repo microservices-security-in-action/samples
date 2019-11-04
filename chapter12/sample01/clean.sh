@@ -23,3 +23,5 @@ kubectl delete ServiceRole order-viewer
 kubectl delete ServiceRole order-admin
 kubectl delete ServiceRoleBinding order-viewer-binding
 
+kubectl delete destinationrules.networking.istio.io -n istio-system ecomm-authn-istio-gateway-mtls
+kubectl delete destinationrules.networking.istio.io ecomm-authn-service-mtls

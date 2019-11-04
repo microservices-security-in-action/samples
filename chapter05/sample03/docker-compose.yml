@@ -1,7 +1,7 @@
 version: '2'
 services:
   opa:
-    image: openpolicyagent/opa:0.10.5
+    image: openpolicyagent/opa:0.15.0
     ports:
       - 8181:8181
     # WARNING: OPA is NOT running with an authorization policy configured. This
@@ -10,9 +10,9 @@ services:
     # authentication and authorization on the daemon. See the Security page for
     # details: https://www.openpolicyagent.org/docs/security.html.
     command:
-      - "run"
-      - "--server"
-      - "--log-level=debug"
+      - run
+      - --server
+      - --log-level=debug
    #api_server:
    #image: openpolicyagent/demo-restful-api:0.2
    #ports:
