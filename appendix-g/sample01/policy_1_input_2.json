@@ -1,0 +1,8 @@
+{
+    "input":{
+      "path":["orders",1000],
+      "method":"POST",
+      "deptid":1000,
+      "role":"dept_manager"
+    }
+}
