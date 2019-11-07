@@ -1,13 +1,10 @@
-package authz.orders.policy3    
+package authz.orders.policy5    
   
-import input    
-
-import data.order_policy_data as policies    
+import input.external as policy    
 
 default allow = false    
 
 allow {    
-  policy = policies[_]    
   policy.method = input.method    
   policy.path = input.path    
   policy.scopes[_] = input.scopes[_]    

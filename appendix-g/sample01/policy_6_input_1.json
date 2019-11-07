@@ -1,0 +1,8 @@
+{
+    "input":{
+      "path": ["orders",101],
+      "method":"GET",
+      "empid" : 101,
+      "token" : "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXRlciIsImF1ZCI6IiouZWNvbW0uY29tIiwibmJmIjoxNTczMTA5MDA3LCJ1c2VyX25hbWUiOiJwZXRlciIsInNjb3BlIjpbImZvbyJdLCJpc3MiOiJzdHMuZWNvbW0uY29tIiwiZXhwIjoxNTczMTE1MDA3LCJpYXQiOjE1NzMxMDkwMDcsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIwNjJjNTliYy05MGE2LTQ5MjMtYjY3OS1kZTdhYWVjYzIwMGIiLCJjbGllbnRfaWQiOiJhcHBsaWNhdGlvbmlkIn0.pp6aCSx5fcZQXBgOHHGFZS8lkJtAS2F-Hm2pKc37yj3IbpMBenB_XCUepLn9B5HiF_AOM0CGxor5x4YmBo6EWkYMNing7i-NDVDMmzCSBTBV2YkH5xkqAseGMeNl46LHJybiamN4L_q3xx6XQYsuvV3YvV5YLjnp5wfwM2UPv1xRYIm4u3u2_3Z7oHJ7f6oWGfls_sPdYnjYCirb5Geog6Po-X-RJFr1gXVke1N2RnG9B5d2nt_DLKx5vVHDJTkbxrM2qlsQcu6yqqzlEVTvQgXyz4-HtnwckN3fL0N6b3mZEqggnJSZpS_b-tPS20ZBnvqsWVy5UR4JjwCF-L5lWA"
+    }
+}

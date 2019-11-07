@@ -1,9 +1,7 @@
 {
-    "input":{
-      "path":"orders",
-      "method":"POST",
-      "role":"manager",
-      "empid" : 101,
-      "token" : "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwZXRlciIsImF1ZCI6IiouZWNvbW0uY29tIiwidXNlcl9uYW1lIjoicGV0ZXIiLCJzY29wZSI6WyJmb28iXSwiaXNzIjoic3RzLmVjb21tLmNvbSIsImV4cCI6MTU3MzAyODU4MCwiaWF0IjoxNTczMDIyNTgwLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiMDBlYWQzODAtNWEzYi00MWZmLWExNjktMDVmNzcxZTA3YjNlIiwiY2xpZW50X2lkIjoiYXBwbGljYXRpb25pZCJ9.Ss0p_wwOoTYiMFsuksXo4is6i3xHQ4eKFpoRGh0ItqZYChwk5ND62DDRN_u3986GpBjWUEki7a3vEzN6ds441-6XWsZIgnfV9qjD9w1bQB_tyiFcaZDu8LLo1hTn0ZpYaqjFsFh06qoxZ0qfTIdqWZ67qkpOWEO4Fr2kYqiIyfJF4PgS8onXEx-7x1cBqQmvjlb6KXU99WTs_up6BbTgspi7FA9WDXx-oMYfj2Pw-qoNBNpMeDtIJa52k5YtL0V_Ebilk8HPkJlvJemDkgMSUmMfA6d4gf7556AQY4qTiEbPUCPuITINdE0cbhhbz8DgATvjgGbsXiOEHsSFGzUUzg"
-    }
+ "input":{
+   "path":"orders",
+   "method":"GET",
+   "scopes":["retrieve_orders"]
+ }
 }

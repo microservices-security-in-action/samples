@@ -1,0 +1,1 @@
+docker run -v "$(pwd)"/policies:/policies -v "$(pwd)"/keys:/keys -p 8181:8181 openpolicyagent/opa:0.15.0-dev-debug run /policies --tls-cert-file /keys/opa/opa.cert --tls-private-key-file /keys/opa/opa.key --tls-ca-cert-file /keys/ca/ca.cert --authentication=tls --log-level=debug --server

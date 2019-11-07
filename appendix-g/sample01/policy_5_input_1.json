@@ -1,0 +1,13 @@
+{
+    "input":{
+      "path":"orders",
+      "method":"GET",
+      "scopes":["retrieve_orders"],
+      "external" : {
+            "id": "r2",
+            "path": "orders",
+            "method": "GET",
+            "scopes": ["retrieve_orders"]
+      }
+    }
+}

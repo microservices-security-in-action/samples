@@ -16,6 +16,7 @@ public class CustomJWTEnhancer extends JwtAccessTokenConverter {
 
 		Map info = new HashMap();
 		info.put("iat", Instant.now().getEpochSecond());
+		info.put("nbf", Instant.now().getEpochSecond());
 		info.put("sub", authentication.getUserAuthentication().getName());
 		info.put("iss", "sts.ecomm.com");
 		info.put("aud", "*.ecomm.com");

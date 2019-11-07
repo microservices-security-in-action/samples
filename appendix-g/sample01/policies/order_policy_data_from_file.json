@@ -1,4 +1,4 @@
-{ "order_policy" :[
+{ "order_policy_data_from_file" :[
 	{
 	 "id": "p1",
 	 "path": "orders",
@@ -17,5 +17,5 @@
 	 "method": "PUT",
 	 "scopes": ["update_order"]
 	}
-]
+ ]
 }

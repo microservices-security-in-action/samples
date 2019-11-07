@@ -1,8 +1,8 @@
-package authz.orders.policy3    
+package authz.orders.policy4    
   
 import input    
 
-import data.order_policy_data as policies    
+import data.order_policy_data_from_file as policies    
 
 default allow = false    
 
