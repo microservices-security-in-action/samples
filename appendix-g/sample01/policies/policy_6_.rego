@@ -1,4 +1,4 @@
-package authz.orders.policy6    
+package authz.orders.policy61    
   
 default allow = false    
 
@@ -25,14 +25,16 @@ allow {
   input.empid = emp_id
   input.path = ["orders",emp_id]
   token.payload.authorities[_] = "ROLE_USER"
+  is_valid.valid
+  #io.jwt.verify_rs256(input.token, certificate)
 }
 
 token = {"payload": payload} {
-  io.jwt.verify_rs256(input.token, certificate)
   [header, payload, signature] := io.jwt.decode(input.token)
-  payload.exp >= now_in_seconds
 }
 
-now_in_seconds = time.now_ns() / 1000000000
-
+is_valid = {"valid": valid} {
+  [valid, header, payload] := io.jwt.decode_verify(input.token, {
+          "cert": certificate})
+}
 
