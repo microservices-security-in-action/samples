@@ -5,11 +5,11 @@
 		"card_type": "Visa",
 		"expiration": "2019-10-11",
 		"name": "Nuwan",
-		"billing_address": "Colombo"
+		"billing_address": "789, Castro Street, MV, CA, USA"
 	},
 	"items": [{
 		"code": "IT01",
 		"qty": 1
 	}],
-	"shipping_address": "Colombo"
+	"shipping_address": "789, Castro Street, MV, CA, USA"
 }
