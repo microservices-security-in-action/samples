@@ -14,8 +14,10 @@ public class NatsPublisher {
 
         Connection natsConnection = null;
         try {
+            //Connect to the NATS server.
             natsConnection = Nats.connect("nats://localhost:4222");
 
+            //Push message to subject "updates"
             natsConnection.publish("updates", "Welcome to NATS".getBytes(StandardCharsets.UTF_8));
 
             // Make sure the message goes through before we close
