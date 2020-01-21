@@ -15,11 +15,14 @@ public class NatsSubscriber {
 
         Connection natsConnection = null;
         try {
+            //Connect to the NATS server
             natsConnection = Nats.connect("nats://localhost:4222");
 
+            //Subscribe to subject "updates"
             Subscription sub = natsConnection.subscribe("updates");
             Message msg = sub.nextMessage(Duration.ZERO);
 
+            //Print the received message.
             String str = new String(msg.getData(), StandardCharsets.UTF_8);
             System.out.print("Received message: ");
             System.out.println(str);
