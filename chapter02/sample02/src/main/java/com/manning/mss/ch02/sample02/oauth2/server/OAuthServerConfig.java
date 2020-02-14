@@ -3,6 +3,7 @@ package com.manning.mss.ch02.sample02.oauth2.server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -15,6 +16,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     private TokenStore tokenStore;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -27,16 +29,22 @@ public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
                 .tokenStore(tokenStore);
     }
 
+    public OAuthServerConfig(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-            .withClient("orderprocessingapp").secret("orderprocessingappsecret")
+            .withClient("orderprocessingapp")
+                .secret(passwordEncoder.encode("orderprocessingappsecret"))
                 .authorizedGrantTypes("client_credentials", "password")
                 .scopes("read", "write")
                 .accessTokenValiditySeconds(3600)
                 .resourceIds("sample-oauth")
             .and()
-            .withClient("orderprocessingservice").secret("orderprocessingservicesecret")
+            .withClient("orderprocessingservice")
+                .secret(passwordEncoder.encode("orderprocessingservicesecret"))
                 .authorizedGrantTypes("client_credentials", "password")
                 .scopes("read")
                 .accessTokenValiditySeconds(3600)
