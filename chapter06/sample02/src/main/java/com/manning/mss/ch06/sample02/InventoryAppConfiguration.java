@@ -13,8 +13,8 @@ public class InventoryAppConfiguration implements EnvironmentAware {
 		String truststorePassword = environment.getProperty("server.ssl.key-store-password");
 
 		if (truststoreLocation != null && truststorePassword != null) {
-			System.setProperty("javax.net.ssl.trustStore", truststoreLocation);
-			System.setProperty("javax.net.ssl.trustStorePassword", truststorePassword);
+//			System.setProperty("javax.net.ssl.trustStore", truststoreLocation);
+//			System.setProperty("javax.net.ssl.trustStorePassword", truststorePassword);
 		}
 
 	}

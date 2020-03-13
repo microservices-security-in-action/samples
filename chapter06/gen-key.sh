@@ -29,6 +29,8 @@ keytool -importkeystore -srcstorepass manning123 -srckeystore /export/orderproce
 
 keytool -changealias -alias "1" -destalias "orderprocessing" -keystore /export/orderprocessing/orderprocessing.jks -storepass manning123
 
+keytool -import -file /export/ca/ca_cert.pem -alias ca -noprompt  -keystore /export/orderprocessing/orderprocessing.jks -storepass manning123
+
 #Cleans up
 rm /export/orderprocessing/app.p12 
 rm /export/orderprocessing/application_keys.pem 
@@ -57,6 +59,9 @@ openssl pkcs12  -export -passout pass:"manning123" -in /export/inventory/applica
 keytool -importkeystore -srcstorepass manning123 -srckeystore /export/inventory/app.p12 -srcstoretype pkcs12 -deststorepass manning123 -destkeystore /export/inventory/inventory.jks -deststoretype JKS
 
 keytool -changealias -alias "1" -destalias "inventory" -keystore /export/inventory/inventory.jks -storepass manning123
+
+keytool -import -file /export/ca/ca_cert.pem -alias ca  -noprompt -keystore /export/inventory/inventory.jks -storepass manning123
+
 
 #Cleans up
 rm /export/inventory/app.p12 
