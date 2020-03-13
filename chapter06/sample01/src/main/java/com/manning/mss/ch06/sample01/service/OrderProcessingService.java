@@ -41,7 +41,7 @@ public class OrderProcessingService {
 
 		if (order != null) {
 			RestTemplate restTemplate = new RestTemplate();
-			URI uri = URI.create("https://localhost:8443/inventory");
+			URI uri = URI.create(System.getProperty("inventory.service"));
 			restTemplate.put(uri, order.getItems());
 
 			order.setOrderId(UUID.randomUUID().toString());
