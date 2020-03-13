@@ -11,8 +11,8 @@ public class OrderAppConfiguration implements EnvironmentAware {
 	public void setEnvironment(final Environment environment) {
 		String keystoreLocation = environment.getProperty("server.ssl.key-store");
 		String keystorePassword = environment.getProperty("server.ssl.key-store-password");
-		String truststoreLocation = environment.getProperty("server.ssl.trust-store");
-		String truststorePassword = environment.getProperty("server.ssl.trust-store-password");
+		String truststoreLocation = environment.getProperty("server.ssl.key-store");
+		String truststorePassword = environment.getProperty("server.ssl.key-store-password");
 		String inventory = environment.getProperty("inventory.service");
 
 		if (truststoreLocation != null && truststorePassword != null) {

@@ -63,7 +63,7 @@ rm /export/inventory/app.p12
 rm /export/inventory/application_keys.pem 
 rm /export/inventory/app_cert.pem 
 rm /export/inventory/app_key.pem
-/export/inventory/csr-for-app
+rm /export/inventory/csr-for-app
 
 
 
