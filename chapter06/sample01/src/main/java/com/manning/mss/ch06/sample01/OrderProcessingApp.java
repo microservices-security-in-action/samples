@@ -11,12 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OrderProcessingApp {
 
 	static {
-
-		HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
-			public boolean verify(String hostname, SSLSession session) {
-				return true;
-			}
-		});
+//		HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+//			public boolean verify(String hostname, SSLSession session) {
+//				return true;
+//			}
+//		});
 	}
 
 	public static void main(String[] args) {
