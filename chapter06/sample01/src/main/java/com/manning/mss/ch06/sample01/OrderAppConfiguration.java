@@ -16,15 +16,13 @@ public class OrderAppConfiguration implements EnvironmentAware {
 		String inventory = environment.getProperty("inventory.service");
 
 		if (truststoreLocation != null && truststorePassword != null) {
-			// System.setProperty("javax.net.ssl.trustStore",
-			// truststoreLocation);
-			// System.setProperty("javax.net.ssl.trustStorePassword",
-			// truststorePassword);
+//			System.setProperty("javax.net.ssl.trustStore", truststoreLocation);
+//			System.setProperty("javax.net.ssl.trustStorePassword", truststorePassword);
 		}
 
 		if (keystoreLocation != null && keystorePassword != null) {
-			System.setProperty("javax.net.ssl.keyStore", keystoreLocation);
-			System.setProperty("javax.net.ssl.keyStorePassword", keystorePassword);
+//			System.setProperty("javax.net.ssl.keyStore", keystoreLocation);
+//			System.setProperty("javax.net.ssl.keyStorePassword", keystorePassword);
 		}
 
 		if (inventory != null) {
