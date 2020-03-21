@@ -1,0 +1,47 @@
+/**
+ * @license Angular v0.10.2
+ * (c) 2010-2019 Google LLC. https://angular.io/
+ * License: MIT
+ */
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('electron')) :
+        typeof define === 'function' && define.amd ? define(['electron'], factory) :
+            (global = global || self, global.zone_patch_electron_rollup = factory(global.electron));
+}(this, function (electron$1) {
+    'use strict';
+    electron$1 = electron$1 && electron$1.hasOwnProperty('default') ? electron$1['default'] : electron$1;
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+    Zone.__load_patch('electron', function (global, Zone, api) {
+        function patchArguments(target, name, source) {
+            return api.patchMethod(target, name, function (delegate) { return function (self, args) {
+                return delegate && delegate.apply(self, api.bindArguments(args, source));
+            }; });
+        }
+        var desktopCapturer = electron$1.desktopCapturer, shell = electron$1.shell, CallbacksRegistry = electron$1.CallbacksRegistry, ipcRenderer = electron$1.ipcRenderer;
+        // patch api in renderer process directly
+        // desktopCapturer
+        if (desktopCapturer) {
+            patchArguments(desktopCapturer, 'getSources', 'electron.desktopCapturer.getSources');
+        }
+        // shell
+        if (shell) {
+            patchArguments(shell, 'openExternal', 'electron.shell.openExternal');
+        }
+        // patch api in main process through CallbackRegistry
+        if (!CallbacksRegistry) {
+            if (ipcRenderer) {
+                patchArguments(ipcRenderer, 'on', 'ipcRenderer.on');
+            }
+            return;
+        }
+        patchArguments(CallbacksRegistry.prototype, 'add', 'CallbackRegistry.add');
+    });
+    var electron = {};
+    return electron;
+}));

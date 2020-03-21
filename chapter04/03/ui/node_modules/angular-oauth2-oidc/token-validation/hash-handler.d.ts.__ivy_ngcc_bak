@@ -1,0 +1,10 @@
+/**
+ * Abstraction for crypto algorithms
+*/
+export declare abstract class HashHandler {
+    abstract calcHash(valueToHash: string, algorithm: string): Promise<string>;
+}
+export declare class DefaultHashHandler implements HashHandler {
+    calcHash(valueToHash: string, algorithm: string): Promise<string>;
+    toHashString(buffer: ArrayBuffer): string;
+}

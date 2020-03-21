@@ -1,0 +1,1 @@
+{"moduleName":null,"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"class","members":{"encodeKey":[{"__symbolic":"method"}],"encodeValue":[{"__symbolic":"method"}],"decodeKey":[{"__symbolic":"method"}],"decodeValue":[{"__symbolic":"method"}]}}}],"symbols":[{"__symbol":0,"name":"WebHttpUrlEncodingCodec","filePath":"./encoder"}]}

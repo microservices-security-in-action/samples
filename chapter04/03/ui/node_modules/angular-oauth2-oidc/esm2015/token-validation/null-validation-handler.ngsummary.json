@@ -1,0 +1,1 @@
+{"moduleName":null,"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"class","members":{"validateSignature":[{"__symbolic":"method"}],"validateAtHash":[{"__symbolic":"method"}]}}}],"symbols":[{"__symbol":0,"name":"NullValidationHandler","filePath":"./null-validation-handler"}]}

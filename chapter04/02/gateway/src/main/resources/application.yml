@@ -1,0 +1,6 @@
+server.port: 9090
+zuul:
+  routes:
+    books:
+      path: /books/**
+      url: http://localhost:8080/books
