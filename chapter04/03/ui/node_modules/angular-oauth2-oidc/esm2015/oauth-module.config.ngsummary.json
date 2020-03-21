@@ -1,0 +1,1 @@
+{"moduleName":null,"summaries":[{"symbol":{"__symbol":0,"members":[]},"metadata":{"__symbolic":"class"}},{"symbol":{"__symbol":1,"members":[]},"metadata":{"__symbolic":"class"}}],"symbols":[{"__symbol":0,"name":"OAuthModuleConfig","filePath":"./oauth-module.config"},{"__symbol":1,"name":"OAuthResourceServerConfig","filePath":"./oauth-module.config"}]}

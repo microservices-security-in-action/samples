@@ -1,0 +1,22 @@
+/**
+ * This custom encoder allows charactes like +, % and / to be used in passwords
+ */
+var WebHttpUrlEncodingCodec = /** @class */ (function () {
+    function WebHttpUrlEncodingCodec() {
+    }
+    WebHttpUrlEncodingCodec.prototype.encodeKey = function (k) {
+        return encodeURIComponent(k);
+    };
+    WebHttpUrlEncodingCodec.prototype.encodeValue = function (v) {
+        return encodeURIComponent(v);
+    };
+    WebHttpUrlEncodingCodec.prototype.decodeKey = function (k) {
+        return decodeURIComponent(k);
+    };
+    WebHttpUrlEncodingCodec.prototype.decodeValue = function (v) {
+        return decodeURIComponent(v);
+    };
+    return WebHttpUrlEncodingCodec;
+}());
+export { WebHttpUrlEncodingCodec };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW5jb2Rlci5qcyIsInNvdXJjZVJvb3QiOiJuZzovL2FuZ3VsYXItb2F1dGgyLW9pZGMvIiwic291cmNlcyI6WyJlbmNvZGVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBOztHQUVHO0FBQ0g7SUFBQTtJQWdCQSxDQUFDO0lBZkMsMkNBQVMsR0FBVCxVQUFVLENBQVM7UUFDakIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBRUQsNkNBQVcsR0FBWCxVQUFZLENBQVM7UUFDbkIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBRUQsMkNBQVMsR0FBVCxVQUFVLENBQVM7UUFDakIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBRUQsNkNBQVcsR0FBWCxVQUFZLENBQVM7UUFDbkIsT0FBTyxrQkFBa0IsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUMvQixDQUFDO0lBQ0gsOEJBQUM7QUFBRCxDQUFDLEFBaEJELElBZ0JDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSHR0cFBhcmFtZXRlckNvZGVjIH0gZnJvbSAnQGFuZ3VsYXIvY29tbW9uL2h0dHAnO1xyXG4vKipcclxuICogVGhpcyBjdXN0b20gZW5jb2RlciBhbGxvd3MgY2hhcmFjdGVzIGxpa2UgKywgJSBhbmQgLyB0byBiZSB1c2VkIGluIHBhc3N3b3Jkc1xyXG4gKi9cclxuZXhwb3J0IGNsYXNzIFdlYkh0dHBVcmxFbmNvZGluZ0NvZGVjIGltcGxlbWVudHMgSHR0cFBhcmFtZXRlckNvZGVjIHtcclxuICBlbmNvZGVLZXkoazogc3RyaW5nKTogc3RyaW5nIHtcclxuICAgIHJldHVybiBlbmNvZGVVUklDb21wb25lbnQoayk7XHJcbiAgfVxyXG5cclxuICBlbmNvZGVWYWx1ZSh2OiBzdHJpbmcpOiBzdHJpbmcge1xyXG4gICAgcmV0dXJuIGVuY29kZVVSSUNvbXBvbmVudCh2KTtcclxuICB9XHJcblxyXG4gIGRlY29kZUtleShrOiBzdHJpbmcpOiBzdHJpbmcge1xyXG4gICAgcmV0dXJuIGRlY29kZVVSSUNvbXBvbmVudChrKTtcclxuICB9XHJcblxyXG4gIGRlY29kZVZhbHVlKHY6IHN0cmluZykge1xyXG4gICAgcmV0dXJuIGRlY29kZVVSSUNvbXBvbmVudCh2KTtcclxuICB9XHJcbn1cclxuIl19
