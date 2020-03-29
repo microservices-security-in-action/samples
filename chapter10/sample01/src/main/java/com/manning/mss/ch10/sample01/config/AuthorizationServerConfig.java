@@ -9,8 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
@@ -29,6 +31,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Autowired
 	private Environment environment;
+
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 
 	@Bean
 	public TokenEnhancer tokenEnhancer() {
@@ -58,7 +63,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("applicationid").secret("applicationsecret").scopes("foo", "bar")
+		clients.inMemory().withClient("applicationid")
+				.secret(passwordEncoder.encode("applicationsecret"))
+				.scopes("foo", "bar")
 				.authorizedGrantTypes("client_credentials", "password", "refresh_token")
 				.accessTokenValiditySeconds(6000);
 	}
