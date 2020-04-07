@@ -5,6 +5,8 @@ import com.netflix.zuul.context.RequestContext;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 
 import java.io.DataOutputStream;
@@ -17,6 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 public class OAuthFilter extends ZuulFilter {
 
     private static Logger log = LoggerFactory.getLogger(OAuthFilter.class);
+
+    @Autowired
+    private Environment env;
 
     public String filterType() {
 
@@ -65,7 +70,7 @@ public class OAuthFilter extends ZuulFilter {
         //Get the value of the token by splitting the Authorization header
         String token = authHeader.split("Bearer ")[1];
 
-        String oauthServerURL = "http://localhost:8085/oauth/check_token";
+        String oauthServerURL = env.getProperty("authserver.introspection.endpoint");
 
         try {
             URL url = new URL(oauthServerURL);
