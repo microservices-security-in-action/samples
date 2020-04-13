@@ -1,0 +1,7 @@
+{
+    "input":{
+      "path":["orders",1000],
+      "method":"GET",
+      "empid":1000
+    }
+}

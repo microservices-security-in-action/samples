@@ -1,0 +1,7 @@
+{
+    "input":{
+      "path":"orders",
+      "method":"POST",
+      "role":"manager"
+    }
+}
