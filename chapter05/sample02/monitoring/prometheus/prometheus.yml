@@ -16,7 +16,7 @@ scrape_configs:
   static_configs:
   - targets: ['host.docker.internal:8080']
     labels:
-      application: 'springboot-app'
+      application: 'order-processing-app'
 
 - job_name: 'prometheus'
 
