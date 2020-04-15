@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orders-application-properties-config-map
+data:
+  application.properties: |
+    [
+     server.port: 8443
+     server.ssl.key-store: /opt/keystore.jks
+     server.ssl.key-store-password: ${KEYSTORE_SECRET}
+     server.ssl.keyAlias: spring
+     server.ssl.trust-store: /opt/trust-store.jks
+     server.ssl.trust-store-password: ${TRUSTSTORE_SECRET}
+     security.oauth2.resource.jwt.key-uri: https://sts-service/oauth/token_key
+     inventory.service: https://inventory-service/inventory
+     logging.level.org.springframework=DEBUG
+     logging.level.root=DEBUG
+    ]
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orders-keystore-config-map
+binaryData:
+  keystore.jks: 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
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orders-truststore-config-map
+binaryData:
+  trust-store.jks: /u3+7QAAAAIAAAABAAAAAgAKYXV0aHNlcnZlcgAAAWMHbzyjAAVYLjUwOQAAA0cwggNDMIICK6ADAgECAgQg0IZzMA0GCSqGSIb3DQEBCwUAMFIxCzAJBgNVBAYTAnVzMQswCQYDVQQIEwJjYTEMMAoGA1UEBxMDc2pjMQwwCgYDVQQKEwN6ZWUxDDAKBgNVBAsTA2JhcjEMMAoGA1UEAxMDZm9vMB4XDTE4MDQyNzE0MDMzMFoXDTI4MDQyNDE0MDMzMFowUjELMAkGA1UEBhMCdXMxCzAJBgNVBAgTAmNhMQwwCgYDVQQHEwNzamMxDDAKBgNVBAoTA3plZTEMMAoGA1UECxMDYmFyMQwwCgYDVQQDEwNmb28wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCPxmiTujUIJ8KrgDZsQhQ+vKheKALNMBVJIb8ZKYta0L8Ern4OirTVDbrYq1wOmAk5eDT6pZh9tsIA2zJCK7hKK3NorYDxOdzmHWgVAsK42lkxOhQ0wvY6D+yiicKNhgwjF/ViDJQZEquE66e1yihFxJMCM64Co6mIMypir8LTPZz08NVyUyqh2CiHWkYJ1Vav5TBw6PjLZj6FBwsq3mz7GOK41BzVJv8JtvhXW5r7k3icnMCVqiREK7yD0QZ/FTOFPJR4DeP2vO3rnKt9QcahYxK5zzR/zTY1vTJB8DYwjozXecWtkUhXc7a9mc6eYUALIQVZO6hx/8bZD1RRUCMdAgMBAAGjITAfMB0GA1UdDgQWBBTfxof0MuHyqJYiBRKdJi/zYINg/TANBgkqhkiG9w0BAQsFAAOCAQEAZaFrJC7z8fbALMtdOeYMK/5XyuAL/fEJmj8zyQLfJwSri6Ia0tZ8wtdNtCPzqDQWHWq1qMrIwRRTpJWUZmIKmz9V8sWn9zihLAuv1+jrUCAhcDtIolSJrUgGzJE+jHAUWhVjgMk6z7IRs90559MmvuZwwThVxwsaslxfyPlIiwj5c8jtYVNtS0LqGvDrPjbXvz91wbM+smfzxmxvjJ43HUHuWxlRrLWAdriK8vpzX4x5pbKOanzC4Gs+Yqv9MwfXZXdX2B3JAMTNLTbDuPQPEUg3t4VaC2JTrbcRsDN6RnWej34Ce+edF/iAGsM+jhNYUdsLSImlUiwaZAXNsuM6ye3CNH7PWoleyvS8xiQDUBz8A0It
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: orders-key-credentials
+type: Opaque
+stringData: 
+  KEYSTORE_PASSWORD: springboot
+  TRUSTSTORE_PASSWORD: springboot
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-deployment 
+  labels:
+    app: orders 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      containers:
+      - name: orders
+        image: prabath/order-processing:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: orders-application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"
+          - name: orders-keystore
+            mountPath: "/opt/keystore.jks"
+            subPath: "keystore.jks"
+          - name: orders-truststore
+            mountPath: "/opt/trust-store.jks"
+            subPath: "trust-store.jks"
+        env:
+          - name: KEYSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: orders-key-credentials
+                key: KEYSTORE_PASSWORD  
+          - name: TRUSTSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: orders-key-credentials
+                key: TRUSTSTORE_PASSWORD     
+      volumes:
+        - name: orders-application-properties
+          configMap:
+            name: orders-application-properties-config-map
+        - name: orders-keystore
+          configMap:
+            name: orders-keystore-config-map
+        - name: orders-truststore
+          configMap:
+            name: orders-truststore-config-map
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-service
+spec:
+ type: NodePort
+ selector:
+  app: orders
+ ports:
+ - protocol: TCP
+   port: 443
+   targetPort: 8443
