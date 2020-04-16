@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-application-properties-config-map
+data:
+  application.properties: |
+    [
+     server.port: 8443
+     logging.level.org.springframework=DEBUG
+     logging.level.root=DEBUG
+    ]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-deployment 
+  labels:
+    app: inventory 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: inventory
+  template:
+    metadata:
+      labels:
+        app: inventory
+    spec:
+      containers:
+      - name: inventory
+        image: prabath/com.manning.mss.ch12.inventory:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: inventory-application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"   
+      volumes:
+        - name: inventory-application-properties
+          configMap:
+            name: inventory-application-properties-config-map
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-service
+spec:
+ selector:
+  app: inventory
+ ports:
+ - name: http
+   protocol: TCP
+   port: 80
+   targetPort: 8443

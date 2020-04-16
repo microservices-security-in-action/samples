@@ -5,4 +5,4 @@ metadata:
 spec:
   mode: ON_WITH_INCLUSION
   inclusion:
-    namespaces: ["default"]
+    services: ["orders-service.default.svc.cluster.local","inventory-service.default.svc.cluster.local"]

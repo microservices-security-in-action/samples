@@ -1,0 +1,84 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sts-application-properties-config-map
+data:
+  application.properties: |
+    [
+     server.port: 8443
+     spring.security.oauth.jwt: true
+     spring.security.oauth.jwt.keystore.password: ${JWT_KEYSTORE_SECRET}
+     spring.security.oauth.jwt.keystore.alias: jwtkey
+     spring.security.oauth.jwt.keystore.name: /opt/jwt.jks
+    ]
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sts-jwt-keystore-config-map
+binaryData:
+  jwt.jks: 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
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sts-keystore-secrets
+stringData: 
+  JWT_KEYSTORE_PASSWORD: springboot
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sts-deployment 
+  labels:
+    app: sts 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: sts
+  template:
+    metadata:
+      labels:
+        app: sts
+    spec:
+      containers:
+      - name: sts
+        image: prabath/com.manning.mss.ch12.sts:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"
+          - name: jwt-keystore
+            mountPath: "/opt/jwt.jks"
+            subPath: "jwt.jks"
+        env:
+          - name: JWT_KEYSTORE_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: sts-keystore-secrets
+                key: JWT_KEYSTORE_PASSWORD       
+      volumes:
+        - name: application-properties
+          configMap:
+            name: sts-application-properties-config-map
+        - name: jwt-keystore
+          configMap:
+            name: sts-jwt-keystore-config-map
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sts-service
+spec:
+ type: NodePort
+ selector:
+  app: sts
+ ports:
+ - name: http
+   protocol: TCP
+   port: 80
+   targetPort: 8443
