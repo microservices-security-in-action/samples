@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.manning.mss.ch13.sample01.exceptions.OrderNotFoundException;
-import com.manning.mss.ch13.sample01.orderentity.Order;
+import com.manning.mss.ch13.sample02.exceptions.OrderNotFoundException;
+import com.manning.mss.ch13.sample02.orderentity.Order;
 
 @RestController
 @RequestMapping("/orders")

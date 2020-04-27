@@ -1,6 +1,6 @@
 package com.manning.mss.ch13.service;
 
-import com.manning.mss.ch13.sample01.paymententity.PaymentDetail;
+import com.manning.mss.ch13.sample02.paymententity.PaymentDetail;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
