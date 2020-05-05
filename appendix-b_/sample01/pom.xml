@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.manning.mss</groupId>
-	<artifactId>com.manning.mss.appendixh.sample01</artifactId>
+	<artifactId>com.manning.mss.appendixb.sample01</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
-	<name>com.manning.mss.appendixj.sample01</name>
+	<name>com.manning.mss.appendixb.sample01</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
