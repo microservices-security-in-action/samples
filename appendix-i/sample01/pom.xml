@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.manning.mss</groupId>
-    <artifactId>com.manning.mss.appendixj.sample01</artifactId>
+    <artifactId>com.manning.mss.appendixi.sample01</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>com.manning.mss.appendixj.sample01</name>
+    <name>com.manning.mss.appendixi.sample01</name>
     <description>gRPC sample 1</description>
 
     <parent>

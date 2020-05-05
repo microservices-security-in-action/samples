@@ -1,7 +1,7 @@
 syntax = "proto3";
 option java_multiple_files = true;
 
-package com.manning.mss.appendixj.sample01;
+package com.manning.mss.appendixi.sample01;
 
 message Customer {
     string name = 1;
