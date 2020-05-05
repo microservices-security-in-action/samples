@@ -1,4 +1,4 @@
-package com.manning.mss.appendixh.sample02;
+package com.manning.mss.appendixb.sample02;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
