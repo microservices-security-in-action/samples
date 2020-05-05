@@ -1,4 +1,4 @@
-package com.manning.mss.appendixa.sample01;
+package com.manning.mss.appendixe.sample01;
 
 import java.security.Principal;
 

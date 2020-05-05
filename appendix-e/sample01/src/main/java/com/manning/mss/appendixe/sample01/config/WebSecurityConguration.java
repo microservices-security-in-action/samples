@@ -1,4 +1,4 @@
-package com.manning.mss.appendixa.sample01.config;
+package com.manning.mss.appendixe.sample01.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
