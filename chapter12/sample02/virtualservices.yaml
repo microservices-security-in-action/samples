@@ -20,12 +20,12 @@ metadata:
   name: orders-virtual-service
 spec:
   hosts:
-  - orders.ecomm.com
+  - orders.ecomm.com                                
   gateways:
-  - ecomm-gateway.istio-system.svc.cluster.local
+  - ecomm-gateway.istio-system.svc.cluster.local    
   http:
-    - route:
-      - destination:
-          host: orders-service
-          port:
-            number: 80           
+  - route:                                          
+    - destination:
+        host: orders-service
+        port:
+          number: 80
