@@ -22,3 +22,6 @@ spec:
       protocol: HTTP
     hosts:
     - "*"
+    tls:
+      httpsRedirect: true
+

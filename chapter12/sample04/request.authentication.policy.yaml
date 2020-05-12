@@ -1,0 +1,28 @@
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: ecomm-req-authn-policy
+spec:
+  selector:
+    matchLabels:
+      app: orders
+      app: inventory
+  jwtRules:
+  - issuer: "sts.ecomm.com"
+    audiences:
+    - "*.ecomm.com"
+    jwksUri: "https://raw.githubusercontent.com/microservices-security-in-action/samples/master/chapter12/sample04/jwtkey.jwk" 
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: orders-services-policy
+spec:
+ selector:
+   matchLabels:
+     app: orders
+     app: inventory
+ rules:
+ - from:
+   - source:
+       requestPrincipals: ["*"]

@@ -1,0 +1,21 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: orders-services-policy
+ namespace: default
+spec:
+ selector:
+   matchLabels:
+     app: orders
+ action: ALLOW
+ rules:
+ - to:
+   - operation:
+       methods: ["GET"]
+   when:
+   - key: request.auth.claims[user_name]
+     values: ["peter"]
+   - key: request.auth.claims[scope]
+     values: ["foo"]
+   - key: request.auth.claims[authorities]
+     values: ["ROLE_USER"]
