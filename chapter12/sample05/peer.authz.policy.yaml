@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ecomm
+  namespace: default
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-deployment 
+  labels:
+    app: orders 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      serviceAccountName: ecomm
+      containers:
+      - name: orders
+        image: prabath/com.manning.mss.ch12.order:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: orders-application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"    
+      volumes:
+        - name: orders-application-properties
+          configMap:
+            name: orders-application-properties-config-map
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: inventory-services-policy
+ namespace: default
+spec:
+ selector:
+   matchLabels:
+     app: inventory                                      
+ action: ALLOW                                           
+ rules:
+ - from:
+   - source:  
+       principals: ["cluster.local/ns/default/sa/ecomm"]
+   to:
+   - operation:
+       methods: ["POST"]
+
