@@ -52,5 +52,5 @@ spec:
        principals: ["cluster.local/ns/default/sa/ecomm"]
    to:
    - operation:
-       methods: ["POST"]
+       methods: ["PUT"]
 
