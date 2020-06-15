@@ -1,4 +1,4 @@
-package com.manning.mss.ch13.service;
+package com.manning.mss.ch13.sample02.service;
 
 import java.util.HashMap;
 import java.util.Map;

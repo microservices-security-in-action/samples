@@ -1,4 +1,4 @@
-package com.manning.mss.ch13.service;
+package com.manning.mss.ch13.sample02.service;
 
 import com.manning.mss.ch13.sample02.paymententity.PaymentDetail;
 import org.springframework.web.bind.annotation.RequestBody;
