@@ -1,4 +1,4 @@
-package com.manning.mss.ch09.sample01.model;
+package com.manning.mss.ch09.sample02.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

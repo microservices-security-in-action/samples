@@ -1,6 +1,6 @@
-package com.manning.mss.ch09.sample01;
+package com.manning.mss.ch09.sample02;
 
-import com.manning.mss.ch09.sample01.model.Order;
+import com.manning.mss.ch09.sample02.model.Order;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
