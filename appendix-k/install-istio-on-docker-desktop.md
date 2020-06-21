@@ -28,7 +28,7 @@ This explains how to install Istio on Docker Desktop.
 \> kubectl label namespace default istio-injection=enabled
 ```
 
-## Installing Istio
+## Uninstalling Istio
 ```javascript
 \> istioctl manifest generate --set profile=demo | kubectl delete -f -
 \> kubectl delete namespace istio-system
