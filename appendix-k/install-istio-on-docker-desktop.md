@@ -19,9 +19,11 @@ This explains how to install Istio on Docker Desktop.
 \> cd istion-1.6.3
 \> export PATH=$PWD/bin:$PATH
 ```
-* Install all the Istion feature with the demo profile.
+* Install all the Istion feature with the demo profile 
 ```javascript
 \> istioctl install --set profile=demo
+```javascript
+for i in install/kubernetes/helm/istio-init/files/crd*yaml;do kubectl apply -f $i; done
 ```
 * Enable auto-injection.
 ```javascript
