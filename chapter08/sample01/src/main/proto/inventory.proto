@@ -31,7 +31,7 @@ message Product {
     float unitPrice = 4;
 }
 
-//The update message sent as a requset to the inventory update.
+//The update message sent as a request to the inventory update.
 message UpdateReply {
     string message = 1;
 }
