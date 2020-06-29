@@ -21,11 +21,11 @@ This explains how to install Istio on Docker Desktop.
 ```
 * Install all the Istion feature with the demo profile 
 
-** Istio 1.6.0+ 
+Istio 1.6.0+ 
 ```javascript
 \> istioctl install --set profile=demo
 ```
-** Before Istion 1.6.0 
+Before Istion 1.6.0 
 ```javascript
 \> for i in install/kubernetes/helm/istio-init/files/crd*yaml;do kubectl apply -f $i; done
 ```
