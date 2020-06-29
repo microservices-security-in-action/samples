@@ -49,7 +49,17 @@ public class InventoryClient {
         order.setOrderId(1);
         order.getItems().add(item);
 
-        InventoryClient client = new InventoryClient("localhost", 50051);
+        String hostname = System.getenv("INVENTORY_HOST");
+        if (hostname==null || hostname.isEmpty()) {
+            hostname = "localhost";
+        }
+
+        String port = System.getenv("INVENTORY_PORT");
+        if (port == null || port.isEmpty()){
+            port = "50051";
+        }
+        InventoryClient client = new InventoryClient(hostname, Integer.parseInt(port));
+
         try {
             client.updateInventory(order);
         } finally {
