@@ -16,7 +16,7 @@ This explains how to install Istio on Docker Desktop.
 ```
 * Update the PATH environment variable
 ```javascript
-\> cd istion-1.6.3
+\> cd istio-1.6.3
 \> export PATH=$PWD/bin:$PATH
 ```
 * Install all the Istio features with the demo profile (Only on Istio 1.6.0+)
