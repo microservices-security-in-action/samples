@@ -28,7 +28,7 @@ spec:
   tls:
     - match:
       - port: 443
-        sni_hosts:
+        sniHosts:
         - sts.ecomm.com
       route:
       - destination:
@@ -37,7 +37,7 @@ spec:
             number: 443
     - match:
       - port: 443
-        sni_hosts:
+        sniHosts:
         - orders.ecomm.com
       route:
       - destination:
