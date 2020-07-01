@@ -54,11 +54,13 @@ public class InventoryClient {
      */
     public InventoryClient(String host,
                            int port,
-                           SslContext sslContext) throws SSLException {
+                           SslContext sslContext,
+                           JWTClientInterceptor clientInterceptor) throws SSLException {
 
         this(NettyChannelBuilder.forAddress(host, port)
                 .negotiationType(NegotiationType.TLS)
                 .sslContext(sslContext)
+                .intercept(clientInterceptor)
                 .build());
     }
 
@@ -66,10 +68,12 @@ public class InventoryClient {
      * Construct client connecting to the server at {@code host:port}.
      */
     public InventoryClient(String host,
-                           int port) throws SSLException {
+                           int port,
+                           JWTClientInterceptor clientInterceptor) throws SSLException {
 
         this(ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext()
+                .intercept(clientInterceptor)
                 .build());
     }
     /**
@@ -159,21 +163,24 @@ public class InventoryClient {
             port = args[1].trim();
         }
 
+        JWTClientInterceptor clientInterceptor = new JWTClientInterceptor();
+        clientInterceptor.setTokenValue(System.getenv("token"));
+
         InventoryClient client;
         switch (args.length) {
             case 0:
-                client = new InventoryClient(hostname, Integer.parseInt(port));
+                client = new InventoryClient(hostname, Integer.parseInt(port),clientInterceptor);
                 break;
             case 2:
-                client = new InventoryClient(hostname, Integer.parseInt(port));
+                client = new InventoryClient(hostname, Integer.parseInt(port),clientInterceptor);
                 break;
             case 3:
                 client = new InventoryClient(hostname, Integer.parseInt(port),
-                        buildSslContext(args[2], null, null));
+                        buildSslContext(args[2], null, null),clientInterceptor);
                 break;
             default:
                 client = new InventoryClient(hostname, Integer.parseInt(port),
-                        buildSslContext(args[2], args[3], args[4]));
+                        buildSslContext(args[2], args[3], args[4]),clientInterceptor);
         }
 
         try {
