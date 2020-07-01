@@ -1,4 +1,4 @@
-package com.manning.mss.ch08.sample01;
+package com.manning.mss.ch12.grpc.sample01;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;

@@ -1,4 +1,4 @@
-package com.manning.mss.ch08.sample01;
+package com.manning.mss.ch12.grpc.sample01;
 
 import io.grpc.ManagedChannel;
 import io.grpc.StatusRuntimeException;
@@ -7,6 +7,8 @@ import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -61,6 +63,16 @@ public class InventoryClient {
     }
 
     /**
+     * Construct client connecting to the server at {@code host:port}.
+     */
+    public InventoryClient(String host,
+                           int port) throws SSLException {
+
+        this(ManagedChannelBuilder.forAddress(host, port)
+                .usePlaintext()
+                .build());
+    }
+    /**
      * Construct client for accessing RouteGuide server using the existing channel.
      */
     InventoryClient(ManagedChannel channel) {
@@ -108,7 +120,7 @@ public class InventoryClient {
      */
     public static void main(String[] args) throws Exception {
 
-        if (args.length < 2 || args.length == 4 || args.length > 5) {
+        if (args.length > 0 && (args.length < 2 || args.length == 4 || args.length > 5)){
             System.out.println("USAGE: InventoryClient host port [trustCertCollectionFilePath] " +
                     "[clientCertChainFilePath clientPrivateKeyFilePath]\n  Note: clientCertChainFilePath and " +
                     "clientPrivateKeyFilePath are only needed if mutual auth is desired.");
@@ -129,18 +141,38 @@ public class InventoryClient {
         order.setOrderId(1);
         order.getItems().add(item);
 
+        String hostname = System.getenv("INVENTORY_HOST");
+        if (hostname==null || hostname.isEmpty()) {
+            hostname = "localhost";
+        }
+
+        if (args.length > 1 && args[0]!=null && args[0].isEmpty()){
+            hostname = args[0].trim();
+        }
+
+        String port = System.getenv("INVENTORY_PORT");
+        if (port == null || port.isEmpty()){
+            port = "50051";
+        }
+
+        if (args.length > 1 && args[1]!=null && args[1].isEmpty()){
+            port = args[1].trim();
+        }
+
         InventoryClient client;
         switch (args.length) {
+            case 0:
+                client = new InventoryClient(hostname, Integer.parseInt(port));
+                break;
             case 2:
-                client = new InventoryClient(args[0], Integer.parseInt(args[1]),
-                        buildSslContext(null, null, null));
+                client = new InventoryClient(hostname, Integer.parseInt(port));
                 break;
             case 3:
-                client = new InventoryClient(args[0], Integer.parseInt(args[1]),
+                client = new InventoryClient(hostname, Integer.parseInt(port),
                         buildSslContext(args[2], null, null));
                 break;
             default:
-                client = new InventoryClient(args[0], Integer.parseInt(args[1]),
+                client = new InventoryClient(hostname, Integer.parseInt(port),
                         buildSslContext(args[2], args[3], args[4]));
         }
 

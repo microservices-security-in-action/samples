@@ -1,4 +1,4 @@
-package com.manning.mss.ch08.sample01;
+package com.manning.mss.ch12.grpc.sample01;
 
 import java.util.ArrayList;
 import java.util.List;
