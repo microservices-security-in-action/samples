@@ -2,6 +2,7 @@
 target
 mvnw
 mvnw.cmd
+.vscode
 .classpath
 .settings
 .project
