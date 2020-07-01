@@ -1,3 +1,0 @@
-FROM openjdk:8-jdk-alpine
-ADD build /build
-ENTRYPOINT ["./build/install/sample01/bin/inventory-server"]
