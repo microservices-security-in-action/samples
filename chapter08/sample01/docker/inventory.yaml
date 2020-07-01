@@ -1,4 +1,3 @@
-
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
@@ -9,9 +8,11 @@ spec:
     istio: ingressgateway 
   servers:
   - port:
-      number: 80
-      name: grpc
-      protocol: GRPC
+      number: 443
+      name: http
+      protocol: grpc
+    tls:
+      mode: PASSTHROUGH
     hosts:
     - "*"
 ---
@@ -49,7 +50,7 @@ spec:
  ports:
  - name: grpc
    protocol: TCP
-   port: 80
+   port: 443
    targetPort: 50051
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -58,12 +59,16 @@ metadata:
   name: ecomm-virtual-service
 spec:
   hosts:
-  - inventory.ecomm.com                                
+  - "*"
   gateways:
-  - ecomm-gateway.istio-system.svc.cluster.local    
-  http:
-  - route:                                          
-    - destination:
-        host: inventory-service
-        port:
-          number: 80
+  - ecomm-gateway.istio-system.svc.cluster.local
+  tls:
+    - match:
+      - port: 443
+        sniHosts:
+        - inventory.ecomm.com
+      route:
+      - destination:
+          host: inventory-service
+          port:
+            number: 443
