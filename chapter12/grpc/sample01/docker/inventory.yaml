@@ -1,0 +1,69 @@
+
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: ecomm-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway 
+  servers:
+  - port:
+      number: 80
+      name: grpc
+      protocol: GRPC
+    hosts:
+    - "*"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-deployment 
+  labels:
+    app: inventory 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: inventory
+  template:
+    metadata:
+      labels:
+        app: inventory
+    spec:
+      containers:
+      - name: inventory
+        image: prabath/inventory.grpc.server
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 50051
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-service
+spec:
+ type: NodePort
+ selector:
+  app: inventory
+ ports:
+ - name: grpc
+   protocol: TCP
+   port: 80
+   targetPort: 50051
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ecomm-virtual-service
+spec:
+  hosts:
+  - inventory.ecomm.com                                
+  gateways:
+  - ecomm-gateway.istio-system.svc.cluster.local    
+  http:
+  - route:                                          
+    - destination:
+        host: inventory-service
+        port:
+          number: 80
