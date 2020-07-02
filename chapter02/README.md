@@ -1,7 +1,3 @@
-## Chapter 2: Hello World microservices security
-* Your first microservice
-* Setting up an OAuth 2.0 server 
-* Securing a microservice with OAuth 2.0 
-* Invoking a secured microservice with a client application 
-* Authorization of requests based on OAuth 2.0 scopes
-* Summary  
+## Chapter 2: First steps in securing microservices
+
+[https://github.com/microservices-security-in-action/samples/tree/master/chapter02](https://github.com/microservices-security-in-action/samples/tree/master/chapter02)
