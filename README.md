@@ -1,7 +1,7 @@
 # Microservices Security In Action
 **By Prabath Siriwardena and Nuwan Dias**
 
-##PART 1 OVERVIEW 
+##P ART 1 OVERVIEW 
 ### 1 ■ Microservices security landscape
 ### 2 ■ First steps in securing microservices
 ## PART 2 EDGE SECURITY 
