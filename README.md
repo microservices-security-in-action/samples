@@ -19,3 +19,15 @@
 ### 12 ■ Securing microservices with Istio service mesh
 ### PART 5 SECURE DEVELOPMENT 
 ### 13 ■ Secure coding practices and automation
+## APPENDICES
+### A ■ OAuth 2.0 and OpenID Connect 
+### B ■ JSON Web Token 
+### C ■ Single-page application architecture 
+### D ■ Observability in a microservices deployment 
+### E ■ Docker fundamentals 
+### F ■ Open Policy Agent 
+### G ■ Creating a certificate authority and related keys with OpenSSL 
+### H ■ appendix H Secure Production Identity Framework for Everyone 
+### I ■ appendix I gRPC fundamentals 
+### J ■ appendix J Kubernetes fundamentals 
+### K ■ appendix K Service mesh and Istio fundamentals 
