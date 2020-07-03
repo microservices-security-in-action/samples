@@ -27,7 +27,7 @@
 ### E ■ Docker fundamentals 
 ### F ■ Open Policy Agent 
 ### G ■ Creating a certificate authority and related keys with OpenSSL 
-### H ■ appendix H Secure Production Identity Framework for Everyone 
-### I ■ appendix I gRPC fundamentals 
-### J ■ appendix J Kubernetes fundamentals 
-### K ■ appendix K Service mesh and Istio fundamentals 
+### H ■ Secure Production Identity Framework for Everyone 
+### I ■ gRPC fundamentals 
+### J ■ Kubernetes fundamentals 
+### K ■ Service mesh and Istio fundamentals 
