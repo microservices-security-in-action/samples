@@ -1,11 +1,3 @@
+## Chapter 6: Securing east/west traffic with certificates
 
-## Chapter 6: Securing service-to-service communication with certificates
-* Why use mTLS? 
-* Creating certificates
-* Securing microservices with TLS 
-* Engaging mTLS
-* Challenges in key management 
-* Key rotation
-* Monitoring key use 
-* SPIFFE 
-* Summary
+[https://github.com/microservices-security-in-action/samples/tree/master/chapter06](https://github.com/microservices-security-in-action/samples/tree/master/chapter06)
