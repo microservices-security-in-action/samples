@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.manning.mss.ch12.grpc.sample01";
+option java_outer_classname = "InventoryProto";
+
+package sample01;
+
+//The inventory service
+service Inventory {
+    rpc UpdateInventory (Order) returns (UpdateReply) {}
+}
+
+//Order type. And order has one or more line items.
+message Order {
+    int32 orderId = 1;
+    repeated LineItem items = 2;
+}
+
+//LineItem. A LineItem consists of a Product with one or more occurrences.
+message LineItem {
+    Product product = 1;
+    int32 quantity = 2;
+}
+
+//Product type.
+message Product {
+    int32 id = 1;
+    string name = 2;
+    string category = 3;
+    float unitPrice = 4;
+}
+
+//The update message sent as a request to the inventory update.
+message UpdateReply {
+    string message = 1;
+}

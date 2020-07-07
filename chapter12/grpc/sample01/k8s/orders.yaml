@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orders-application-properties-config-map
+data:
+  application.properties: |
+    [
+     server.port: 8443
+     inventory.service: inventory-service
+     inventory.port: 10443
+    ]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-deployment 
+  labels:
+    app: orders 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      containers:
+      - name: orders
+        image: prabath/orders.grpc.client
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8443
+        volumeMounts:
+          - name: orders-application-properties
+            mountPath: "/opt/application.properties"
+            subPath: "application.properties"    
+      volumes:
+        - name: orders-application-properties
+          configMap:
+            name: orders-application-properties-config-map
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orders-service
+spec:
+ selector:
+  app: orders
+ ports:
+ - name: http
+   protocol: TCP
+   port: 80
+   targetPort: 8443
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: orders-virtual-service
+spec:
+  hosts:
+  - orders.ecomm.com                                
+  gateways:
+  - ecomm-gateway.istio-system.svc.cluster.local    
+  http:
+  - route:                                          
+    - destination:
+        host: orders-service
+        port:
+          number: 80

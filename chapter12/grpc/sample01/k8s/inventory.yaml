@@ -45,9 +45,7 @@ spec:
   gateways:
   - ecomm-gateway.istio-system.svc.cluster.local    
   http:
-  - match:
-    - port: 443
-    route:                                          
+  - route:                                          
     - destination:
         host: inventory-service
         port:

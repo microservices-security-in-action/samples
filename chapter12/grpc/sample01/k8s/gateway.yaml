@@ -9,10 +9,10 @@ spec:
   servers:
   - port:
       number: 443
-      name: grpc
+      name: https
       protocol: https
     tls:
       mode: SIMPLE # enables HTTPS on this port
       credentialName: ecomm-credential
     hosts:
-    - "gateway.ecomm.com"
+    - "*"
