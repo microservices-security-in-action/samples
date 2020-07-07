@@ -1,0 +1,16 @@
+# grpc/sample01/k8s
+docker run -it -v $(pwd):/export prabath/openssl
+openssl req  -nodes -new -x509 -keyout /export/gateway-keys/server.key -out /export/gateway-keys/server.cert -subj "/CN=gateway.ecomm.com"
+
+# grpc/sample01/k8s/gateway-keys
+kubectl create -n istio-system secret generic ecomm-credential --from-file=key=server.key --from-file=cert=server.cert
+
+# grpc/sample01/k8s
+kubectl apply -f inventory.yaml
+kubectl apply -f gateway.yaml
+
+# grpc/sample01
+./gradlew installDist
+
+# grpc/sample01
+./build/install/sample01/bin/inventory-client gateway.ecomm.com 443 $(pwd)/k8s/gateway-keys/server.cert

@@ -150,7 +150,7 @@ public class InventoryClient {
             hostname = "localhost";
         }
 
-        if (args.length > 1 && args[0]!=null && args[0].isEmpty()){
+        if (args.length > 1 && args[0]!=null && !args[0].isEmpty()){
             hostname = args[0].trim();
         }
 
@@ -159,9 +159,12 @@ public class InventoryClient {
             port = "50051";
         }
 
-        if (args.length > 1 && args[1]!=null && args[1].isEmpty()){
+        if (args.length > 1 && args[1]!=null && !args[1].isEmpty()){
             port = args[1].trim();
         }
+
+        System.out.println("Hostname: "+ hostname);
+        System.out.println("Port: "+ port);
 
         JWTClientInterceptor clientInterceptor = new JWTClientInterceptor();
         clientInterceptor.setTokenValue(System.getenv("token"));

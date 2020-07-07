@@ -1,22 +1,3 @@
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
-metadata:
-  name: ecomm-gateway
-  namespace: istio-system
-spec:
-  selector:
-    istio: ingressgateway 
-  servers:
-  - port:
-      number: 443
-      name: grpc
-      protocol: https
-    tls:
-      mode: SIMPLE # enables HTTPS on this port
-      credentialName: ecomm-credential
-    hosts:
-    - "gateway.ecomm.com"
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -72,42 +53,3 @@ spec:
         port:
           number: 10443
 ---
-apiVersion: security.istio.io/v1beta1
-kind: RequestAuthentication
-metadata:
-  name: inventory-req-authn-policy
-spec:
-  selector:
-    matchLabels:
-      app: inventory
-  jwtRules:
-  - issuer: "sts.ecomm.com"
-    audiences:
-    - "*.ecomm.com"
-    jwksUri: "https://raw.githubusercontent.com/microservices-security-in-action/samples/master/chapter12/sample04/jwtkey.jwk"
-    jwtHeaders:
-    - "Authorization" 
----
-apiVersion: security.istio.io/v1beta1
-kind: AuthorizationPolicy
-metadata:
- name: inventory-services-policy
-spec:
- selector:
-   matchLabels:
-     app: inventory
- rules:
- - from:
-   - source:
-       requestPrincipals: ["*"]
----       
-#apiVersion: networking.istio.io/v1alpha3
-#kind: DestinationRule
-#metadata:
-#  name: disable-mtls
-#  namespace: istio-system
-#spec:
-#  host: inventory-service.default.svc.cluster.local
-#  trafficPolicy:
-#    tls:
-#      mode: DISABLE
