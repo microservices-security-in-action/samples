@@ -11,6 +11,7 @@ spec:
     audiences:
     - "*.ecomm.com"
     jwksUri: "https://raw.githubusercontent.com/microservices-security-in-action/samples/master/chapter12/sample04/jwtkey.jwk"
+    forwardOriginalToken: true
 ---
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
