@@ -1,0 +1,18 @@
+apiVersion: authentication.istio.io/v1alpha1
+kind: Policy
+metadata:
+ name: ecomm-authn-policy
+spec:
+ targets:
+ - name: orders-service
+ - name: inventory-service
+ peers:
+ - mtls:
+     mode: STRICT
+ origins:
+ - jwt:
+     issuer: "sts.ecomm.com"
+     audiences:
+     - "*.ecomm.com"
+     jwksUri: "https://raw.githubusercontent.com/microservices-security-in-action/samples/master/chapter12/sample04/jwtkey.jwk"
+ principalBinding: USE_ORIGIN

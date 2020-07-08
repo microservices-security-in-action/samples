@@ -47,6 +47,11 @@ public class OrderProcessingService {
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<?> createOrder(@RequestBody Order order, @RequestHeader Map<String, String> headers) {
 
+		
+		for (Map.Entry<String,String> entry : headers.entrySet())  
+            System.out.println("Key = " + entry.getKey() + 
+                             ", Value = " + entry.getValue()); 
+		
 		if (order != null) {
 
 			String jwt = headers.get("authorization");

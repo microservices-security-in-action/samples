@@ -1,5 +1,7 @@
 package com.manning.mss.ch12.order.client;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.stereotype.Component;
 
 import com.manning.mss.ch12.grpc.sample01.InventoryGrpc;
@@ -35,6 +37,12 @@ public class InventoryClient {
 		UpdateReply reply = stub.updateInventory(order);
 
 		System.out.println(reply.getMessage());
+		
+		try {
+			channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+		}
 
 	}
 }

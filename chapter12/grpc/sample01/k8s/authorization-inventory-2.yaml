@@ -1,0 +1,20 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+ name: inventory-services-policy-2
+spec:
+ selector:
+   matchLabels:
+     app: inventory
+ action: DENY
+ rules:
+ - to:
+   - operation:
+       methods: ["POST"]
+   when:
+   - key: request.auth.claims[user_name]
+     values: ["peter"]
+   - key: request.auth.claims[scope]
+     values: ["foo"]
+   - key: request.auth.claims[authorities]
+     values: ["ROLE_USER"]
