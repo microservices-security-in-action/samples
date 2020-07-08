@@ -167,7 +167,7 @@ public class InventoryClient {
         System.out.println("Port: "+ port);
 
         JWTClientInterceptor clientInterceptor = new JWTClientInterceptor();
-        clientInterceptor.setTokenValue(System.getenv("token"));
+        clientInterceptor.setTokenValue(System.getenv("TOKEN"));
 
         InventoryClient client;
         switch (args.length) {

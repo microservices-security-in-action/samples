@@ -74,7 +74,6 @@ kind: Service
 metadata:
   name: sts-service
 spec:
- type: NodePort
  selector:
   app: sts
  ports:
@@ -82,3 +81,19 @@ spec:
    protocol: TCP
    port: 80
    targetPort: 8443
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: sts-virtual-service
+spec:
+  hosts:
+  - sts.ecomm.com                                
+  gateways:
+  - ecomm-gateway.istio-system.svc.cluster.local    
+  http:
+  - route:                                          
+    - destination:
+        host: sts-service
+        port:
+          number: 80

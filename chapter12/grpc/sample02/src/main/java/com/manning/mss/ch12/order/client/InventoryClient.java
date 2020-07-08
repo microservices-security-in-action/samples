@@ -17,19 +17,24 @@ public class InventoryClient {
 
 	public void updateInventory(Item[] items, String jwt) {
 
-		try {
-			ManagedChannel channel = ManagedChannelBuilder.forAddress(System.getProperty("inventory.service"),
-					Integer.parseInt(System.getProperty("inventory.port"))).usePlaintext().build();
-			Product product = Product.newBuilder().setCategory("test").setName("test").setUnitPrice(100f).build();
-			LineItem lineItem = LineItem.newBuilder().setProduct(product).build();
-			Order order = Order.newBuilder().setOrderId(100).addItems(lineItem).build();
-			InventoryGrpc.InventoryBlockingStub stub = InventoryGrpc.newBlockingStub(channel);
-			UpdateReply reply = stub.updateInventory(order);
-			System.out.println(reply.getMessage());
-		} catch (Throwable e) {
-			System.out.println("ERROR");
-			e.printStackTrace();
+		JWTClientInterceptor clientInterceptor = new JWTClientInterceptor();
+
+		if (jwt != null && !jwt.isEmpty()) {
+			clientInterceptor.setTokenValue(jwt);
 		}
+
+		ManagedChannel channel = ManagedChannelBuilder
+				.forAddress(System.getProperty("inventory.service"),
+						Integer.parseInt(System.getProperty("inventory.port")))
+				.intercept(clientInterceptor).usePlaintext().build();
+
+		Product product = Product.newBuilder().setCategory("test").setName("test").setUnitPrice(100f).build();
+		LineItem lineItem = LineItem.newBuilder().setProduct(product).build();
+		Order order = Order.newBuilder().setOrderId(100).addItems(lineItem).build();
+		InventoryGrpc.InventoryBlockingStub stub = InventoryGrpc.newBlockingStub(channel);
+		UpdateReply reply = stub.updateInventory(order);
+
+		System.out.println(reply.getMessage());
 
 	}
 }

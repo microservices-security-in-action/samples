@@ -51,6 +51,15 @@ public class OrderProcessingService {
 
 			String jwt = headers.get("authorization");
 			
+			if (jwt != null && !jwt.isEmpty()) {
+
+				String[] tokens = jwt.split(" ");
+
+				if (tokens != null & tokens.length > 1) {
+					jwt = tokens[1];
+				}
+			}
+			
 			System.out.println("JWT: " + jwt);
 
 			inventoryClient.updateInventory(order.getItems(), jwt);
