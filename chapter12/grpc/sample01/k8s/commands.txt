@@ -5,6 +5,8 @@ openssl req  -nodes -new -x509 -keyout /export/gateway-keys/server.key -out /exp
 # grpc/sample01/k8s/gateway-keys
 kubectl create -n istio-system secret generic ecomm-credential --from-file=key=server.key --from-file=cert=server.cert
 
+kubectl create -n istio-system secret tls  ecomm-credential --key=server.key --cert=server.cert
+
 # grpc/sample01/k8s
 kubectl apply -f inventory.yaml
 kubectl apply -f gateway.yaml
@@ -15,6 +17,11 @@ kubectl apply -f gateway.yaml
 # grpc/sample01
 ./build/install/sample01/bin/inventory-client gateway.ecomm.com 443 $(pwd)/k8s/gateway-keys/server.cert
 
+curl -v -X POST --basic -u applicationid:applicationsecret \
+-H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
+-k -d "grant_type=password&username=peter&password=peter123&scope=foo" \
+--resolve sts.ecomm.com:$INGRESS_HTTP_PORT:$INGRESS_HOST \
+http://sts.ecomm.com:$INGRESS_HTTPS_PORT/oauth/token
 
 curl -v -X POST --basic -u applicationid:applicationsecret \
 -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
@@ -25,6 +32,32 @@ https://sts.ecomm.com:$INGRESS_HTTPS_PORT/oauth/token
 curl -k -v https://orders.ecomm.com:$INGRESS_HTTPS_PORT/orders \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer $TOKEN" \
+--resolve orders.ecomm.com:$INGRESS_HTTPS_PORT:$INGRESS_HOST \
+-d @- << EOF
+{
+"customer_id":"101021",
+"payment_method":{
+"card_type":"VISA",
+"expiration":"01/22",
+"name":"John Doe",
+"billing_address":"201, 1st Street, San Jose, CA"
+},
+"items":[
+{
+"code":"101",
+"qty":1
+},
+{
+"code":"103",
+"qty":5
+}
+],
+"shipping_address":"201, 1st Street, San Jose, CA"
+}
+EOF
+
+curl -k -v https://orders.ecomm.com:$INGRESS_HTTPS_PORT/orders \
+-H "Content-Type: application/json" \
 --resolve orders.ecomm.com:$INGRESS_HTTPS_PORT:$INGRESS_HOST \
 -d @- << EOF
 {
