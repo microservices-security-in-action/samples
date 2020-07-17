@@ -3,20 +3,20 @@
 
 ## PART 1 OVERVIEW 
 ### 1 ■ Microservices security landscape
-### 2 ■ [First steps in securing microservices](chaper02)
+### 2 ■ [First steps in securing microservices](chapter02)
 ## PART 2 EDGE SECURITY 
-### 3 ■ [Securing north/south traffic with an API gateway](chaper03)
-### 4 ■ [Accessing a secured microservice via a single-page application](chaper04)
-### 5 ■ [Engaging throttling, monitoring, and access control](chaper05)
+### 3 ■ [Securing north/south traffic with an API gateway](chapter03)
+### 4 ■ [Accessing a secured microservice via a single-page application](chapter04)
+### 5 ■ [Engaging throttling, monitoring, and access control](chapter05)
 ## PART 3 SERVICE-TO-SERVICE COMMUNICATIONS 
-### 6 ■ [Securing east/west traffic with certificates ](chaper06)
-### 7 ■ [Securing east/west traffic with JWT](chaper07)
-### 8 ■ [Securing east/west traffic over gRPC](chaper08)
-### 9 ■ [Securing reactive microservices](chaper09)
+### 6 ■ [Securing east/west traffic with certificates ](chapter06)
+### 7 ■ [Securing east/west traffic with JWT](chapter07)
+### 8 ■ [Securing east/west traffic over gRPC](chapter08)
+### 9 ■ [Securing reactive microservices](chapter09)
 ## PART 4 SECURE DEPLOYMENT 
-### 10 ■ [Conquering container security with Docker](chaper10)
-### 11 ■ [Securing microservices on Kubernetes](chaper11)
-### 12 ■ [Securing microservices with Istio service mesh](chaper12)
+### 10 ■ [Conquering container security with Docker](chapter10)
+### 11 ■ [Securing microservices on Kubernetes](chapter11)
+### 12 ■ [Securing microservices with Istio service mesh](chapter12)
 ### PART 5 SECURE DEVELOPMENT 
 ### 13 ■ [Secure coding practices and automation](chaper13)
 ## APPENDICES
