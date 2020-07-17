@@ -21,14 +21,14 @@
 ### 13 ■ [Secure coding practices and automation](chaper13)
 ## APPENDICES
 ### A ■ OAuth 2.0 and OpenID Connect 
-### B ■ JSON Web Token 
+### B ■ [JSON Web Token](appendix-b)
 ### C ■ Single-page application architecture 
 ### D ■ Observability in a microservices deployment 
-### E ■ Docker fundamentals 
-### F ■ Open Policy Agent 
+### E ■ [Docker fundamentals](appendix-e)
+### F ■ [Open Policy Agent](appendix-f)
 ### G ■ Creating a certificate authority and related keys with OpenSSL 
 ### H ■ Secure Production Identity Framework for Everyone 
-### I ■ gRPC fundamentals 
-### J ■ Kubernetes fundamentals 
-### K ■ Service mesh and Istio fundamentals 
+### I ■ [gRPC fundamentals](appendix-i)
+### J ■ [Kubernetes fundamentals](appendix-j)
+### K ■ [Service mesh and Istio fundamentals](appendix-k)
 
