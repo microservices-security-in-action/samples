@@ -2,8 +2,8 @@
 **By Prabath Siriwardena and Nuwan Dias**
 
 ## PART 1 OVERVIEW 
-### 1 ■ Microservices security landscape
-### 2 ■ First steps in securing microservices
+### 1 ■ Microservices security landscape (No code samples)
+### 2 ■ [First steps in securing microservices](sample02)
 ## PART 2 EDGE SECURITY 
 ### 3 ■ Securing north/south traffic with an API gateway
 ### 4 ■ Accessing a secured microservice via a single-page application
