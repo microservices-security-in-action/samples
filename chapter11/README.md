@@ -11,3 +11,4 @@
 Should be corrected as:
 
 > From the Kubernetes 1.7 release onward, etcd **supports storing** Secrets in an encrypted format.
+
