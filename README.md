@@ -1,8 +1,7 @@
 # Microservices Security In Action
 **By Prabath Siriwardena and Nuwan Dias**
 
-<img src="cover.jpeg"
-     style="float: left; margin-right: 10px;" />
+<img src="cover.jpeg" style="float: left;" />
 
 ## PART 1 OVERVIEW 
 ### 1 ■ Microservices security landscape
