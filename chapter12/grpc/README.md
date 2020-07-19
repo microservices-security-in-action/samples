@@ -1,4 +1,4 @@
-* Note: This sample is not covered in the book.
+# Note: This sample is not covered in the book.
 
 # Tryout gRPC microservice with no TLS enabled at the Istio Ingress Gateway
 
