@@ -1,4 +1,4 @@
-**NOTE**: *This sample is not covered in the book. This videos explains the steps you need to carry out to run this samples: [https://www.youtube.com/watch?v=g2fexevWS8A](https://www.youtube.com/watch?v=g2fexevWS8A).*
+***NOTE**: *This sample is not covered in the book. This videos explains the steps you need to carry out to run this samples: [https://www.youtube.com/watch?v=g2fexevWS8A](https://www.youtube.com/watch?v=g2fexevWS8A).*
 
 # Tryout gRPC microservice with no TLS enabled at the Istio Ingress Gateway
 
