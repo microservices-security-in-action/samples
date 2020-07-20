@@ -19,14 +19,14 @@ virtualservice.networking.istio.io/ecomm-virtual-service created
 \> ./gradlew installDist
 ```
 * Make sure you have following entries in the /etc/hosts file, where the IP address points to the external IP address of the Istio Ingress Gateway. 
-
+```javascript
 127.0.0.1 gateway.ecomm.com
 127.0.0.1 inventory.ecomm.com
-
+```
 * Run the gRPC client application with the following command from sample01 directory. The 80 is the node port of the Istio ingress gateway service running under the istio-system namespace.
-
-./build/install/sample01/bin/inventory-client gateway.ecomm.com 80
-
+```javascript
+\> ./build/install/sample01/bin/inventory-client gateway.ecomm.com 80
+```
 # Enable mTLS at the Istio Ingress Gateway
 
 * Generate TLS keys for the Ingress Gateway using OpenSSL Docker container (run from sample01/k8s directory)
