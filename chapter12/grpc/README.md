@@ -27,7 +27,7 @@ virtualservice.networking.istio.io/ecomm-virtual-service created
 ```javascript
 \> ./build/install/sample01/bin/inventory-client gateway.ecomm.com 80
 ```
-# Enable mTLS at the Istio Ingress Gateway
+# Enable TLS at the Istio Ingress Gateway
 
 * Generate TLS keys for the Ingress Gateway using OpenSSL Docker container (run from sample01/k8s directory)
 ```javascript
@@ -44,7 +44,60 @@ virtualservice.networking.istio.io/ecomm-virtual-service created
 ```javascript
 \> kubectl apply -f k8s/gateway.yaml
 ```
+* Test the TLS connection with the gRPC client appliation (run from sample01 directory). Here we have to use the TLS port correponding to the Istio Ingress Gateway.
+```javascript
+\> ./build/install/sample01/bin/inventory-client gateway.ecomm.com 443 $(pwd)/k8s/gateway-keys/server.cert
+```
+# Deploy STS and Order Processing microservice (Order Processing service will act as a gRPC client to the Invetory gRPC service)
 
+* Deploy STS  (run from sample01 directory).
+```javascript
+\> kubectl apply -f k8s/sts.yaml
+```
+* Deploy Order Processing microservice  (run from sample01 directory).
+```javascript
+\> kubectl apply -f k8s/orders.yaml
+```
+# Access Order Processing microservice with a JWT from the STS
+
+* Get a JWT from the STS.
+```javascript
+curl -v -X POST --basic -u applicationid:applicationsecret \
+-H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" \
+-k -d "grant_type=password&username=peter&password=peter123&scope=foo" \
+--resolve sts.ecomm.com:$INGRESS_HTTPS_PORT:$INGRESS_HOST \
+https://sts.ecomm.com:$INGRESS_HTTPS_PORT/oauth/token
+```
+* Access Order Processing microservice with the JWT.
+```javascript
+\> export TOKEN=<jwt>
+\> curl -k -v https://orders.ecomm.com:$INGRESS_HTTPS_PORT/orders \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer $TOKEN" \
+--resolve orders.ecomm.com:$INGRESS_HTTPS_PORT:$INGRESS_HOST \
+-d @- << EOF
+{
+"customer_id":"101021",
+"payment_method":{
+"card_type":"VISA",
+"expiration":"01/22",
+"name":"John Doe",
+"billing_address":"201, 1st Street, San Jose, CA"
+},
+"items":[
+{
+"code":"101",
+"qty":1
+},
+{
+"code":"103",
+"qty":5
+}
+],
+"shipping_address":"201, 1st Street, San Jose, CA"
+}
+EOF
+```
 
 
 
