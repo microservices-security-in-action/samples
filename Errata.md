@@ -9,3 +9,12 @@
 Should be corrected as:
 
 > From the Kubernetes 1.7 release onward, etcd **supports storing** Secrets in an encrypted format.
+
+## Chapter12
+
+* Page 307 right after the 1st para | reported by authors. You do not need to run the following command, if you are using Istion 1.6.0+. Istio 1.6.0 enables SDS for Ingress Gateway by default.
+
+> \> istioctl manifest generate \
+--set values.gateways.istio-ingressgateway.sds.enabled=true > \
+istio-ingressgateway.yaml
+
