@@ -4,7 +4,7 @@
 
 ## Errata
 
-* **Page 278***, under the section 11.3.3 (the last line)
+* **Page 278***, under the section 11.3.3 (the last line) | reported by the authors.
 
 > From the Kubernetes 1.7 release onward, etcd stores Secrets **only** in an encrypted format.
 
