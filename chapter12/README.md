@@ -26,4 +26,4 @@ default. Istio 1.5.0 only enables SDS by default for the service proxies.
 * **Page 311**, towards the end of the page, you do not need to run the following command in Istio 1.6.0. As the Note says on the same, Policy CRD was removed from Istio 1.6.0. | reported by authors.
 > \> kubectl apply -f authentication.policy.yaml
 
-
+* **Page 317**. If you are using Istio 1.6.0, you need to skip the section 12.4.1 and directly move to section 12.4.3. Istio 1.6.0 removed the Policy CRD.
