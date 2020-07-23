@@ -33,7 +33,7 @@ virtualservice.networking.istio.io/ecomm-virtual-service created
 ```javascript
 \> docker run -it -v $(pwd):/export prabath/openssl
 
-# openssl req  -nodes -new -x509 -keyout /export/gateway-keys/server.key -out /export/gateway-keys/server.cert -subj "/CN=gateway.ecomm.com"
+# openssl req -nodes -new -x509 -keyout /export/gateway-keys/server.key -out /export/gateway-keys/server.cert -subj "/CN=gateway.ecomm.com"
 # exit
 ```
 * Create a TLS secret under istio-system namespace, where the Gateway resource is created (run from sample01/k8s directory)
