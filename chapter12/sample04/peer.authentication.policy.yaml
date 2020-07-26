@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: orders
-      app: inventory
   mtls:
     mode: STRICT
 
