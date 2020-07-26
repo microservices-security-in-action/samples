@@ -6,6 +6,8 @@
 
 ### Updates to the Istio 1.6.0 release. <hr/>
 
+* **Page 321**, section 12.4.3, listing 12.12.  Remove the label **app: inventory**. To striclty enforce mTLS for the Inventory microservice you can define another PeerAuthentication policy with that label. The samples git repo has the correct policy.
+
 * **Page 307**, right after the 1st para. You do not need to run the following two commands, if you are using Istio 1.6.0+. Istio 1.6.0 enables SDS for Ingress Gateway by default.
 
 > \> istioctl manifest generate \
