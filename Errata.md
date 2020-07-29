@@ -1,6 +1,6 @@
 # Errata
 
-## Chapter11
+## Chapter 11
 
 * Page 278/Section 11.3.3 (the last line) | reported by authors.
 
@@ -10,7 +10,7 @@ Should be corrected as:
 
 > From the Kubernetes 1.7 release onward, etcd **supports storing** Secrets in an encrypted format.
 
-## Chapter12
+## Chapter 12
 
 * **Page 321**, section 12.4.3, listing 12.12.  Remove the label **app: inventory**. To striclty enforce mTLS for the Inventory microservice you can define another PeerAuthentication policy with that label. The samples git repo has the correct policy.
 
@@ -51,5 +51,14 @@ spec:
 ```
 
 * **Page 317**. If you are using Istio 1.6.0, you need to skip the section 12.4.1 and directly move to section 12.4.3. Istio 1.6.0 removed the Policy CRD.
+
+## Appendix E
+
+* **Page 414**, formatting issue on the last line of the code block. Should be correct as: 
+```yaml
+docker-init:
+  Version: 0.18.0
+  Gitcommit: fec3683
+```
 
 
