@@ -27,6 +27,7 @@ default. Istio 1.5.0 only enables SDS by default for the service proxies.
 
 * **Page 311**, towards the end of the page, you do not need to run the following command in Istio 1.6.0. As the Note says on the same, Policy CRD was removed from Istio 1.6.0.
 > \> kubectl apply -f authentication.policy.yaml
+
 If you want to disable TLS between the Istio ingress gateway running in the istio-system namespace and all the services in the default namespace, you can use the following DestinationRule.
 ```yaml
 apiVersion: networking.istio.io/v1alpha3
