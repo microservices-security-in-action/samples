@@ -36,7 +36,7 @@ metadata:
   name: disable-mtls
   namespace: istio-system
 spec:
-  host: inventory-service.default.svc.cluster.local
+  host: *.default.svc.cluster.local
   trafficPolicy:
     tls:
       mode: DISABLE
