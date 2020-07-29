@@ -4,7 +4,7 @@
 
 ## Errata
 
-* **Page 413**, formatting issue on the last line of the code block. Should be.
+* **Page 413**, formatting issue on the last line of the code block. Should be correct as: 
 ```yaml
 docker-init:
   Version: 0.18.0
