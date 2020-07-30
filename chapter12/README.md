@@ -41,7 +41,7 @@ spec:
     tls:
       mode: DISABLE
 ```
-* **Page 311**, figure 12.4, shows the  default behavior of Istio versions before 1.5.0. With Istio 1.5.0+ if we do not specifically ask Istio not to use TLS between the Ingress Gateway and the microservices, the communications between the Ingress Gateway and STS / Order Processing microservices will be on HTTPS (arrows 1, 2 from the Istio Ingress Gateway), and also the communication between the Order Process and the Inventory microservices (arrow 3) will also be on HTTPS. 
+* **Page 312**, figure 12.4, shows the  default behavior of Istio versions before 1.5.0. With Istio 1.5.0+ if we do not specifically ask Istio not to use TLS between the Ingress Gateway and the microservices, the communications between the Ingress Gateway and STS / Order Processing microservices will be on HTTPS (arrows 1, 2 from the Istio Ingress Gateway), and also the communication between the Order Process and the Inventory microservices (arrow 3) will also be on HTTPS. 
 
 * **Page 317**. If you are using Istio 1.6.0, you need to skip the section 12.4.1 and directly move to section 12.4.3. Istio 1.6.0 removed the Policy CRD.
 
