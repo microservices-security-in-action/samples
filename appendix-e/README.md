@@ -2,7 +2,7 @@
 
 [https://github.com/microservices-security-in-action/samples/tree/master/appendix-e](https://github.com/microservices-security-in-action/samples/tree/master/appendix-e)
 
-## Errata
+## Notes
 
 * **Page 414**, formatting issue on the last line of the code block. Should be correct as: 
 ```yaml
