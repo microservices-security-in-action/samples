@@ -2,7 +2,7 @@
 
 [https://github.com/microservices-security-in-action/samples/tree/master/chapter12](https://github.com/microservices-security-in-action/samples/tree/master/chapter12)
 
-## Errata
+## Notes
 
 * **Page 321**, section 12.4.3, listing 12.12.  Remove the label **app: inventory**. To striclty enforce mTLS for the Inventory microservice you can define another PeerAuthentication policy with that label. The samples in the git repo has the correct policy.
 
