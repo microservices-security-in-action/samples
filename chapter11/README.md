@@ -2,7 +2,7 @@
 
 [https://github.com/microservices-security-in-action/samples/tree/master/chapter11](https://github.com/microservices-security-in-action/samples/tree/master/chapter11)
 
-## Errata
+## Notes
 
 * **Page 278***, under the section 11.3.3 (the last line) | reported by the authors.
 
