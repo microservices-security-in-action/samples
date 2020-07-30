@@ -55,7 +55,7 @@ spec:
 
 ## Appendix E
 
-* **Page 414**, formatting issue on the last line of the code block. Should be correct as: 
+* **Page 414**, formatting issue on the last line of the code block. Should be corrected as: 
 ```yaml
 docker-init:
   Version: 0.18.0
