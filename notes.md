@@ -10,8 +10,8 @@ Should be corrected as:
 
 > From the Kubernetes 1.7 release onward, etcd **supports storing** Secrets in an encrypted format.
 
-** Release notes of Kubernetes 1.7: [https://groups.google.com/g/kubernetes-announce/c/NNVPGTyWAwg/m/hu58a661AAAJ?pli=1](https://groups.google.com/g/kubernetes-announce/c/NNVPGTyWAwg/m/hu58a661AAAJ?pli=1)
-** [Encrypting Secret Data at Rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/)
+- Release notes of Kubernetes 1.7: [https://groups.google.com/g/kubernetes-announce/c/NNVPGTyWAwg/m/hu58a661AAAJ?pli=1](https://groups.google.com/g/kubernetes-announce/c/NNVPGTyWAwg/m/hu58a661AAAJ?pli=1)
+- [Encrypting Secret Data at Rest](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/)
 
 ## Chapter 12
 
