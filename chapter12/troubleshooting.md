@@ -2,5 +2,5 @@
 # Troubleshooting Tips
 
 * [https://istio.io/latest/docs/ops/diagnostic-tools/](https://istio.io/latest/docs/ops/diagnostic-tools/)
-* [https://www.youtube.com/watch?time_continue=1&v=XAKY24b7XjQ](Webinar: Debugging your debugging tools; What to do when your service mesh goes down in production?)
+* [Webinar: Debugging your debugging tools; What to do when your service mesh goes down in production?](https://www.youtube.com/watch?time_continue=1&v=XAKY24b7XjQ)
 
