@@ -1,5 +1,5 @@
 # Microservices Security In Action
-**By Prabath Siriwardena and Nuwan Dias**
+**By [Prabath Siriwardena](https://twitter.com/prabath) and [Nuwan Dias](https://twitter.com/nuwandias)**
 
 <img src="cover.jpeg" style="float: left; width: 100%" />
 
