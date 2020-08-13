@@ -1,5 +1,15 @@
 # Notes
 
+## Chapter 4
+
+* Page 94/Section 4.2.4 (the 3rd paragraph on the page). o is printed instead of 0.
+
+> localhost:808o
+
+Needs to be corrected as
+
+> localhost:8080
+
 ## Chapter 11
 
 * Page 278/Section 11.3.3 (the last line).
