@@ -11,6 +11,17 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video][Controlling Access to Your Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=5MqSOnQ7ZGw) by [Prabath Siriwardena](https://twitter.com/prabath)
 * [Video][Securing gRPC Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=g2fexevWS8A) by [Prabath Siriwardena](https://twitter.com/prabath)
 
+## Appendix A: OAuth 2.0 and OpenID Connect
+
+* [Video][OAuth 2.0 Internals and Applications](https://www.youtube.com/watch?v=lv9sv-YTgMs) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][OpenID Connect Authentication Flows](https://www.youtube.com/watch?v=q3Nw8WlFsx0) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][OAuth 2 0 Threat Landscape](https://www.youtube.com/watch?v=FBFEuP5ZVj0) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][OAuth 2.0 with cURL](https://www.youtube.com/watch?v=xipHJSW93KI) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][OAuth 2.0 Token Introspection](https://www.youtube.com/watch?v=CuawoBrs_6k) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][OAuth 2.0 Token Revocation](https://www.youtube.com/watch?v=OEab8UoEUow) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][OAuth 2.0 Response Type vs. Grant Type](https://www.youtube.com/watch?v=Qdjuavr33E4) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][Proof Key for Code Exchange](https://www.youtube.com/watch?v=2pJShFKYoJc) by [Prabath Siriwardena](https://twitter.com/prabath)
+
 ## Appendix J: Kubenrnetes fundamentals
 
 * [Section J.4]: This provides a comparision between different managed Kubernetes services offered by Google, Amazon, Microsoft, IBM< Digitalocean, ALibaba and so on: [Comparison of Kubernetes managed services](https://docs.google.com/spreadsheets/d/1RPpyDOLFmcgxMCpABDzrsBYWpPYCIBuvAoUQLwOGoQw/edit#gid=907731238)
