@@ -1,6 +1,7 @@
 # Microservices Security in Action ~ Supplementary Readings
 
 We update this section as and when we find articles/blogs/videos related to the content discussed in this book.
+<img src="cover.jpeg" style="float: left; width: 100%" />
 
 ## Chapter 11: Securing microservices on Kubernetes
 
