@@ -1,4 +1,4 @@
-# Supplementary Readings
+# Microservices Security in Action ~ Supplementary Readings
 
 We update this section as and when we find articles/blogs/videos related to the content discussed in this book.
 
