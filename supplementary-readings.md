@@ -24,6 +24,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 ## Appendix J: Kubenrnetes fundamentals
 
+* [Section J.2.3] Kubernetes uses itables to route traffic destined to a given service IP address to the corresponding pod. iptables is a user-space program providing a table-based system for defining rules for manipulating and transforming packets using the netfilter framework. This tutorial provides a very good intro to iptables and netfilter architecture: [A Deep Dive into Iptables and Netfilter Architecture](https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture)
 * [Section J.4] This provides a comparision between different managed Kubernetes services offered by Google, Amazon, Microsoft, IBM, Digitalocean, Alibaba and so on: [Comparison of Kubernetes managed services](https://docs.google.com/spreadsheets/d/1RPpyDOLFmcgxMCpABDzrsBYWpPYCIBuvAoUQLwOGoQw/edit#gid=907731238)
 * [Section J.18] Here is an excellent article that explains what happens during the creation and deletion of a Pod: [Graceful shutdown and zero downtime deployments in Kubernetes](https://learnk8s.io/graceful-shutdown)
 * [Minimum Viable Kubernetes](https://eevans.co/blog/minimum-viable-kubernetes/index.html)
