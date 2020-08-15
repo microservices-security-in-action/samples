@@ -8,7 +8,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 ## Chapter 4: Accessing a secured microservice via a single-page application
 
-* [Video][Securing Single-page Applications with OpenID Connect](https://www.youtube.com/watch?v=tmKD2famPJc) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [Securing Single-page Applications with OpenID Connect](https://www.youtube.com/watch?v=tmKD2famPJc) by [Prabath Siriwardena](https://twitter.com/prabath)
 
 
 ## Chapter 11: Securing microservices on Kubernetes
@@ -17,23 +17,23 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
-* [Video][Controlling Access to Your Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=5MqSOnQ7ZGw) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][Securing gRPC Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=g2fexevWS8A) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [Controlling Access to Your Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=5MqSOnQ7ZGw) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [Securing gRPC Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=g2fexevWS8A) by [Prabath Siriwardena](https://twitter.com/prabath)
 
 ## Appendix A: OAuth 2.0 and OpenID Connect
 
-* [Video][OAuth 2.0 Internals and Applications](https://www.youtube.com/watch?v=lv9sv-YTgMs) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][OpenID Connect Authentication Flows](https://www.youtube.com/watch?v=q3Nw8WlFsx0) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][OAuth 2 0 Threat Landscape](https://www.youtube.com/watch?v=FBFEuP5ZVj0) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][OAuth 2.0 with cURL](https://www.youtube.com/watch?v=xipHJSW93KI) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][OAuth 2.0 Token Introspection](https://www.youtube.com/watch?v=CuawoBrs_6k) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][OAuth 2.0 Token Revocation](https://www.youtube.com/watch?v=OEab8UoEUow) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][OAuth 2.0 Response Type vs. Grant Type](https://www.youtube.com/watch?v=Qdjuavr33E4) by [Prabath Siriwardena](https://twitter.com/prabath)
-* [Video][Proof Key for Code Exchange](https://www.youtube.com/watch?v=2pJShFKYoJc) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OAuth 2.0 Internals and Applications](https://www.youtube.com/watch?v=lv9sv-YTgMs) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OpenID Connect Authentication Flows](https://www.youtube.com/watch?v=q3Nw8WlFsx0) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OAuth 2 0 Threat Landscape](https://www.youtube.com/watch?v=FBFEuP5ZVj0) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OAuth 2.0 with cURL](https://www.youtube.com/watch?v=xipHJSW93KI) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OAuth 2.0 Token Introspection](https://www.youtube.com/watch?v=CuawoBrs_6k) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OAuth 2.0 Token Revocation](https://www.youtube.com/watch?v=OEab8UoEUow) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [OAuth 2.0 Response Type vs. Grant Type](https://www.youtube.com/watch?v=Qdjuavr33E4) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [Proof Key for Code Exchange](https://www.youtube.com/watch?v=2pJShFKYoJc) by [Prabath Siriwardena](https://twitter.com/prabath)
 
 ## Appendix B: JSON Web Token (JWT)
 
-* [Video][JSON Web Token Internals and Applications](https://www.youtube.com/watch?v=c-jsKk1OR24) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] [JSON Web Token Internals and Applications](https://www.youtube.com/watch?v=c-jsKk1OR24) by [Prabath Siriwardena](https://twitter.com/prabath)
 
 ## Appendix J: Kubenrnetes fundamentals
 
