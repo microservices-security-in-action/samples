@@ -46,7 +46,8 @@ We update this section as and when we find articles/blogs/videos related to the 
 * There is no easy way to see network namespaces, as Kubernetes and Docker don’t register them (“ip netns” won’t work with Kubernetes and Docker). But we can use a few tricks discuss in this article to see, debug, manage and configure POD networking from the host: [A Hacker’s Guide to Kubernetes Networking](https://thenewstack.io/hackers-guide-kubernetes-networking/)
 * [Deconstructing Kubernetes Networking](https://eevans.co/blog/deconstructing-kubernetes-networking/)
 * [Book] This is an execellent resource, which explains fundamental ingredients that help building Kubernetes. The book is not yet released, but you have access to the MEAP edition: [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
-* [Video] [ntro + Deep Dive: Kubernetes (Network) SIG](https://www.youtube.com/watch?v=BxDnv7MpJ0I)
+* [Video] [Intro + Deep Dive: Kubernetes (Network) SIG](https://www.youtube.com/watch?v=BxDnv7MpJ0I)
+* [Video] [A Deep Dive into Pod Readiness Gates for Service Health](https://www.youtube.com/watch?v=Vw9GmSeomFg)
 
 ## Appendix K: Service mesh and Istio fundamentals
 
