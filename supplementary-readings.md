@@ -40,3 +40,6 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Appendix K: Service mesh and Istio fundamentals
 
 * [Design Considerations at the Edge of the ServiceMesh](https://www.openshift.com/blog/design-considerations-at-the-edge-of-the-servicemesh)
+* [Video] Talks in depth about the Istion architecture prior to Istio 1.5 (1hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=oZrZlx2fmcM)
+* [Video] Talks in depth about the Istion architecture prior to Istio 1.5 (2hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=cB611FtjHcQ)
+
