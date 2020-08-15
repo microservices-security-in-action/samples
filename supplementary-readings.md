@@ -44,5 +44,5 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] Talks in depth about the Istio architecture prior to Istio 1.5 (1hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=oZrZlx2fmcM)
 * [Video] Talks in depth about the Istio architecture prior to Istio 1.5 (2hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=cB611FtjHcQ)
 * [Book] The current edition of the book Istio Up & Running is mostlly applicable to < Istio 1.5: [Istio Up & Running](https://www.amazon.com/Istio-Running-Service-Connect-Control/dp/1492043788/)
-* [Book] This book is only half-way completed by now. You have access to the MEAP edition: [Istio in Action](https://www.manning.com/books/istio-in-action)
+* [Book] This book is only half-way completed by now. You have access to the MEAP edition: [Istio in Action](https://www.manning.com/books/istio-in-action). This video is based out of chapter 04 of the book: [Istio Ingress Gateway](https://www.youtube.com/watch?v=Pq3NzxrvBP8)
 * [Video] [Practical Istio](https://www.youtube.com/watch?v=uRXzRfthYeU)
