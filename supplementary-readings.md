@@ -14,7 +14,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Chapter 11: Securing microservices on Kubernetes
 
 * This chapter mostly focuses on securing microservices in a Kubernetes deployment, and does not delve deep into a securing a Kubernetes deployment, which is in fact a book on it's own. The book [Learn Kubernetes Security](https://www.amazon.com/Learn-Kubernetes-Security-orchestrate-microservices/dp/1839216506/), published in July, 2020 carries a wealth of information with respet to securing a Kubernetes deployment.
-* [Vide] [RBAC tooling](https://www.youtube.com/watch?v=ODTETX48yIU)
+* [Video] [RBAC tooling](https://www.youtube.com/watch?v=ODTETX48yIU)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
