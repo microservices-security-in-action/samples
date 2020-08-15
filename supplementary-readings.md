@@ -36,6 +36,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * This is an excellent article written by Kevin Sookocheff on the Kubernetes network model: [A Guide to the Kubernetes Networking Model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/)
 * There is no easy way to see network namespaces, as Kubernetes and Docker don’t register them (“ip netns” won’t work with Kubernetes and Docker). But we can use a few tricks discuss in this article to see, debug, manage and configure POD networking from the host: [A Hacker’s Guide to Kubernetes Networking](https://thenewstack.io/hackers-guide-kubernetes-networking/)
 * [Deconstructing Kubernetes Networking](https://eevans.co/blog/deconstructing-kubernetes-networking/)
+* [Book] This is an execellent resource, which explains fundamental ingredients that help building Kubernetes. The book is not yet released, but you have access to the MEAP edition: [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
 
 ## Appendix K: Service mesh and Istio fundamentals
 
@@ -44,3 +45,4 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] Talks in depth about the Istio architecture prior to Istio 1.5 (2hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=cB611FtjHcQ)
 * [Book] The current edition of the book Istio Up & Running is mostlly applicable to < Istio 1.5: [Istio Up & Running](https://www.amazon.com/Istio-Running-Service-Connect-Control/dp/1492043788/)
 * [Book] This book is only half-way completed by now. You have access to the MEAP edition: [Istio in Action](https://www.manning.com/books/istio-in-action)
+* [Video] [Practical Istio](https://www.youtube.com/watch?v=uRXzRfthYeU)
