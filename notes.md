@@ -74,6 +74,8 @@ docker-init:
   Version: 0.18.0
   Gitcommit: fec3683
 ```
+## Appendix J
 
+* **Page 500 / figure J.1**, top, right caption which points to kubectl box. In the caption it says kubelet, should be corrected as kubectl. 
 
 
