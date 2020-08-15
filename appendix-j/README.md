@@ -2,6 +2,10 @@
 
 [https://github.com/microservices-security-in-action/samples/tree/master/appendix-j](https://github.com/microservices-security-in-action/samples/tree/master/appendix-j)
 
+## Notes
+
+* **Page 500 / figure J.1**, top, right caption which points to kubectl box. In the caption it says kubelet, should be corrected as kubectl. 
+
 ## Supplementary Readings
 
 We update this section as and when we find articles/blogs/videos related to the content discussed in this chapter.
