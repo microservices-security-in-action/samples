@@ -11,5 +11,5 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Design Considerations at the Edge of the ServiceMesh](https://www.openshift.com/blog/design-considerations-at-the-edge-of-the-servicemesh)
 * [Video] Talks in depth about the Istio architecture prior to Istio 1.5 (1hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=oZrZlx2fmcM)
 * [Video] Talks in depth about the Istio architecture prior to Istio 1.5 (2hr version): [Life of a Packet through Istio](https://www.youtube.com/watch?v=cB611FtjHcQ)
-* [Book] The current edition of the book Istio Up & Running is mostlly applicable to < Istio 1.5 [Istio Up & Running](https://www.amazon.com/Istio-Running-Service-Connect-Control/dp/1492043788/)
-* [Book] This book is only half-way completed by now. You have access to the MEAP edition [Istio in Action](https://www.manning.com/books/istio-in-action)
+* [Book] The current edition of the book Istio Up & Running is mostlly applicable to < Istio 1.5: [Istio Up & Running](https://www.amazon.com/Istio-Running-Service-Connect-Control/dp/1492043788/)
+* [Book] This book is only half-way completed by now. You have access to the MEAP edition: [Istio in Action](https://www.manning.com/books/istio-in-action)
