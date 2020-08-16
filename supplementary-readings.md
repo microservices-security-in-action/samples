@@ -50,6 +50,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] [Intro + Deep Dive: Kubernetes (Network) SIG](https://www.youtube.com/watch?v=BxDnv7MpJ0I)
 * [Video] [A Deep Dive into Pod Readiness Gates for Service Health](https://www.youtube.com/watch?v=Vw9GmSeomFg)
 * [Documentation] [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+* [Documentation] Sometimes it's necessary to inspect the state of an existing Pod, however, for example to troubleshoot a hard-to-reproduce bug. In these cases you can run an ephemeral container in an existing Pod to inspect its state and run arbitrary commands: [Ephemeral Containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/)
 
 ## Appendix K: Service mesh and Istio fundamentals
 
