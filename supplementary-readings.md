@@ -8,11 +8,19 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 ## Chapter 2: Securing north/south traffic with an API gateway
 
-* [Advanced API Security: OAuth 2.0 and Beyond](https://www.amazon.com/Advanced-API-Security-OAuth-Beyond-ebook/dp/B082WRYJJM/) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Book] [Advanced API Security: OAuth 2.0 and Beyond](https://www.amazon.com/Advanced-API-Security-OAuth-Beyond-ebook/dp/B082WRYJJM/) by [Prabath Siriwardena](https://twitter.com/prabath)
 
 ## Chapter 4: Accessing a secured microservice via a single-page application
 
 * [Video] [Securing Single-page Applications with OpenID Connect](https://www.youtube.com/watch?v=tmKD2famPJc) by [Prabath Siriwardena](https://twitter.com/prabath)
+
+## Chapter 8: Securing east/west traffic over gRPC
+
+* [Video] [Securing service-to-service interactions over HTTP, gRPC and Kafka](https://www.youtube.com/watch?v=CYgq2NnJr-8) by [Nuwan Dias](https://twitter.com/nuwandias) and [Kasun Indrasiri](https://twitter.com/kasunindrasiri)
+
+## Chapter 9: Securing reactive microservices
+
+* [Video] [Securing service-to-service interactions over HTTP, gRPC and Kafka](https://www.youtube.com/watch?v=CYgq2NnJr-8) by [Nuwan Dias](https://twitter.com/nuwandias) and [Kasun Indrasiri](https://twitter.com/kasunindrasiri)
 
 ## Chapter 10: Conquering container security with Docker
 
