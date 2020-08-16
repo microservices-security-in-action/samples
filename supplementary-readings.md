@@ -10,6 +10,10 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 * [Video] [Securing Single-page Applications with OpenID Connect](https://www.youtube.com/watch?v=tmKD2famPJc) by [Prabath Siriwardena](https://twitter.com/prabath)
 
+## Chapter 10: Conquering container security with Docker
+
+* [Book] [Container Security: Fundamental Technology Concepts that Protect Containerized Applications](https://www.amazon.com/Container-Security-Fundamental-Containerized-Applications/dp/1492056707/)
+
 ## Chapter 11: Securing microservices on Kubernetes
 
 * This chapter mostly focuses on securing microservices in a Kubernetes deployment, and does not delve deep into a securing a Kubernetes deployment, which is in fact a book on it's own. The book [Learn Kubernetes Security](https://www.amazon.com/Learn-Kubernetes-Security-orchestrate-microservices/dp/1839216506/), published in July, 2020 carries a wealth of information with respet to securing a Kubernetes deployment.
@@ -36,6 +40,10 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Appendix B: JSON Web Token (JWT)
 
 * [Video] [JSON Web Token Internals and Applications](https://www.youtube.com/watch?v=c-jsKk1OR24) by [Prabath Siriwardena](https://twitter.com/prabath)
+
+## Appendix E: Docker fundamentals
+
+* [Book] [Docker Deep Dive](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1521822808/)
 
 ## Appendix J: Kubenrnetes fundamentals
 
