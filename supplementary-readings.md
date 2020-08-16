@@ -6,6 +6,10 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 [Amazon](https://www.amazon.com/Microservices-Security-Action-Prabath-Siriwardena/dp/1617295957/) | [Manning](https://www.manning.com/books/microservices-security-in-action) | [YouTube](https://www.youtube.com/channel/UCoEOYnrqEcANUgbcG-BuhSA) | [Slack](https://bit.ly/microservices-security) 
 
+## Chapter 2: Securing north/south traffic with an API gateway
+
+* [Advanced API Security: OAuth 2.0 and Beyond](https://www.amazon.com/Advanced-API-Security-OAuth-Beyond-ebook/dp/B082WRYJJM/) by [Prabath Siriwardena](https://twitter.com/prabath)
+
 ## Chapter 4: Accessing a secured microservice via a single-page application
 
 * [Video] [Securing Single-page Applications with OpenID Connect](https://www.youtube.com/watch?v=tmKD2famPJc) by [Prabath Siriwardena](https://twitter.com/prabath)
@@ -36,6 +40,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] [OAuth 2.0 Token Revocation](https://www.youtube.com/watch?v=OEab8UoEUow) by [Prabath Siriwardena](https://twitter.com/prabath)
 * [Video] [OAuth 2.0 Response Type vs. Grant Type](https://www.youtube.com/watch?v=Qdjuavr33E4) by [Prabath Siriwardena](https://twitter.com/prabath)
 * [Video] [Proof Key for Code Exchange](https://www.youtube.com/watch?v=2pJShFKYoJc) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Book] [OAuth 2.0 in Action](https://www.amazon.com/OAuth-2-Action-Justin-Richer/dp/161729327X/)
 
 ## Appendix B: JSON Web Token (JWT)
 
