@@ -15,6 +15,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * This chapter mostly focuses on securing microservices in a Kubernetes deployment, and does not delve deep into a securing a Kubernetes deployment, which is in fact a book on it's own. The book [Learn Kubernetes Security](https://www.amazon.com/Learn-Kubernetes-Security-orchestrate-microservices/dp/1839216506/), published in July, 2020 carries a wealth of information with respet to securing a Kubernetes deployment.
 * Each layer of the Cloud Native security model builds upon the next outermost layer. The Code layer benefits from strong base (Cloud, Cluster, Container) security layers: [Overview of Cloud Native Security](https://kubernetes.io/docs/concepts/security/overview/)
 * [Video] [RBAC tooling](https://www.youtube.com/watch?v=ODTETX48yIU)
+* [Video] [Role based access control (RBAC) policies in Kubernetes](https://www.youtube.com/watch?v=CnHTCTP8d48)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
