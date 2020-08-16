@@ -10,10 +10,10 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 * [Video] [Securing Single-page Applications with OpenID Connect](https://www.youtube.com/watch?v=tmKD2famPJc) by [Prabath Siriwardena](https://twitter.com/prabath)
 
-
 ## Chapter 11: Securing microservices on Kubernetes
 
 * This chapter mostly focuses on securing microservices in a Kubernetes deployment, and does not delve deep into a securing a Kubernetes deployment, which is in fact a book on it's own. The book [Learn Kubernetes Security](https://www.amazon.com/Learn-Kubernetes-Security-orchestrate-microservices/dp/1839216506/), published in July, 2020 carries a wealth of information with respet to securing a Kubernetes deployment.
+* Each layer of the Cloud Native security model builds upon the next outermost layer. The Code layer benefits from strong base (Cloud, Cluster, Container) security layers: [Overview of Cloud Native Security](https://kubernetes.io/docs/concepts/security/overview/)
 * [Video] [RBAC tooling](https://www.youtube.com/watch?v=ODTETX48yIU)
 
 ## Chapter 12: Securing microservices with Istio service mesh
