@@ -37,6 +37,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 * [Video] [Controlling Access to Your Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=5MqSOnQ7ZGw) by [Prabath Siriwardena](https://twitter.com/prabath)
 * [Video] [Securing gRPC Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=g2fexevWS8A) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video] If you'd like to understand what's happening at the Envoy level, please check this one: [Overview of Authentication and Authorization Features in Envoy](https://www.youtube.com/watch?v=YgoQ4SwRtBA)
 
 ## Appendix A: OAuth 2.0 and OpenID Connect
 
