@@ -33,6 +33,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] [RBAC tooling](https://www.youtube.com/watch?v=ODTETX48yIU)
 * [Video] [Role based access control (RBAC) policies in Kubernetes](https://www.youtube.com/watch?v=CnHTCTP8d48)
 * [Video] [How Kubernetes Components Communicate Securely in Your Cluster](https://www.youtube.com/watch?v=bXnVI_hUAbk)
+* [Video] [Kubernetes Auth and Access Control](https://www.youtube.com/watch?v=WvnXemaYQ50)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
