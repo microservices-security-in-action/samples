@@ -32,6 +32,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * Each layer of the Cloud Native security model builds upon the next outermost layer. The Code layer benefits from strong base (Cloud, Cluster, Container) security layers: [Overview of Cloud Native Security](https://kubernetes.io/docs/concepts/security/overview/)
 * [Video] [RBAC tooling](https://www.youtube.com/watch?v=ODTETX48yIU)
 * [Video] [Role based access control (RBAC) policies in Kubernetes](https://www.youtube.com/watch?v=CnHTCTP8d48)
+* [Video] [How Kubernetes Components Communicate Securely in Your Cluster](https://www.youtube.com/watch?v=bXnVI_hUAbk)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
