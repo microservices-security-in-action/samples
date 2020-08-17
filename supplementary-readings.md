@@ -54,6 +54,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Appendix B: JSON Web Token (JWT)
 
 * [Video] [JSON Web Token Internals and Applications](https://www.youtube.com/watch?v=c-jsKk1OR24) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Book] The chapters 7 & 8 of the book [Advanced API Security: OAuth 2.0 and Beyond](https://www.amazon.com/Advanced-API-Security-OAuth-Beyond-ebook/dp/B082WRYJJM/) by [Prabath Siriwardena](https://twitter.com/prabath) takes you through the details of JWT.
 
 ## Appendix E: Docker fundamentals
 
