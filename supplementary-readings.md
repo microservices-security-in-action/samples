@@ -61,6 +61,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Appendix E: Docker fundamentals
 
 * [Book] [Docker Deep Dive](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1521822808/)
+* [Video] If you are new to containers, these videos will be helpful: [What is a Container?](https://www.youtube.com/watch?v=EnJ7qX9fkcU) and [The Benefits of Containers](https://www.youtube.com/watch?v=cCTLjAdIQho)
 
 ## Appendix J: Kubenrnetes fundamentals
 
