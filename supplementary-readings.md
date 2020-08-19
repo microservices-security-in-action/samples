@@ -25,6 +25,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Chapter 10: Conquering container security with Docker
 
 * [Book] [Container Security: Fundamental Technology Concepts that Protect Containerized Applications](https://www.amazon.com/Container-Security-Fundamental-Containerized-Applications/dp/1492056707/)
+* [Documentation] [Seccomp security profiles for Docker](https://docs.docker.com/engine/security/seccomp/)
 
 ## Chapter 11: Securing microservices on Kubernetes
 
@@ -34,6 +35,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] [Role based access control (RBAC) policies in Kubernetes](https://www.youtube.com/watch?v=CnHTCTP8d48)
 * [Video] [How Kubernetes Components Communicate Securely in Your Cluster](https://www.youtube.com/watch?v=bXnVI_hUAbk)
 * [Video] [Kubernetes Auth and Access Control](https://www.youtube.com/watch?v=WvnXemaYQ50)
+* [Kubernetes Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
