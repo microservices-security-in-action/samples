@@ -25,7 +25,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 ## Chapter 10: Conquering container security with Docker
 
 * [Book] [Container Security: Fundamental Technology Concepts that Protect Containerized Applications](https://www.amazon.com/Container-Security-Fundamental-Containerized-Applications/dp/1492056707/)
-* [Documentation] [Seccomp security profiles for Docker](https://docs.docker.com/engine/security/seccomp/)
+* [Documentation] [Seccomp security profiles for Docker](https://docs.docker.com/engine/security/seccomp/), and if you are new to seccomp please check this video: [Using Seccomp to Limit the Kernel Attack Surface](https://www.youtube.com/watch?v=-hmG5An2bN8)
 
 ## Chapter 11: Securing microservices on Kubernetes
 
