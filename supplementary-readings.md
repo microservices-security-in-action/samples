@@ -64,9 +64,14 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 * [Book] [Docker Deep Dive](https://www.amazon.com/Docker-Deep-Dive-Nigel-Poulton/dp/1521822808/)
 * [Video] If you are new to containers, these videos will be helpful: [What is a Container?](https://www.youtube.com/watch?v=EnJ7qX9fkcU) and [The Benefits of Containers](https://www.youtube.com/watch?v=cCTLjAdIQho)
- * [Video] [Understanding and Working with the Cgroups Interface](https://www.youtube.com/watch?v=z7mgaWqiV90)
- * [Video] [Understanding user namespaces](https://www.youtube.com/watch?v=83NOk8pmHi8)
- * [Video] [Containers unplugged: Linux namespaces](https://www.youtube.com/watch?v=0kJPa-1FuoI)
+* [Video] [Understanding and Working with the Cgroups Interface](https://www.youtube.com/watch?v=z7mgaWqiV90)
+* [Video] [Understanding user namespaces](https://www.youtube.com/watch?v=83NOk8pmHi8)
+* [Video] [Containers unplugged: Linux namespaces](https://www.youtube.com/watch?v=0kJPa-1FuoI)
+* [Book] [The Docker Handbook](https://www.freecodecamp.org/news/the-docker-handbook/)
+ 
+## Appendix F: Open Policy Agent (OPA)
+
+* [Video][Tutorial] [OPA Policy Authoring](https://academy.styra.com/courses/opa-rego)
 
 ## Appendix J: Kubenrnetes fundamentals
 
@@ -84,6 +89,8 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Documentation] [Pod Lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 * [Documentation] Sometimes it's necessary to inspect the state of an existing Pod, however, for example to troubleshoot a hard-to-reproduce bug. In these cases you can run an ephemeral container in an existing Pod to inspect its state and run arbitrary commands: [Ephemeral Containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/)
 * [Video] The recordings of TGI Kubernetes: [Grokking Kubernetes](https://www.youtube.com/playlist?list=PL7bmigfV0EqS6WxgWlH-p4dhkfuwcZ6-E)
+* [Book] [The Kubernetes Handbook](https://www.freecodecamp.org/news/the-kubernetes-handbook/)
+* [Kubernetes Podcasts](https://kubernetespodcast.com/)
 
 ## Appendix K: Service mesh and Istio fundamentals
 
