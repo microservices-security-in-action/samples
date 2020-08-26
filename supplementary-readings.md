@@ -1,4 +1,4 @@
-# Microservices Security in Action ~ Supplementary Readings
+# Microservices Security in Action ~ Supplementary Readings / References
 
 We update this section as and when we find articles/blogs/videos related to the content discussed in this book.
 
@@ -36,12 +36,19 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Video] [How Kubernetes Components Communicate Securely in Your Cluster](https://www.youtube.com/watch?v=bXnVI_hUAbk)
 * [Video] [Kubernetes Auth and Access Control](https://www.youtube.com/watch?v=WvnXemaYQ50)
 * [Kubernetes Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
+* [Tool] Krane is a simple Kubernetes RBAC static analysis tool. It identifies potential security risks in K8s RBAC design and makes suggestions on how to mitigate them. Krane dashboard presents current RBAC security posture and lets you navigate through its definition: [Krane](https://github.com/appvia/krane)
+* [Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
 * [Video] [Controlling Access to Your Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=5MqSOnQ7ZGw) by [Prabath Siriwardena](https://twitter.com/prabath)
 * [Video] [Securing gRPC Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=g2fexevWS8A) by [Prabath Siriwardena](https://twitter.com/prabath)
 * [Video] If you'd like to understand what's happening at the Envoy level, please check this one: [Overview of Authentication and Authorization Features in Envoy](https://www.youtube.com/watch?v=YgoQ4SwRtBA)
+
+## Chapter 13: Secure coding practices and automation
+
+* [All You Need To Know About GitOps](https://opensource.substack.com/p/all-you-need-to-know-about-gitops)
+* [Video] [TGI Kubernetes 127: GitOps with Steve Wade](https://www.youtube.com/watch?v=F70wRexHIwg)
 
 ## Appendix A: OAuth 2.0 and OpenID Connect
 
