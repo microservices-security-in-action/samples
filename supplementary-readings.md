@@ -38,7 +38,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Kubernetes Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
 * [Tool] Krane is a simple Kubernetes RBAC static analysis tool. It identifies potential security risks in K8s RBAC design and makes suggestions on how to mitigate them. Krane dashboard presents current RBAC security posture and lets you navigate through its definition: [Krane](https://github.com/appvia/krane)
 * [Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)
-* [Video] TGIK Community Call: [Sealed Secrets](https://www.youtube.com/watch?v=x-cDk8DIvwE)
+* [Video] [TGI Kubernetes 132: Sealed Secrets](https://www.youtube.com/watch?v=x-cDk8DIvwE)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
