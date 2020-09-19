@@ -38,6 +38,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 * [Kubernetes Auth Special Interest Group](https://github.com/kubernetes/community/tree/master/sig-auth)
 * [Tool] Krane is a simple Kubernetes RBAC static analysis tool. It identifies potential security risks in K8s RBAC design and makes suggestions on how to mitigate them. Krane dashboard presents current RBAC security posture and lets you navigate through its definition: [Krane](https://github.com/appvia/krane)
 * [Threat matrix for Kubernetes](https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/)
+* [Video] TGIK Community Call: [Sealed Secrets](https://www.youtube.com/watch?v=x-cDk8DIvwE)
 
 ## Chapter 12: Securing microservices with Istio service mesh
 
@@ -49,6 +50,7 @@ We update this section as and when we find articles/blogs/videos related to the 
 
 * [All You Need To Know About GitOps](https://opensource.substack.com/p/all-you-need-to-know-about-gitops)
 * [Video] [TGI Kubernetes 127: GitOps with Steve Wade](https://www.youtube.com/watch?v=F70wRexHIwg)
+* Tekton is a powerful and flexible open-source framework for creating CI/CD systems, allowing developers to build, test, and deploy across cloud providers and on-premise systems [Tekton](https://tekton.dev/)
 
 ## Appendix A: OAuth 2.0 and OpenID Connect
 
