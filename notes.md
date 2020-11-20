@@ -76,7 +76,7 @@ spec:
 
 ## Appendix A
 
-* **Page 379**, the very fist cURL command at the of the page. The client_id must be included in the cURL command. Should be corrected as: 
+* **Page 379**, the very fist cURL command at the top of the page. The client_id must be included in the cURL command. Should be corrected as: 
 ```
 \> curl \
 -u application1:application1secret \
