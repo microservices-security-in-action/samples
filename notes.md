@@ -74,6 +74,19 @@ spec:
 
 * **Page 317**. If you are using Istio 1.6.0, you need to skip the section 12.4.1 and directly move to section 12.4.3. Istio 1.6.0 removed the Policy CRD.
 
+## Appendix A
+
+* **Page 379**, the very fist cURL command at the of the page. The client_id must be included in the cURL command. Should be corrected as: 
+```
+\> curl \
+-u application1:application1secret \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "grant_type=authorization_code&
+    code=hus83nn-8ujq6-7snuelq&
+    client_id=application_id&
+    redirect_uri=https%3A%2F%2Fweb.application.domain%2Flogin" 
+    https://localhost:8085/oauth/token
+```
 ## Appendix E
 
 * **Page 414**, formatting issue on the last line of the code block. Should be corrected as: 
