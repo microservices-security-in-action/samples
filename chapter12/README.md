@@ -1,6 +1,8 @@
 ## Chapter 12: Securing microservices with Istio service mesh
 
-[https://github.com/microservices-security-in-action/samples/tree/master/chapter12](https://github.com/microservices-security-in-action/samples/tree/master/chapter12)
+<img src="../cover.jpeg" style="float: left; width: 100%" />
+
+[Amazon](https://www.amazon.com/Microservices-Security-Action-Prabath-Siriwardena/dp/1617295957/) | [Manning](https://www.manning.com/books/microservices-security-in-action) | [YouTube](https://www.youtube.com/channel/UCoEOYnrqEcANUgbcG-BuhSA) | [Slack](https://bit.ly/microservices-security) | [Notes](../notes.md) | [Supplementary Readings](../supplementary-readings.md)
 
 ## Notes
 
@@ -44,4 +46,11 @@ spec:
 * **Page 312**, figure 12.4, shows the  default behavior of Istio versions before 1.5.0. With Istio 1.5.0+ if we do not specifically ask Istio not to use TLS between the Ingress Gateway and the microservices, the communications between the Ingress Gateway and STS / Order Processing microservices will be on HTTPS (arrows 1, 2 from the Istio Ingress Gateway), and also the communication between the Order Process and the Inventory microservices (arrow 3) will also be on HTTPS. 
 
 * **Page 317**. If you are using Istio 1.6.0, you need to skip the section 12.4.1 and directly move to section 12.4.3. Istio 1.6.0 removed the Policy CRD.
+
+## Supplementary Readings
+
+We update this section as and when we find articles/blogs/videos related to the content discussed in this chapter.
+
+* [Video][Controlling Access to Your Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=5MqSOnQ7ZGw) by [Prabath Siriwardena](https://twitter.com/prabath)
+* [Video][Securing gRPC Microservices with Istio Service Mesh](https://www.youtube.com/watch?v=g2fexevWS8A) by [Prabath Siriwardena](https://twitter.com/prabath)
 

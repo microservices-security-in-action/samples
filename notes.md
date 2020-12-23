@@ -1,5 +1,23 @@
 # Notes
 
+<img src="cover.jpeg" style="float: left; width: 100%" />
+
+[Amazon](https://www.amazon.com/Microservices-Security-Action-Prabath-Siriwardena/dp/1617295957/) | [Manning](https://www.manning.com/books/microservices-security-in-action) | [YouTube](https://www.youtube.com/channel/UCoEOYnrqEcANUgbcG-BuhSA) | [Slack](https://bit.ly/microservices-security) | [Supplementary Readings](supplementary-readings.md)
+
+## Chapter 2
+
+* Page 43 / Section: 2.2.3, the curl command is missing closing doulbe quote after "read write"
+
+## Chapter 4
+
+* Page 94/Section 4.2.4 (the 3rd paragraph on the page). o is printed instead of 0.
+
+> localhost:808o
+
+Needs to be corrected as
+
+> localhost:8080
+
 ## Chapter 11
 
 * Page 278/Section 11.3.3 (the last line).
@@ -15,7 +33,7 @@ Should be corrected as:
 
 ## Chapter 12
 
-* **Page 321**, section 12.4.3, listing 12.12.  Remove the label **app: inventory**. To striclty enforce mTLS for the Inventory microservice you can define another PeerAuthentication policy with that label. The samples git repo has the correct policy.
+* **Page 321**, section 12.4.3, listing 12.12.  Remove the label **app: inventory**. To striclty enforce mTLS for the Inventory microservice you can define another PeerAuthentication policy with that label. The samples in git repo has the correct policy.
 
 ### Updates to the Istio 1.6.0 release <hr/>
 
@@ -56,6 +74,19 @@ spec:
 
 * **Page 317**. If you are using Istio 1.6.0, you need to skip the section 12.4.1 and directly move to section 12.4.3. Istio 1.6.0 removed the Policy CRD.
 
+## Appendix A
+
+* **Page 379**, the very fist cURL command at the top of the page. The client_id must be included in the cURL command. Should be corrected as: 
+```
+\> curl \
+-u application1:application1secret \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-d "grant_type=authorization_code&
+    code=hus83nn-8ujq6-7snuelq&
+    client_id=application_id&
+    redirect_uri=https%3A%2F%2Fweb.application.domain%2Flogin" 
+    https://localhost:8085/oauth/token
+```
 ## Appendix E
 
 * **Page 414**, formatting issue on the last line of the code block. Should be corrected as: 
@@ -64,6 +95,8 @@ docker-init:
   Version: 0.18.0
   Gitcommit: fec3683
 ```
+## Appendix J
 
+* **Page 500 / figure J.1**, top, right caption which points to kubectl box. In the caption it says kubelet, should be corrected as kubectl. 
 
 
