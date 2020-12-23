@@ -8,7 +8,7 @@
 
 * Page 43 / Section: 2.2.3, the curl command is missing closing doulbe quote after "read write"
 
-* Page 51 / Section: 2.5.1, the response from the cURL command needs to be corrected as the following. The response you see in the book is related to an older dependency, which does not strictly validate the scopes and issues a token for the valid scope, ignoring the others. However, the updated dependency in git repo (which we did later), validates the scopes strictly. This is not defined under the OAuth 2.0 specification, and totatly upto the authorization server.
+* Page 51 / Section: 2.5.1, the response from the cURL command needs to be corrected as the following. The response you see in the book is related to an older dependency, which does not strictly validate the scopes and issues a token for the valid scope, ignoring the others. However, the updated dependency in git repo (which we did later), validates the scopes strictly. This is not defined under the OAuth 2.0 specification, and totatly upto the authorization server (already stated in the book).
 
 ```json
 {
