@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.manning.mss.ch02.sample03.exceptions.OrderNotFoundException;
 import com.manning.mss.ch02.sample03.orderentity.Order;
 
-@EnableResourceServer
 @EnableWebSecurity
 @RestController
 @RequestMapping("/orders")
